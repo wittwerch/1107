@@ -1,0 +1,21 @@
+/* BOXED STYLE 
+============== */
+.boxed-style,
+#sign-in {
+        body {
+                max-width: 1260px;
+                .box-shadow(0, 4px, 12px, 0, rgba(0, 0, 0, .4));
+
+                #content {
+                        background-color: white;
+                }
+
+                @media (min-width: 828px) {
+                        background      : url('../img/body-background-medium.jpg') fixed center;
+                        margin          : 45px;                       
+                }
+
+                @media (min-width: 1350px)      { margin: 45px auto; }
+                @media (min-width: 1367px)      { background-image: url('../img/body-background-large.jpg'); }
+        }
+}

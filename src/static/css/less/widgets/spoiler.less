@@ -1,0 +1,15 @@
+/* SPOILER 
+========== */
+div.spoiler {
+        margin          : 4px 0 15px 0;
+        padding         : 15px;
+        background-color: @lighter-bg;
+        color           : @darker-text;
+        text-shadow     : 0 1px 1px rgba(0, 0, 0, .1);
+        
+        >:first-child           { margin-top: 0 }
+        >p:empty:first-child    { margin-top: -15px }
+        
+        >:last-child            { margin-bottom: 0 }  
+        >p:empty:last-child     { margin-bottom: -15px }
+}

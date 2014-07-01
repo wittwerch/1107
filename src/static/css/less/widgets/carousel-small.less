@@ -1,0 +1,50 @@
+/* CAROUSEL SMALL 
+============================================================================= */
+.carousel-small {        
+        &:hover .carousel-indicators li { opacity: 1; }
+        
+        .carousel-inner {
+                overflow: hidden;
+        
+                .item {
+                        &:hover .carousel-caption {
+                                opacity: 1;
+
+                                a {
+                                        font-size   : 50px;
+                                        margin      : -25px;
+                                        &:hover { opacity: 1 }
+                                }
+                        }
+
+                        height: 100%;            
+
+                        img { max-width: none }
+
+                        .carousel-caption {
+                                background-color: rgba(0, 0, 0, .5);
+                                height          : 100%;
+                                left            : 0;
+                                opacity         : 0; 
+                                padding         : 0; 
+                                top             : 0;
+                                width           : 100%;
+                                z-index         : 0; 
+                                .transition();  
+
+                                a { 
+                                        background  : none;
+                                        font-size   : 200px; 
+                                        left        : 50%;
+                                        margin      : -100px;
+                                        opacity     : .5; 
+                                        padding     : 0; 
+                                        position    : absolute; 
+                                        top         : 50%;
+                                        .box-shadow-none();
+                                        .transition();                    
+                                }
+                        }
+                }
+    }    
+}

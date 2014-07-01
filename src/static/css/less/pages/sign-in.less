@@ -1,0 +1,36 @@
+/* SIGN IN PAGE
+=============== */
+#sign-in {
+        body { 
+                .box-shadow-none(); 
+                @media(max-width: 827px) and (min-width: 360px) {
+                        background: url('../img/body-background-small.jpg') fixed center;
+                }
+        }
+        
+        #content {
+                border                  : none;
+                margin                  : 0 auto;
+                max-width               : 360px;
+                min-height              : 300px; 
+                padding                 : 15px;
+                -webkit-box-shadow      : none;
+                -moz-box-shadow         : none;
+                box-shadow              : none;
+                
+                > :last-child { margin-bottom: 0 }
+                
+                @media(min-height: 320px) and (min-width: 360px) {
+                        left            : 50%;
+                        margin-left     : -180px; 
+                        margin-top      : -160px; 
+                        position        : absolute;
+                        top             : 50%;
+                        width           : 360px;                         
+                }
+                
+                @media(min-width: 360px) {
+                        .box-shadow(0, 4px, 12px, 0, rgba(0, 0, 0, .8));
+                }
+        } 
+}

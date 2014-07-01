@@ -1,0 +1,54 @@
+/* RECENT COMMENTS
+================== */
+.recent-comments {  
+        list-style  : none;
+        margin      : 0;
+        padding     : 0;
+
+        li {
+                border-bottom   : 1px solid @lighter-border; 
+                display         : table;
+                margin-bottom   : 15px;
+
+                > .avatar { 
+                        background      : none!important;
+                        display         : table-cell;
+                        padding-bottom  : 15px;
+
+                        a { 
+                                display : block; 
+                                position: relative; 
+                        }
+
+                        img { width: 75px;  }            
+                }
+
+                .content { 
+                        display         : table-cell; 
+                        vertical-align  : top;
+                        padding-bottom  : 15px;
+
+                        .comment-content,
+                        .comment-meta {
+                                display     : block;
+                                padding     : 0 10px;
+                                line-height : 25px;
+                        }
+
+                        .comment-content { min-height: 50px }
+                }
+        }
+}
+
+#footer-main .recent-comments {
+        li { border: none }
+        .avatar, .content { padding: 0 }
+
+        .content { 
+                background: @dark-border;
+
+                .comment-meta { 
+                        background: @darker-bg; 
+                }
+        }
+}

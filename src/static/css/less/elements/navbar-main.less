@@ -1,0 +1,101 @@
+/* NAVBAR MAIN 
+============== */
+#main-nav {
+        background-color    : #fafafa;
+        z-index             : 2; 
+        -webkit-box-shadow  : inset 0 30px 0 0 white, 0 0 1px 0 rgba(0, 0, 0, .4);
+           -moz-box-shadow  : inset 0 30px 0 0 white, 0 0 1px 0 rgba(0, 0, 0, .4);
+                box-shadow  : inset 0 30px 0 0 white, 0 0 1px 0 rgba(0, 0, 0, .4);
+
+        .navbar-header {
+                height: 60px;
+
+                .navbar-brand { 
+                        margin  : 0;
+                        position: relative;
+
+                        img { height: 30px; width: auto; }
+                }
+
+                .navbar-toggle {
+                        border-radius   : 0;
+                        margin          : 13px 15px; 
+                        .box-shadow-inset();
+
+                        &:hover { 
+                                border          : 1px solid transparent;
+                                background-color: @primary;
+
+                                .icon-bar { background-color: @light-text; }
+                        }
+                }
+        }
+
+        .navbar-nav {        
+                > li {           
+                        @media(min-width: @screen-md) {
+                                > a {
+                                        border-left         : 1px solid @lighter-border; 
+                                        padding             : 23px 15px;
+                                        -webkit-transition  : background .4s, border .4s, color .4s;
+                                           -moz-transition  : background .4s, border .4s, color .4s;
+                                             -o-transition  : background .4s, border .4s, color .4s;
+                                                transition  : background .4s, border .4s, color .4s;
+                                }          
+                                
+                                &.open > a,
+                                &.active > a,
+                                & > a:hover {                                        
+                                        border-color    : @primary;                                        
+                                        .box-shadow-inset(0, 30px, 0, 0, rgba(255, 255, 255, .16));
+
+                                        .caret { border-top-color: @light-text; }                       
+                                }     
+                        }
+
+
+                        &:last-child > a { border-right: 1px solid @lighter-border }                                       
+                }
+
+                @media(max-width: (@screen-md - 1)) {
+                        > li > a {
+                                border  : none;
+                                padding : 8px 15px;
+
+                                &:hover { 
+                                        color           : @dark-bg; 
+                                        background-color: @lighter-bg;
+
+                                        .caret { border-top-color: @darker-text; }
+                                }
+                        }
+
+                        .open {
+                                .dropdown-menu {
+                                        background-color: transparent;
+                                        border          : none;
+                                        box-shadow      : none;
+                                        float           : none;
+                                        margin-left     : 30px;
+                                        position        : static;
+
+                                        > li > a {
+                                                color       : @darker-text;  
+                                                font-size   : 14px;
+                                                line-height : 14px;
+                                                padding     : 8px 15px;
+
+                                                &:hover { background-color: @light-text; }
+                                        }
+                                }
+
+                                > a {
+                                        background-color: @light-text;
+                                        color           : @darker-text; 
+
+                                        .caret { border-top-color: @darker-text; }
+                                }
+                        }
+                }        
+        }    
+}

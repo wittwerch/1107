@@ -1,0 +1,29 @@
+/* FLICKR FEED WIDGET
+===================== */
+.flickr-feed {
+        margin: 0 -4px 0 0!important;
+        .ul-no-style();
+
+        li {
+                margin      : 0 0 4px 0;
+                padding     : 0 4px 0 0; 
+                white-space : nowrap; 
+                width       : 25%;
+
+                a { 
+                        display : block; 
+                        height  : 85px; 
+                        overflow: hidden;
+                        position: relative;
+
+                        &:hover { background: none;}
+
+                        img { 
+                                position: relative;
+                                width   : auto;
+                        }
+                }
+        }
+}
+
+footer .flickr-feed li { width: 33.333333333333333%; }

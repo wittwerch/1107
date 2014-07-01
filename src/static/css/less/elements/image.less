@@ -1,0 +1,81 @@
+/* IMAGES 
+========= */
+.image {   
+        display             : block;
+        overflow            : hidden;
+        position            : relative; 
+        -webkit-transition  :none;
+           -moz-transition  :none;
+             -o-transition  :none;
+                transition  :none; 
+
+        img { position: relative; }
+
+        .caption {
+                background-color: rgba(0, 0, 0, .6);                
+                bottom          : 0;
+                color           : @light-text;
+                position        : absolute;
+                width           : 100%; 
+                .transition(all, .5s);
+
+                h5      { padding     : 4px 10px 5px; }
+                .format { margin-right: 10px; }
+        }
+
+        .image-light { z-index: 1 }
+
+        &:hover {
+                .caption {
+                        bottom  : -45px;
+                        opacity : 0;
+                }
+
+                .container-link {
+                        opacity : 1;
+                        .link { top: 50%; }
+                }
+        }
+
+        .container-link {
+                background-color: fade(@primary, 80%);
+                height          : 100%;
+                opacity         : 0;
+                position        : absolute;
+                top             : 0;
+                width           : 100%;
+                .transition(opacity, .3s);
+
+                .link {         
+                        margin-top  : -35px; 
+                        position    : absolute;
+                        text-align  : center; 
+                        top         : -35px;
+                        width       : 100%;
+                        .transition(top, .3s);
+
+                        a {
+                                background-color    : white;  
+                                background-color    : rgba(255, 255, 255, .7);  
+                                border-radius       : 30px; 
+                                color               : @light-text;
+                                color               : fade(@primary, 80%);
+                                display             : inline-block;
+                                font-size           : 30px;
+                                line-height         : 30px; 
+                                margin              : 10px;
+                                padding             : 10px; 
+                                -webkit-transition  :background .3s, box-shadow .6s;
+                                   -moz-transition  :background .3s, box-shadow .6s;
+                                     -o-transition  :background .3s, box-shadow .6s;
+                                        transition  :background .3s, box-shadow .6s; 
+                                .box-shadow(0, 0, 0, 10px, rgba(255, 255, 255, .5));
+
+                                &:hover {
+                                        background-color: rgba(0, 0, 0, .6);
+                                        .box-shadow(0, 0, 0, 10px, rgba(0, 0, 0, .2));
+                                }
+                        }
+                }
+        }
+} 

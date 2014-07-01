@@ -1,0 +1,33 @@
+/* SLIDER  
+========= = */
+.slider-container {    
+        margin: 0 -6px; 
+
+        &.article { 
+                margin: 0 -15px; 
+                li { padding : 0 15px; } 
+        }
+
+        ul {
+                overflow    : hidden;
+                position    : relative;
+                .ul-no-style();
+
+                li {
+                        padding : 0 6px;
+                        width   : 16.66666666666667%;
+
+                        a {
+                                overflow: hidden;
+                                position: relative;
+                        } 
+
+                        @media(max-width: (@screen-md - 1)) { width: 25%; }
+                        @media(max-width: 768px) { width: 33.33333333333333%; }
+                        @media(max-width: 576px) { width: 100%; }
+                }
+
+                @media(max-width: 576px) { overflow: visible; }
+        }
+}
+

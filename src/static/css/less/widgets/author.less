@@ -1,0 +1,40 @@
+/* AUTHOR WIDGET 
+================ */
+.author.widget {
+        a.avatar {
+                display : block;        
+                margin  : 0 10px 10px 0;
+                overflow: hidden;
+                position: relative;
+                width   : 75px;
+        }
+
+        a.avatar, 
+        .name { float: left; }
+
+        .name {
+                font-family     : @headings-font; 
+                font-size       : 16px;
+                font-weight     : bold;
+                line-height     : 16px;
+                .arial-narrow();
+        }
+        
+        a.name,
+        .name a {
+                color: @headings-link-color;
+                &:hover { color: @primary }
+        }
+
+        .social { 
+                clear   : both;
+                margin  : 0;
+
+                li { margin: 0 5px 5px 0; }
+        }
+
+        p { 
+                line-height     : 18px; 
+                margin          : 3px 0 10px; 
+        }
+}

@@ -1,0 +1,36 @@
+/* ARTICLES SMALL 
+================= */
+.article-small .image,
+.article-tiny .image {      
+        margin  : 0 15px 15px 0;
+        position: relative;
+        width   : 100%;
+
+        &:hover .link { 
+                opacity: 1; 
+                .dashicons { top: 50%; }
+        }
+
+        .link {
+                background-color: rgba(0, 0, 0, .6);
+                height          : 100%;
+                opacity         : 0;     
+                position        : absolute;
+                top             : 0;   
+                width           : 100%;
+                .transition();
+
+                .dashicons {
+                        color           : white; 
+                        border-radius   : 23px;
+                        left            : 50%;
+                        margin-left     : -22.5px; 
+                        margin-top      : -22.5px; 
+                        position        : absolute;
+                        top             : -22.5px;
+                        .transition(top, .3s);  
+                }
+        }
+}
+
+.article-small .image { margin-bottom: 10px; }

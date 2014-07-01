@@ -1,0 +1,114 @@
+/* POST COMMENTS 
+================ */
+.post-comments {
+        margin-bottom: 30px;
+        
+        &, 
+        ol.children,
+        ol.children > li > ol { 
+                list-style  : none;
+                padding     : 0;
+        }
+
+        ol.children,
+        ol.children > li > ol  {
+                margin-left: 90px;
+        }
+
+        .comment-container {
+                display : table;
+                margin  : 0 0 15px 0;
+                width   : 100%;
+
+                .avatar {
+                        border          : 5px solid white;
+                        border-radius   : 37.5px;
+                        margin          : 0 15px 0 0!important;
+                        height          : 75px; 
+                        width           : 75px; 
+                        .box-shadow(0, 1px, 1px, 0, rgba(0, 0, 0, .4));
+                }
+
+                .avatar, 
+                .content { 
+                        display         : table-cell; 
+                        vertical-align  : top;
+                }
+
+                .content {
+                        width   : 99%;
+
+                        .comment-meta { 
+                                float: left; margin-right: 10px; 
+                                a { display: inline-block }                
+                        }
+
+                        .reply {
+                                color       : @dark-text;
+                                float       : right;
+                                font-family : @headings-font;
+                                font-size   : 13px;
+                                line-height : 18px;
+                                .arial-narrow();
+
+                                &:hover { color: @primary }
+                        }
+
+                        .comment {
+                                background      : @lighter-bg;
+                                clear           : both;
+                                display         : block;
+                                padding         : 1px 10px;
+                                position        : relative;
+                                .border-radius(4px);
+
+                                blockquote {
+                                        background: lighten(@lighter-bg, 8%);
+                                }
+
+                                p, blockquote { margin: 9px 0; }
+
+                                .triangle {
+                                        border-right    : 10px solid @lighter-bg;
+                                        border-top      : 7.5px solid transparent; 
+                                        border-bottom   : 7.5px solid transparent; 
+                                        left            : -10px;
+                                        position        : absolute;
+                                        top             : 10px;
+                                }
+                        }
+                }
+        }
+
+        .children > li  > .comment-container {
+                .avatar     { margin: 0 0 0 15px!important }
+
+                .content .comment { 
+                        background-color: @primary;
+                        color           : @light-text;
+
+                        blockquote {
+                                background  : lighten(@primary, 8%);
+                                border-color: lighten(@primary, 24%);
+                                color       : lighten(@light-text, 8%);   
+
+                                footer, cite { color: @light-text; }
+                        }
+
+                        .triangle { 
+                                border-right    : none;
+                                border-color    : @primary; 
+                                border-left     : 10px solid @primary;
+                                border-top      : 7.5px solid transparent; 
+                                border-bottom   : 7.5px solid transparent; 
+                                left            : auto;
+                                right           : -10px; 
+                        }       
+                }
+        }
+
+        @media(max-width: 768px) {
+                .avatar { display       : none!important }
+                li ol   { margin-left   : 30px }
+        }
+}

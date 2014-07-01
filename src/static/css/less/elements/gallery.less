@@ -1,0 +1,55 @@
+/* GALLERY
+========== */
+.entry-content .images {
+        padding: 0 0 5px 0;
+
+        .da-thumbs {
+                margin      : 0 -10px 0 0!important;
+                max-width   : none;
+                .ul-no-style();
+
+                li {
+                        padding : 0 10px 10px 0;
+                        width   : 25%;
+
+                        a {
+                            overflow: hidden;
+                            position: relative;
+                        }
+                }   
+
+                &.col-1 li { width: 100% }
+                &.col-2 li { width: 50% }
+                &.col-3 li { width: 33.33333333333333% }
+                &.col-4 li { width: 25% }
+                &.col-5 li { width: 20% }
+                &.col-6 li { width: 16.66666666666667% }
+                &.col-7 li { width: 14.28571428571429% }
+                &.col-8 li { width: 12.5% }
+                &.col-9 li { width: 11.11111111111111% }
+
+                @media(max-width: 768px) { 
+                        li { width: 33.33333333333333% } 
+
+                        &.col-2 li { width: 100% }
+                        &.col-3 li { width: 50% }
+                        &.col-4 li { width: 33.33333333333333% }
+                        &.col-5 li { width: 25% }
+                        &.col-6 li { width: 20% }
+                        &.col-7 li { width: 16.66666666666667% }
+                        &.col-8 li { width: 14.28571428571429% }
+                        &.col-9 li { width: 12.5% }
+                }
+                @media(max-width: 512px) { 
+                        li { width: 50% }
+
+                        &.col-3 li { width: 100% }
+                        &.col-4 li { width: 50% }
+                        &.col-5 li { width: 33.33333333333333% }
+                        &.col-6 li { width: 25% }
+                        &.col-7 li { width: 20% }
+                        &.col-8 li { width: 16.66666666666667% }
+                        &.col-9 li { width: 14.28571428571429% }
+                }
+        }
+}      

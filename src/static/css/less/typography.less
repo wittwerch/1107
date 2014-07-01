@@ -1,0 +1,167 @@
+/* TYPOGRAPHY 
+============= */
+/*Body*/ 
+body { 
+        color                   : @darker-text; 
+        font-family             : @body-font;
+        font-size               : 13px;
+        -webkit-font-smoothing  : antialiased;
+        -moz-osx-font-smoothing : grayscale;
+        -ms-word-wrap           : break-word;
+        word-wrap               : break-word; 
+}
+ 
+/*Anchor*/
+a {
+        color: @body-link-color; 
+        .transition();
+        &:hover { 
+                color           : @primary;
+                text-decoration : none; 
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+                color: @headings-link-color;
+                .transition();
+                &:hover { color: @primary }
+        }
+}
+h1, h2, h3, h4, h5, h6 { 
+        a {
+                color: @headings-link-color;
+                &:hover { color: @primary }                
+        }
+}
+
+/*Blockquote*/
+blockquote,
+.blockquote-reverse {
+        background  : @lighter-bg;
+        border-width: 10px;
+        border-color: @light-border;
+        font-size   : inherit;
+        padding     : 10px;
+
+        footer,
+        > cite { 
+                &, a {
+                        font-size   : 12px; 
+                        color       : lighten(@darker-text, 8%); 
+                        line-height : 25px; 
+                }
+
+                a:hover { color: @primary }
+        }
+}
+.article-medium,
+#blog-version-1 article {
+        blockquote { margin: 15px 0 }
+}
+
+/*Headings*/
+h1, h2, h3, h4, h5, h6 {
+        font-family     : @headings-font;
+        font-weight     : bold; 
+        margin          : 0;        
+        .arial-narrow();
+}
+h5 {
+        font-size   : 15px;
+        line-height : 20px;
+}
+
+/*Horizontal line*/
+hr { 
+        clear   : both;
+        color   : @light-border;
+        margin  : 15px 0;
+}
+
+/*Paragraphs*/
+p { 
+        line-height         : 20px;
+        margin              : 15px 0;
+        -moz-column-gap     : 30px; /* Firefox */
+        -webkit-column-gap  : 30px; /* Safari and Chrome */
+        column-gap          : 30px;
+
+        &.col-2 { .column-count(2); }     
+        &.col-3 { .column-count(3); }     
+        &.col-4 { .column-count(4); } 
+
+        @media(max-width: 768px) { 
+                &.col-3, 
+                &.col-4 { .column-count(2); } 
+        } 
+        @media(max-width: 512px) { 
+                &.col-2, 
+                &.col-3,
+                &.col-4 { .column-count(1); } 
+        } 
+}
+
+/*Dropcaps*/
+span.dropcaps,
+p.dropcaps:first-letter {
+        float           : left;
+        font-size       : 45.5px;
+        line-height     : 40px;
+        margin-right    : 5px; 
+}
+
+/*User contents*/
+.entry-content,
+.comment-container .comment {        
+        a { 
+                border-bottom: 1px solid fade(@body-link-color, 20%);
+                &:hover { border-color: @primary }
+                        
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+                font-weight     : normal;
+                margin          : 10px 0;
+        }
+        
+        .btn { border: none }
+} 
+.entry-content,
+blockquote {
+        overflow: hidden;
+        > *:nth-child(1)        { margin-top: 0 !important }
+        > *:nth-last-child(1)   { margin-bottom: 0 !important }
+}
+
+/*Post meta*/
+.post-meta,
+.comment-meta,
+.comment-container .reply { 
+        margin: 0; 
+        a { 
+                border          : none;
+                color           : @dark-text;  
+                font-family     : @headings-font; 
+                font-size       : 13px;
+                line-height     : 13px;  
+                display         : inline-block;
+                overflow        : visible!important;
+                .arial-narrow();
+
+                &:hover { color: @primary }
+        }
+        .dashicons {
+                background          : none;
+                padding             : 0;
+                font-size           : 13px;
+                float               : none;
+                margin              : 0;
+                width               : auto;
+                height              : auto;
+                line-height         : 13px;
+                text-shadow         : none;
+                -webkit-transition  : none;
+                -moz-transition     : none;
+                -o-transition       : none;
+                transition          : none;
+        }
+}

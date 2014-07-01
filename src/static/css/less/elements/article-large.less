@@ -1,0 +1,76 @@
+/* ARTICLE LARGE
+================ */
+.article-large {
+        position: relative;    
+
+        .frame { 
+                a   { 
+                        border          : none;
+                        display         : block; 
+                        overflow        : hidden;
+                        position        : relative; 
+
+                        &.carousel-control { position: absolute }
+                }
+
+                small { 
+                        color       : @dark-text;  
+                        font-family : @headings-font; 
+                        .arial-narrow();
+                }
+
+                h4              { margin-top    : 10px }
+                .image-light    { z-index       : 1 }
+                .post-meta a    { display       : inline-block }
+        }
+
+        .icons {
+                left    : 0px;
+                position: absolute;
+                top     : 20px;
+                width   : 75px; 
+
+                a {
+                        background      : white;
+                        border          : 5px solid white;
+                        border-radius   : 37.5px;
+                        display         : block; 
+                        margin-bottom   : 10px;
+                        overflow        : hidden; 
+                        position        : relative;
+                        text-align      : center; 
+                        .box-shadow(0, 1px, 1px, 0, rgba(0, 0, 0, .4));
+
+                        i { 
+                                border-radius   : 32.5px;
+                                color           : white;
+                                font-size       : 40px;
+                                height          : 65px;
+                                padding-top     : 22px; 
+                                width           : 65px; 
+                                .box-shadow-inset(0, 24px, 0, 0, @color: rgba(255, 255, 255, .16));
+                                .text-shadow();
+
+                                &.fa {
+                                        background  : @primary;
+                                        padding-top : 4px;
+                                }
+                        }            
+
+                        .comment {
+                                bottom      : 6px;
+                                color       : white; 
+                                display     : block; 
+                                position    : absolute;
+                                text-align  : center; 
+                                width       : 100%;
+                        }
+                }        
+        }
+
+        @media(max-width: (@screen-sm - 1)) { 
+                padding-left: 0!important;
+
+                .icons { display: none; } 
+        }
+}

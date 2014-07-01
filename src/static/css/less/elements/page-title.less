@@ -1,0 +1,51 @@
+/* PAGE TITLE 
+============= */
+#title {
+        background-image    : url('../img/title-background-small.jpg');
+        background-position : center; 
+        height              : 150px;
+        position            : relative;
+        overflow            : hidden;
+
+        .container {
+                height  : 100%;
+                position: relative;
+
+                .title-container {
+                        bottom      : 20px; 
+                        color       : @light-text;
+                        margin-right: 15px;
+                        position    : absolute;        
+
+                        .primary,
+                        .secondary { float: left; }
+
+                        p { margin: 2px 0 0 0; clear: both; }
+
+                        .primary {
+                                font-size   : 20px;
+                                line-height : 20px; 
+                                background  : @primary;
+                                background  : fade(@primary, 80%); 
+                                padding     : 10px;
+                        }
+
+                        .secondary {
+                                background      : rgba(0, 0, 0, .8); 
+                                font-family     : @body-font; 
+                                font-size       : 15px;
+                                line-height     : 15px;
+                                padding         : 12.5px 10px;
+
+                                a { 
+                                        color: @light-text;
+
+                                        &:hover { color: @primary }
+                                }
+                        }
+                }
+        }     
+
+        @media(min-width: 769px)    { background-image: url('../img/title-background-medium.jpg'); }
+        @media(min-width: 1367px)   { background-image: url('../img/title-background-large.jpg'); }
+}

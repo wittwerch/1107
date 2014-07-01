@@ -1,0 +1,67 @@
+/* FLAT STYLE 
+============= */
+.flat-style {
+        * { text-shadow: none; }
+        
+        button,
+        input[type="button"], 
+        input[type="reset"], 
+        input[type="submit"],
+        .btn,
+        
+        #top-nav,
+        #top-nav .navbar-toggle,
+        #top-nav .navbar-form button, 
+        #top-nav .navbar-form input[type="button"], 
+        #top-nav .navbar-form input[type="reset"], 
+        #top-nav .navbar-form input[type="submit"]
+        
+        #main-nav,
+        #main-nav .navbar-toggle,
+        
+        .sc-sm, 
+        .sc-md,
+        
+        .widget header h4,
+        .widget .nav-tabs li a,
+        .widget header .control,
+        
+        .article-large .icons a i,
+        .dashicons,
+        .dropdown-menu,
+        
+        #content,
+        #footer-main {
+                .box-shadow-none();
+        }
+        
+        #main-nav {
+                background-color: white;
+        }
+        
+        #top-nav,
+        #main-nav {
+                button,
+                input[type="button"], 
+                input[type="reset"], 
+                input[type="submit"],
+                .nav > li > a  {
+                        text-shadow: none;
+                        
+                        &, &:hover {
+                                @media(min-width: @screen-md) {
+                                        .box-shadow-none();
+                                }
+                        }
+                }
+        }
+
+        .breaking-news .header .triangle:before         { background: none }   
+        
+        &#blog-version-2 #main-content article .frame,
+        .headline article .frame                        { margin-bottom: 15px }   
+        .shadow                                         { display: none }  
+        
+        .article-large .icons a,
+        .post-comments .comment-container .avatar       { .box-shadow(0, 0); }
+}

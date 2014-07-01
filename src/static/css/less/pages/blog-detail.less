@@ -1,0 +1,88 @@
+/* BLOG DETAIL 
+============== */
+#blog-detail #main-content {
+        .article-large .frame {
+                position: relative;
+
+                .icons {
+                        bottom  : -5px;
+                        left    : 20px;
+                        top     : auto;
+                        width   : auto;
+
+                        a { 
+                                display : inline-block;
+                                width   : 75px; 
+                        }
+                }
+
+                small,
+                .post-meta { 
+                        margin-top: 10px; 
+                        a { display: inline-block }
+                }
+        }
+        
+        article-small { 
+                margin-bottom: 15px;         
+                
+                @media(max-width: (@screen-md - 1)) { 
+                        &:nth-child(2n+1) { clear: both } 
+                }
+        }
+        
+        .entry-content {                
+                border-bottom   : 1px solid @light-border;
+                padding-bottom  : 15px;
+        }
+
+        .page-links {
+                a, > span,
+                li > span {
+                        background      : @lighter-bg; 
+                        border          : none;
+                        color           : @darker-text;
+                        display         : inline-block; 
+                        font-size       : 13px;
+                        line-height     : 13px; 
+                        margin-bottom   : 4px; 
+                        padding         : 8px 10px;
+
+                        &:hover { 
+                                background-color: @primary;
+                                color           : @light-text;
+                        }
+                }
+
+                .dots, .dots:hover {
+                        background      : @lighter-bg;  
+                        color           : @darker-text;
+                }
+
+                > span,
+                li > span  {
+                        &, &:hover {
+                                background  : @secondary; 
+                                color       : @light-text;
+                        }                 
+                }
+        }
+
+        .post-navigation {
+                margin-bottom: 45px;
+
+                .nav-previous,
+                .nav-next {
+                        border-bottom   : 1px solid @light-border;
+                        padding         : 10px 0;
+
+                        .meta-nav {
+                                color       : @darker-text;
+                                font-size   : 15px; 
+                                font-family : @headings-font;
+                                line-height : 15px; 
+                                .arial-narrow();
+                        }
+                }
+        }
+}

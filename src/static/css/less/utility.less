@@ -1,0 +1,66 @@
+/* MIXINS 
+========= */
+.arial-narrow() when (@headings-font = "Arial Narrow") {
+        font-family     : "Arial Narrow", Arial, sans-serif;
+        font-stretch    : condensed; /*Firefox*/
+}
+
+.box-shadow(@offset-x: 0, @offset-y: 1px, @blur-radius: 1px, @spread-radius: 0, @color: rgba(0, 0, 0, .12)) {
+     -webkit-box-shadow : @arguments;
+    -moz-box-shadow     : @arguments;
+    box-shadow          : @arguments;
+}
+
+.box-shadow-inset(@offset-x: 0, @offset-y: 15px, @blur-radius: 0, @spread-radius: 0, @color: rgba(255, 255, 255, .12)) {
+     -webkit-box-shadow : inset @arguments;
+    -moz-box-shadow     : inset @arguments;
+    box-shadow          : inset @arguments;
+}
+
+.box-shadow-none() {
+    -webkit-box-shadow  : none;
+    -moz-box-shadow     : none;
+    box-shadow          : none;
+}
+
+.border-radius(@radius: 0) {
+    -webkit-border-radius   : @radius;
+    -moz-border-radius      : @radius;
+    border-radius           : @radius;
+}
+
+.column-count(@column) {
+    -moz-column-count   : @column; /* Firefox */
+    -webkit-column-count: @column; /* Safari and Chrome */
+    column-count        : @column;
+}
+
+.text-shadow() {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.transition(@property: all, @duration: .4s, @easing: ease-out) {
+    -webkit-transition  : @property @duration ease-out;
+    -moz-transition     : @property @duration ease-out;
+    -o-transition       : @property @duration ease-out;
+    transition          : @property @duration ease-out;
+}
+
+.transition-none() {
+    -webkit-transition  : none;
+    -moz-transition     : none;
+    -o-transition       : none;
+    transition          : none;
+}
+
+.ul-no-style() {
+    list-style  : none;
+    margin      : 0;
+    padding     : 0;
+    
+    li { float: left }
+}
+
+/* NO-MOBILE
+============ */
+.no-mobile { display: none }

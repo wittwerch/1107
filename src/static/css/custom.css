@@ -1,0 +1,23 @@
+/*Custom CSS
+============ */
+#home-version-2 #title  { background-image: url('../img/title-background-home-version-2-small.jpg') }
+#blog-version-1 #title  { background-image: url('../img/title-background-blog-version-1-small.jpg') }
+#blog-version-2 #title  { background-image: url('../img/title-background-blog-version-2-small.jpg') }
+#blog-detail #title     { background-image: url('../img/title-background-blog-detail-small.jpg') }
+#gallery-page #title    { background-image: url('../img/title-background-gallery-page-small.jpg') }
+
+@media(min-width: 769px) {
+        #home-version-2 #title  { background-image: url('../img/title-background-home-version-2-medium.jpg') }
+        #blog-version-1 #title  { background-image: url('../img/title-background-blog-version-1-medium.jpg') }
+        #blog-version-2 #title  { background-image: url('../img/title-background-blog-version-2-medium.jpg') }
+        #blog-detail #title     { background-image: url('../img/title-background-blog-detail-medium.jpg') }
+        #gallery-page #title    { background-image: url('../img/title-background-gallery-page-medium.jpg') }
+}
+
+@media(min-width: 1367px) {
+        #home-version-2 #title  { background-image: url('../img/title-background-home-version-2-large.jpg') }
+        #blog-version-1 #title  { background-image: url('../img/title-background-blog-version-1-large.jpg') }
+        #blog-version-2 #title  { background-image: url('../img/title-background-blog-version-2-large.jpg') }
+        #blog-detail #title     { background-image: url('../img/title-background-blog-detail-large.jpg') }
+        #gallery-page #title    { background-image: url('../img/title-background-gallery-page-large.jpg') }
+}

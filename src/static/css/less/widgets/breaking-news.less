@@ -1,0 +1,47 @@
+/* BREAKING NEWS WIDGET
+======================= */
+.breaking-news { 
+        margin-bottom: 45px;
+
+        header {      
+                position        : absolute; 
+                white-space     : nowrap; 
+                height          : 30px;
+                overflow        : hidden;
+
+                h4 {
+                        background-color: @secondary;
+                        color           : @light-text;
+                        float           : left; 
+                        line-height     : 18px; 
+                        padding         : 6px 10px; 
+                }
+
+                .triangle {
+                        border-color    : @secondary;
+                        border-left     : 10px solid @secondary;
+                        border-top      : 15px solid transparent;
+                        border-bottom   : 15px solid transparent;
+                        float           : left;             
+                }
+        }
+
+        .content {
+                background-color: @lighter-bg;
+                height          : 30px;
+                line-height     : 20px;
+                overflow        : hidden; 
+                padding         : 5px 10px;
+
+                ul {
+                        .ul-no-style();
+                        li { 
+                                margin-right: 15px; 
+                                a {
+                                        color: @darker-text;
+                                        &:hover { color: @primary }
+                                }
+                        }
+                }
+        }    
+}

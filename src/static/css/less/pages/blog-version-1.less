@@ -1,0 +1,45 @@
+/* BLOG VERSION 1 
+================= */
+#blog-version-1 #main-content .article-large {
+        padding : 0 0 0 32.5px;
+
+        .featured-media { margin: 15px 0 }
+
+        &.no-image {         
+                > .post-meta, .title  { 
+                        border-bottom   : 1px solid @light-border; 
+                        display         : block; 
+                        padding-bottom  : 10px; 
+                } 
+
+                > .post-meta { padding-top: 10px }
+        }    
+}
+
+#blog-version-1,
+#blog-version-2 {
+        #main-content article {
+                .footer {
+                        border-bottom   : 1px solid @light-border;
+                        display         : table;
+                        margin-bottom   : 45px;
+                        padding-bottom  : 15px;
+                        width           : 100%;
+
+                        .tags,
+                        .read-more  { 
+                                display         : table-cell; 
+                                vertical-align  : top; 
+                        }
+                        
+                        .read-more { width: 1%; }
+                        
+                        .tags { 
+                                padding-right: 10px; 
+                                width: 99% 
+                        }
+                }
+
+                .frame .post-meta { margin: 0;  }
+        }
+}

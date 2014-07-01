@@ -1,0 +1,30 @@
+/* PAGINATION 
+============= */
+.pagination {
+        display : table;
+        margin  : 0 -2px 45px -2px;
+
+        li {
+                display     : table-cell;
+                float       : none; 
+                margin-right: 5px;
+                padding     : 0 2px;
+
+                &.active a { 
+                        background  : @secondary; 
+                        color       : @light-text; 
+                        cursor      : default; 
+                }
+
+                &.divider { 
+                        background  : url(../img/line.jpg) repeat-x center;
+                        width       : 50%;
+                }
+
+                .hellip {
+                        cursor  : default;
+
+                        &:hover { background: @lighter-bg; color: @darker-text }
+                }
+        }
+}

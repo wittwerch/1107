@@ -1,0 +1,52 @@
+/* REVIEW BOX 
+============= */
+.review {
+        float   : left;
+        margin  : 15px 30px 0 0;
+        width   : 45%;
+
+        header {
+                border-bottom   : 1px solid @light-border;
+                margin-bottom   : 15px;
+
+                h5 {
+                        border-bottom   : 7px solid @light-border;
+                        display         : inline-block; 
+                        margin          : 0;  
+                        padding         : 0 0 10px;
+                }
+        }
+
+        .review-total-score {
+                background  : @primary;
+                color       : @light-text;
+                float       : left;
+                margin      : 0 15px 15px 0; 
+                padding     : 10px;
+                text-align  : center;
+
+                h1 { margin: 0 }
+        }
+
+        &.full-width {
+                margin-right: 0;
+                width       : 100%;
+        }    
+}
+
+.user-rating { 
+        clear   : both; 
+        display : block; 
+        margin  : 15px 0;
+
+        .rating { display: inline-block }
+
+        .after-vote {
+                clear   : both;
+                display : none;
+        } 
+}
+    
+@media( max-width: 512px ) { 
+        .review { width: 100% }
+}

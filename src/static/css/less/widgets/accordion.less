@@ -1,0 +1,43 @@
+/* ACCORCION 
+============ */
+.accordion .header {
+        background  : @lighter-bg;
+        border      : 1px solid @light-border;
+        cursor      : pointer; 
+        display     : table;
+        margin      : 0 0 1px 0;     
+
+        &.active i:before { content: '\f068' }
+
+        h1, h2, h3, h4, h5, h6, i { 
+                display         : table-cell; 
+                vertical-align  : middle }
+
+        h1, h2, h3, h4, h5, h6 { 
+                color   : @secondary;
+                padding : 10px;
+                width   : 99%;  
+        }
+
+        i {
+                border-left : 1px solid @light-border;
+                padding     : 0 10px;
+
+                &:before {
+                        background      : @secondary;
+                        border-radius   : 12px;
+                        color           : @light-text;
+                        display         : block;
+                        font-size       : 11px;
+                        font-weight     : normal;
+                        line-height     : 11px;
+                        height          : 21px;
+                        margin          : 5px;
+                        padding         : 5px;
+                        text-align      : center;
+                        width           : 21px;
+                        .text-shadow();
+                        .box-shadow(0, 0, 0, 5px, fade(@secondary, 20%));
+                }
+        }
+}

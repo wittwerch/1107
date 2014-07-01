@@ -1,0 +1,37 @@
+/* TWITTER FEED WIDGET
+====================== */
+.twitter-feed {    
+        ul { 
+                .ul-no-style(); 
+
+                li {
+                        border-bottom   : 1px solid @light-border; 
+                        display         : table;
+                        padding         : 15px 0;
+                        width           : 100%;
+
+                        .avatar {
+                                padding : 3px 15px 0 0;
+                                width   : 48px;
+
+                                .fa { 
+                                        color       : #40bff5;
+                                        font-size   : 32px;
+                                }
+                        }
+
+                        .avatar, 
+                        .content { 
+                                display         : table-cell;
+                                vertical-align  : top;
+                        }
+
+                        &:first-child { padding-top: 0 }
+                }
+        }    
+}
+
+#footer-main .twitter-feed ul li {
+        border          : none; 
+        padding-bottom  : 0;
+}

@@ -1,0 +1,43 @@
+/* SHARE POST BUTTONS 
+===================== */
+.share-post {    
+        ul {
+                .ul-no-style();
+
+                li {            
+                        margin: 0 5px 5px 0; 
+
+                        a {
+                                span {
+                                        border-top      : 1px solid @light-border;
+                                        border-right    : 1px solid @light-border;
+                                        border-bottom   : 1px solid @light-border;
+                                        color           : @darker-text;
+                                        background      : @lighter-bg;
+                                        line-height     : 14px; 
+                                        padding         : 7px;
+                                        
+                                        &:hover { color: @primary }
+                                }
+
+                                i, span { display: inline-block }
+                        }
+                }            
+        }
+} 
+
+/* SHARE POST BUTTONS AND POST TAGS
+=================================== */
+.share-post,
+.post-tags {    
+        border-bottom   : 1px solid @light-border;
+        padding         : 10px 0 5px 0;
+
+        h5 { 
+                font-weight     : normal;
+                line-height     : 30px;
+                margin-right    : 5px;
+        }
+
+        h5, ul { float: left }
+}
