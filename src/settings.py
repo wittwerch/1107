@@ -179,6 +179,35 @@ DATABASES = {
     }
 }
 
+#############
+# LOGGING #
+#############
+
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+            }
+        },
+    'loggers': {
+        'shcbelpa': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+            }
+        }
+    }
 
 #########
 # PATHS #
@@ -248,6 +277,7 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "shcbelpa",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )
@@ -332,6 +362,11 @@ OPTIONAL_APPS = (
 #     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 # }
 
+##################
+# SHCBELPA SETTINGS #
+##################
+
+HOME_CLUB = 'SHC Belpa 1107'
 
 ##################
 # LOCAL SETTINGS #

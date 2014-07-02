@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block main %}
+
+<!-- Nav tabs -->
+<ul id="statsTab" class="nav nav-tabs" role="tablist">
+{% for game_type, stats in sections.items %}
+
+  {% if stats|length > 0 %}
+
+  <li {% if game_type.name == active %}class="active"{% endif %}>
+      <a href="#{{ game_type }}" role="tab" data-toggle="tab">{{ game_type }}</a>
+  </li>
+
+  {% endif %}
+
+{% endfor %}
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+{% for game_type, stats in sections.items %}
+
+  {% if stats|length > 0 %}
+
+  <div class="tab-pane{% if game_type.name == active %} active{% endif %}" id="{{ game_type }}">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                                <th>Name</th>
+                                <th><a href="#" id="tooltip" title="Spiele">S</a></th>
+                                <th><a href="#" id="tooltip" title="Goals">G</a></th>
+                                <th><a href="#" id="tooltip" title="Assists">A</a></th>
+                                <th><a href="#" id="tooltip" title="Punkte">P</a></th>
+                                <th><a href="#" id="tooltip" title="Punktedurchschnitt pro Spiel">&Oslash;P</a></th>
+                                <th><a href="#" id="tooltip" title="Strafminuten">PM</a></th>
+                                <th><a href="#" id="tooltip" title="Strafminuten pro Spiel">&Oslash;PM</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                 {% for stat in stats %}
+                            <tr>
+                                <td>{{ stat.player.number }}</td>
+                                <td><a href="{% url 'player' stat.player.pk %}">{{ stat.player }}</a></td>
+                                 <td>{{ stat.gp }}</td>
+                                <td>{{ stat.goal }}</td>
+                                <td>{{ stat.assist }}</td>
+                                <td><strong>{{ stat.points }}</strong></td>
+                                <td>{{ stat.points_avg|floatformat:2 }}</td>
+                                <td>{{ stat.pm }}</td>
+                                <td>{{ stat.pm_avg|floatformat:2}}</td>
+                            </tr>
+                            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   </div>
+    {% endif %}
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+$(document).ready(function() {
+    $('#statsTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+})
+</script>
+
+{% endblock %}

@@ -6,12 +6,9 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
+from shcbelpa.views import PlayerView, RosterView, SeasonView, StatsView
 
 admin.autodiscover()
-
-# Add the urlpatterns for any custom Django applications here.
-# You can also change the ``home`` view to add your own functionality
-# to the project's homepage.
 
 urlpatterns = i18n_patterns("",
     # Change the admin prefix here to use an alternate URL for the
@@ -20,6 +17,14 @@ urlpatterns = i18n_patterns("",
 )
 
 urlpatterns += patterns('',
+
+    url(r'^(?P<team_pk>\d{1})/season/(?P<season>\d{4})', SeasonView.as_view(), name='season'),
+
+    url(r'^player/(?P<pk>\d+)/$', PlayerView.as_view(), name='player'),
+
+    url(r'^(?P<team_pk>\d+)/players$', RosterView.as_view(), name='roster'),
+
+    url(r'^(?P<team_pk>\d{1})/stats/(?P<season>\d{4})/(?P<game_type>.*)$', StatsView.as_view(), name='stats'),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.

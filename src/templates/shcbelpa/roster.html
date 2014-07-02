@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block main %}
+
+    {% for position in roster %}
+
+        {% for player in position %}
+            {{ player.first_name }} {{ player.last_name }}
+
+            {% endfor %}
+
+    {% endfor %}
+
+{% endblock %}

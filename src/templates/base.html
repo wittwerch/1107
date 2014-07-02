@@ -108,7 +108,7 @@
         <div class="image-light"></div>
         <div class="container">
             <div class="title-container">
-                <h3 class="primary">SHC Belpa 1107</h3>
+                <h3 class="primary">{% block subtitle %}SHC Belpa 1107{% endblock %}</h3>
 
             </div>
         </div>
@@ -175,7 +175,7 @@
 <script src="{% static "js/jquery-ui.custom.min.js" %}"></script>
 
 <!-- Warta scripts -->
-<script src="{% static "js/script.min.js" %}"></script>
+<script src="{% static "js/script.js" %}"></script>
 <script src="{% static "js/initialize.js" %}"></script>
 
 {% block extra_js %}{% endblock %}
