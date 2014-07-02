@@ -9,7 +9,7 @@
 
   {% if stats|length > 0 %}
 
-  <li {% if game_type.name == active %}class="active"{% endif %}>
+  <li {% if game_type == active %}class="active"{% endif %}>
       <a href="#{{ game_type }}" role="tab" data-toggle="tab">{{ game_type }}</a>
   </li>
 
@@ -24,7 +24,7 @@
 
   {% if stats|length > 0 %}
 
-  <div class="tab-pane{% if game_type.name == active %} active{% endif %}" id="{{ game_type }}">
+  <div class="tab-pane{% if game_type == active %} active{% endif %}" id="{{ game_type }}">
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>

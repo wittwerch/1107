@@ -1,8 +1,9 @@
+from datetime import date
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from mezzanine.blog.models import BlogPost
+from django.db.models import Q, Sum
 
-from .managers import GameManager
 
 class League(models.Model):
     name = models.CharField(max_length=60)
@@ -27,6 +28,13 @@ class Club(models.Model):
         verbose_name = "Club"
         verbose_name_plural = "Club"
         ordering = ['name']
+
+
+class PlayerManager(models.Manager):
+
+    def played_for_team(self, team, season):
+        # filter queryset by team where either home_team or away_team matches
+        return super(PlayerManager, self).get_query_set().filter(seasonplayerstats__team=team, seasonplayerstats__season=season).distinct()
 
 
 class Player(models.Model):
@@ -54,6 +62,7 @@ class Player(models.Model):
     class Meta:
         ordering = ['last_name']
 
+    objects = PlayerManager()
 
 class Team(models.Model):
 
@@ -68,6 +77,7 @@ class Team(models.Model):
         ('B', _('Junioren B')),
         ('C', _('Junioren C')),
     )
+    league = models.ForeignKey(League, blank=True,null=True)
     level = models.CharField(max_length=1,choices=LEVEL_CHOICES)
     players = models.ManyToManyField(Player, through='Roster',blank=True,null=True)
 
@@ -88,6 +98,12 @@ class Roster(models.Model):
     position = models.CharField(max_length=1,choices=POSITION_CHOICES)
 
 
+class SeasonManager(models.Manager):
+
+    def get_current_season(self):
+        return Season.objects.get(start_date__lte=date.today(),end_date__gte=date.today())
+
+
 class Season(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
@@ -106,12 +122,20 @@ class Season(models.Model):
     class Meta:
         ordering = ['-start_date']
 
+    objects = SeasonManager()
 
 class GameType(models.Model):
     name = models.CharField(max_length=20,unique=True)
 
     def __unicode__(self):
         return self.name
+
+class GameManager(models.Manager):
+
+    def filter_by_team(self, team):
+        # filter queryset by team where either home_team or away_team matches
+        return super(GameManager, self).get_query_set().filter(Q(home_team=team) | Q(away_team=team))
+
 
 class Game(models.Model):
     date_time = models.DateTimeField()
@@ -153,6 +177,52 @@ class CommonPlayerStats(models.Model):
         abstract = True
 
 
+class SeasonPlayerStatsManager(models.Manager):
+
+    def get_season_stats_by_type(self, season, team, game_type):
+        queryset = super(SeasonPlayerStatsManager, self).get_query_set().filter(season=season, team=team, game_type=game_type)
+        return queryset.filter(season=season, team=team, game_type=game_type)
+
+    def get_season_stats(self, season, team):
+        players = Player.objects.played_for_team(team, season)
+        stats = []
+        for player in players:
+            season_player_stats = super(SeasonPlayerStatsManager, self).get_query_set().filter(season=season, team=team, player=player)
+            stat = self._generate_stats(player, season_player_stats)
+            stats.append(stat)
+
+        stats.sort(key=lambda x: x['points'], reverse=True)
+
+        return stats
+
+    def get_season_stats_by_player(self, season, team, player):
+        season_player_stats = super(SeasonPlayerStatsManager, self).get_query_set().filter(season=season, team=team, player=player)
+        stat = self._generate_stats(player, season_player_stats)
+        return stat
+
+
+    def get_alltime_stats_by_player(self, player, league):
+        season_player_stats = super(SeasonPlayerStatsManager, self).get_query_set().filter(player=player, league=league)
+        stats = self._generate_stats(player, season_player_stats)
+        return stats
+
+
+    def _generate_stats(self, player, season_player_stats):
+        stats = {}
+        for field in ['gp', 'goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','ppg','ppa','shg','sha', 'gw', 'gt']:
+            values = (stat.__dict__.get(field) for stat in season_player_stats)
+            stats[field] = sum(values)
+
+        stats['points'] = stats['goal'] + stats['assist']
+        stats['points_avg'] = float(stats['points']/stats['gp']) if stats['gp'] > 0 else 0
+
+        stats['player'] = player
+
+        #stats['pm'] = sps.pm_2*2 + sps.pm_5*5 + sps.pm_10*10 + sps.pm_20*20 + sps.pm_25*25
+
+        return stats
+
+
 class SeasonPlayerStats(CommonPlayerStats):
     gp = models.PositiveIntegerField(default=0)
     points = models.PositiveIntegerField(default=0)
@@ -176,8 +246,12 @@ class SeasonPlayerStats(CommonPlayerStats):
             return float(self.pm)/float(self.gp)
         return 0
 
+
     class Meta:
         unique_together = (("player", "season", "game_type", "team", "league"),)
 
         ordering = ['-points']
+
+    objects = SeasonPlayerStatsManager()
+
 

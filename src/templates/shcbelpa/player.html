@@ -5,4 +5,68 @@
 
 {{ player.first_name }} {{ player.last_name }}
 
+                    <h5 class="line">
+            <span>{{ season }}</span>
+        </h5>
+
+                        <div class="table-responsive">
+                    	<table class="table table-striped">
+                            <tr>
+                                <th>Liga</th>
+                                <th><a href="#" id="tooltip" title="Spiele">S</a></th>
+                                <th><a href="#" id="tooltip" title="Goals">G</a></th>
+                                <th><a href="#" id="tooltip" title="Assists">A</a></th>
+                                <th><a href="#" id="tooltip" title="Punkte">P</a></th>
+                                <th><a href="#" id="tooltip" title="Punktedurchschnitt pro Spiel">&Oslash;P</a></th>
+                                <th><a href="#" id="tooltip" title="Strafminuten">PM</a></th>
+                                <th><a href="#" id="tooltip" title="Strafminuten pro Spiel">&Oslash;PM</a></th>
+                            </tr>
+                            {% for team,stats in season_stats %}
+                            <tr>
+                                <td>{{ team.league }}</td>
+                                <td>{{ stats.gp }}</td>
+                                <td>{{ stats.goal }}</td>
+                                <td>{{ stats.assist }}</td>
+                                <td>{{ stats.points }}</td>
+                                <td>{{ stats.points_avg|floatformat:2 }}</td>
+                                <td>{{ stats.pm }}</td>
+                                <td>{{ stats.pm_avg|floatformat:2}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+
+                    <h5 class="line">
+            <span>Karriere</span>
+        </h5>
+
+                        <div class="table-responsive">
+                    	<table class="table table-striped">
+                            <tr>
+                                <th>Liga</th>
+                                <th><a href="#" id="tooltip" title="Spiele">S</a></th>
+                                <th><a href="#" id="tooltip" title="Goals">G</a></th>
+                                <th><a href="#" id="tooltip" title="Assists">A</a></th>
+                                <th><a href="#" id="tooltip" title="Punkte">P</a></th>
+                                <th><a href="#" id="tooltip" title="Punktedurchschnitt pro Spiel">&Oslash;P</a></th>
+                                <th><a href="#" id="tooltip" title="Strafminuten">PM</a></th>
+                                <th><a href="#" id="tooltip" title="Strafminuten pro Spiel">&Oslash;PM</a></th>
+                            </tr>
+                            {% for stats in alltime_stats %}
+                            <tr>
+                                <td>{{ stats.league }}</td>
+                                <td>{{ stats.gp }}</td>
+                                <td>{{ stats.goal }}</td>
+                                <td>{{ stats.assist }}</td>
+                                <td>{{ stats.points }}</td>
+                                <td>{{ stats.points_avg|floatformat:2 }}</td>
+                                <td>{{ stats.pm }}</td>
+                                <td>{{ stats.pm_avg|floatformat:2}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+
 {% endblock %}

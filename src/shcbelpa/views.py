@@ -1,7 +1,9 @@
+from collections import OrderedDict
+
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView
 
-from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats
+from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League
 
 
 class SeasonView(TemplateView):
@@ -29,6 +31,30 @@ class PlayerView(DetailView):
     template_name = 'shcbelpa/player.html'
     context_object_name = 'player'
 
+    def get_context_data(self, **kwargs):
+        context = super(PlayerView, self).get_context_data(**kwargs)
+
+        player = context['player']
+        season = Season.objects.get_current_season()
+
+        season_stats = []
+        # get every team where player currently is on the roster (exclude coaches)
+        for roster in player.roster_set.exclude(position='C'):
+            stats =  SeasonPlayerStats.objects.get_season_stats_by_player(season, roster.team, player)
+            season_stats.append([roster.team, stats])
+
+        context['season_stats'] = season_stats
+
+        alltime_stats = []
+        # get every league the player ever played in (means has at least one SeasonPlayerStats entry)
+        for league in League.objects.filter(seasonplayerstats__player=player).distinct().order_by('pk'):
+            stats = SeasonPlayerStats.objects.get_alltime_stats_by_player(player, league)
+            stats['league'] = league
+            alltime_stats.append(stats)
+
+        context['alltime_stats'] = alltime_stats
+        context['season'] = season
+        return context
 
 
 class RosterView(TemplateView):
@@ -61,15 +87,16 @@ class StatsView(TemplateView):
         season = get_object_or_404(Season, code=self.kwargs['season'])
         team = get_object_or_404(Team, pk=self.kwargs['team_pk'])
 
-        sections = {}
+        sections = OrderedDict()
+        sections['all'] = SeasonPlayerStats.objects.get_season_stats(season, team)
+
         for game_type in GameType.objects.all():
-            stats = SeasonPlayerStats.objects.filter(team=team, season=season, game_type=game_type)
-            print stats
-            sections[game_type] = stats
+            stats = SeasonPlayerStats.objects.get_season_stats_by_type(season, team, game_type)
+            sections[game_type.name] = stats
 
         context['sections'] = sections
 
-        context['active'] = 'regular'
+        context['active'] = 'all'
         if self.kwargs['game_type']:
             context['active'] = self.kwargs['game_type']
 
