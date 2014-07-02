@@ -3,7 +3,7 @@ from datetime import date
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q, Sum
-
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 class League(models.Model):
     name = models.CharField(max_length=60)
@@ -55,6 +55,12 @@ class Player(models.Model):
         upload_to='players',
         blank=True,
     )
+
+    def photo_url(self):
+        try:
+            return self.photo.url
+        except ValueError:
+            return static("img/empty-profile.jpg")
 
     def __unicode__(self):
         return "%s %s" % (self.first_name, self.last_name)
@@ -209,12 +215,13 @@ class SeasonPlayerStatsManager(models.Manager):
 
     def _generate_stats(self, player, season_player_stats):
         stats = {}
-        for field in ['gp', 'goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','ppg','ppa','shg','sha', 'gw', 'gt']:
+        for field in ['gp', 'goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','pm','ppg','ppa','shg','sha', 'gw', 'gt']:
             values = (stat.__dict__.get(field) for stat in season_player_stats)
             stats[field] = sum(values)
 
         stats['points'] = stats['goal'] + stats['assist']
-        stats['points_avg'] = float(stats['points']/stats['gp']) if stats['gp'] > 0 else 0
+        stats['points_avg'] = float(stats['points'])/float(stats['gp']) if stats['gp'] > 0 else 0
+        stats['pm_avg'] = float(stats['pm'])/float(stats['gp']) if stats['gp'] > 0 else 0
 
         stats['player'] = player
 

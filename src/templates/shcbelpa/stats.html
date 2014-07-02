@@ -43,7 +43,7 @@
             <tbody>
                  {% for stat in stats %}
                             <tr>
-                                <td>{{ stat.player.number }}</td>
+                                <td>{{ stat.player.number|default_if_none:"-" }}</td>
                                 <td><a href="{% url 'player' stat.player.pk %}">{{ stat.player }}</a></td>
                                  <td>{{ stat.gp }}</td>
                                 <td>{{ stat.goal }}</td>

@@ -21,3 +21,18 @@
         #blog-detail #title     { background-image: url('../img/title-background-blog-detail-large.jpg') }
         #gallery-page #title    { background-image: url('../img/title-background-gallery-page-large.jpg') }
 }
+
+dl {
+ width:100%;
+ overflow:hidden;
+ padding: 5px;
+}
+dt {
+ float:left;
+ width:15%;
+
+}
+dd {
+ float:left;
+ width:85%;
+}
