@@ -22,7 +22,7 @@
         <div class="col-xs-12 col-sm-9">
                 <h4>{{ player.first_name }} {{ player.last_name }}</h4>
                 <dl>
-                    <dt>Geburtstag</dt> <dd>{{ player.born|date:"d.m.Y"|default_if_none:"-" }}</dd>
+                    <dt>Geburtstag</dt> <dd>{{ player.born|date:"d.m.Y"}}{% if player.born == None %}-{% endif %}</dd>
                     <dt>Nummer</dt> <dd>{{ player.number|default_if_none:"-" }}</dd>
                     <dt>Grösse</dt> <dd>{{ player.height|default_if_none:"-" }}cm</dd>
                     <dt>Gewicht</dt> <dd>{{ player.weight|default_if_none:"-" }}kg</dd>
