@@ -6,7 +6,7 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
-from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, AlbumList, AlbumDetail
+from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView
 
 admin.autodiscover()
 
