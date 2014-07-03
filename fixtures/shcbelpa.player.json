@@ -1,0 +1,4160 @@
+[
+    {
+        "pk": 230,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Beat",
+            "last_name": "Kr\u00e4henmann",
+            "weight": "78",
+            "photo": "",
+            "number": "96",
+            "height": "177",
+            "born": "1977-07-31",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 231,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "M\u00fcller",
+            "weight": "89",
+            "photo": "players/IMG_5860_2.jpg",
+            "number": "58",
+            "height": "194",
+            "born": "1979-12-05",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 232,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ronny",
+            "last_name": "Str\u00e4hler",
+            "weight": "91",
+            "photo": "",
+            "number": "71",
+            "height": "189",
+            "born": "1985-06-17",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 233,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christoph",
+            "last_name": "Curchod",
+            "weight": "100",
+            "photo": "players/CC.jpg",
+            "number": "68",
+            "height": "199",
+            "born": "1968-08-15",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 234,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christian",
+            "last_name": "Wittwer",
+            "weight": "70",
+            "photo": "",
+            "number": "51",
+            "height": "172",
+            "born": "1985-06-19",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 235,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Dubach",
+            "weight": "0",
+            "photo": "",
+            "number": "89",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 236,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Martin",
+            "last_name": "Kilchhofer",
+            "weight": "75",
+            "photo": "",
+            "number": "79",
+            "height": "175",
+            "born": "1979-06-03",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 237,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Martin",
+            "last_name": "Reber",
+            "weight": "70",
+            "photo": "",
+            "number": "66",
+            "height": "168",
+            "born": "1986-10-29",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 238,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "Brenner",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 239,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Fahrni",
+            "weight": "80",
+            "photo": "players/IMG_5883.jpg",
+            "number": "72",
+            "height": "188",
+            "born": "1985-06-25",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 240,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christoph",
+            "last_name": "Auer",
+            "weight": "0",
+            "photo": "",
+            "number": "15",
+            "height": "0",
+            "born": "1984-05-09",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 241,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mathias",
+            "last_name": "Beiersd\u00f6rfer",
+            "weight": "0",
+            "photo": "",
+            "number": "16",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 242,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "Menetrey",
+            "weight": "80",
+            "photo": "",
+            "number": "93",
+            "height": "175",
+            "born": "1979-09-07",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 243,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Housi",
+            "last_name": "Wyss",
+            "weight": "78",
+            "photo": "",
+            "number": "48",
+            "height": "179",
+            "born": "1977-07-22",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 244,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Trachsel",
+            "weight": "82",
+            "photo": "",
+            "number": "33",
+            "height": "178",
+            "born": "1979-12-25",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 245,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ron",
+            "last_name": "Wymann",
+            "weight": "0",
+            "photo": "",
+            "number": "88",
+            "height": "0",
+            "born": "1983-03-14",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 246,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Philipp",
+            "last_name": "Gerber",
+            "weight": "76",
+            "photo": "",
+            "number": "68",
+            "height": "181",
+            "born": "1980-05-09",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 247,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Yannick",
+            "last_name": "Str\u00e4hler",
+            "weight": "0",
+            "photo": "players/IMG_5897.jpg",
+            "number": "87",
+            "height": "0",
+            "born": "1987-10-16",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 248,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "Fahrni",
+            "weight": "102",
+            "photo": "players/IMG_5890.jpg",
+            "number": "37",
+            "height": "198",
+            "born": "1981-11-25",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 249,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Nicola",
+            "last_name": "Fuchs",
+            "weight": "0",
+            "photo": "players/IMG_5894.jpg",
+            "number": "97",
+            "height": "0",
+            "born": "1988-05-07",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 250,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Raphael",
+            "last_name": "Roth",
+            "weight": "85",
+            "photo": "",
+            "number": "26",
+            "height": "182",
+            "born": "1985-04-24",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 251,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michel",
+            "last_name": "Pfarrer",
+            "weight": "74",
+            "photo": "",
+            "number": "29",
+            "height": "176",
+            "born": "1977-08-23",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 252,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Philipp",
+            "last_name": "Hulliger",
+            "weight": "75",
+            "photo": "",
+            "number": "25",
+            "height": "175",
+            "born": "1982-01-04",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 253,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Frei",
+            "weight": "84",
+            "photo": "",
+            "number": "59",
+            "height": "186",
+            "born": "1980-10-03",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 254,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Stefan",
+            "last_name": "Hutmacher",
+            "weight": "89",
+            "photo": "",
+            "number": "82",
+            "height": "186",
+            "born": "1986-06-22",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 255,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roger",
+            "last_name": "Reber",
+            "weight": "70",
+            "photo": "",
+            "number": "23",
+            "height": "168",
+            "born": "1984-01-23",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 256,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Schori",
+            "weight": "83",
+            "photo": "",
+            "number": "28",
+            "height": "175",
+            "born": "1978-10-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 257,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "Feuz",
+            "weight": "0",
+            "photo": "",
+            "number": "57",
+            "height": "0",
+            "born": "1981-12-17",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 258,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "Marbot",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": "1975-05-13",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 259,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Alessio",
+            "last_name": "Faina",
+            "weight": "80",
+            "photo": "players/Unbenannt.jpg",
+            "number": "3",
+            "height": "175",
+            "born": "1989-11-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 260,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Francesco",
+            "last_name": "Faina",
+            "weight": "75",
+            "photo": "players/IMG_5862.jpg",
+            "number": "69",
+            "height": "169",
+            "born": "1989-11-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 261,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "Oberli",
+            "weight": "62",
+            "photo": "",
+            "number": "14",
+            "height": "170",
+            "born": "1988-02-17",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 262,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Ramseier",
+            "weight": "81",
+            "photo": "",
+            "number": "20",
+            "height": "178",
+            "born": "1985-06-09",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 263,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Baumgartner",
+            "weight": "0",
+            "photo": "",
+            "number": "19",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 264,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Becker",
+            "weight": "0",
+            "photo": "",
+            "number": "4",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 265,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jan",
+            "last_name": "Griessen",
+            "weight": "0",
+            "photo": "",
+            "number": "14",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 266,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "Hertig",
+            "weight": "0",
+            "photo": "",
+            "number": "3",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 267,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "Jaussi",
+            "weight": "0",
+            "photo": "",
+            "number": "9",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 268,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "K\u00fcbli",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 269,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Liniger",
+            "weight": "0",
+            "photo": "",
+            "number": "5",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 270,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christoph",
+            "last_name": "Nydegger",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 271,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Martin",
+            "last_name": "Nyffenegger",
+            "weight": "0",
+            "photo": "",
+            "number": "16",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 272,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Stefan",
+            "last_name": "Otto",
+            "weight": "0",
+            "photo": "",
+            "number": "6",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 273,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ren\u00e9",
+            "last_name": "R\u00f6thlisberger",
+            "weight": "0",
+            "photo": "",
+            "number": "3",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 274,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roger",
+            "last_name": "Schlapbach",
+            "weight": "0",
+            "photo": "",
+            "number": "13",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 275,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Bruno",
+            "last_name": "Schumacher",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 276,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roland",
+            "last_name": "Sch\u00fcttel",
+            "weight": "0",
+            "photo": "",
+            "number": "20",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 277,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Steffen",
+            "weight": "0",
+            "photo": "",
+            "number": "18",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 278,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Trachsel",
+            "weight": "0",
+            "photo": "",
+            "number": "77",
+            "height": "0",
+            "born": "1972-04-25",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 279,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "J\u00fcrg",
+            "last_name": "Fankhauser",
+            "weight": "0",
+            "photo": "",
+            "number": "17",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 280,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "David",
+            "last_name": "Gerber",
+            "weight": "0",
+            "photo": "",
+            "number": "9",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 281,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jean-Marc",
+            "last_name": "Huber",
+            "weight": "0",
+            "photo": "",
+            "number": "10",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 282,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "David",
+            "last_name": "Rohrbach",
+            "weight": "0",
+            "photo": "",
+            "number": "5",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 283,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roger",
+            "last_name": "Rohrbach",
+            "weight": "0",
+            "photo": "",
+            "number": "8",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 284,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ren\u00e9",
+            "last_name": "Utiger",
+            "weight": "0",
+            "photo": "",
+            "number": "14",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 285,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Fisler",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 286,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "Fisler",
+            "weight": "0",
+            "photo": "",
+            "number": "23",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 287,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roger",
+            "last_name": "Hubler",
+            "weight": "0",
+            "photo": "",
+            "number": "15",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 288,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "Meier",
+            "weight": "0",
+            "photo": "",
+            "number": "17",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 289,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christof",
+            "last_name": "Schmid",
+            "weight": "0",
+            "photo": "",
+            "number": "73",
+            "height": "0",
+            "born": "1973-10-15",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 290,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Andreas",
+            "last_name": "Eschmann",
+            "weight": "0",
+            "photo": "",
+            "number": "27",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 291,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lorenz",
+            "last_name": "Bohler",
+            "weight": "0",
+            "photo": "",
+            "number": "69",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 292,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Kay",
+            "last_name": "Eskes",
+            "weight": "0",
+            "photo": "",
+            "number": "91",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 293,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Pascal",
+            "last_name": "Huber",
+            "weight": "0",
+            "photo": "",
+            "number": "33",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 294,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Stefan",
+            "last_name": "Reist",
+            "weight": "85",
+            "photo": "",
+            "number": "30",
+            "height": "175",
+            "born": "1981-07-09",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 295,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Serge",
+            "last_name": "Burkhard",
+            "weight": "0",
+            "photo": "",
+            "number": "84",
+            "height": "0",
+            "born": "1984-12-30",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 296,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Enver",
+            "last_name": "Avdic",
+            "weight": "0",
+            "photo": "",
+            "number": "78",
+            "height": "0",
+            "born": "1984-03-07",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 297,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Adrian",
+            "last_name": "Zwahlen",
+            "weight": "0",
+            "photo": "",
+            "number": "47",
+            "height": "0",
+            "born": "1987-02-19",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 298,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Samir",
+            "last_name": "Skokic",
+            "weight": "0",
+            "photo": "",
+            "number": "22",
+            "height": "0",
+            "born": "1988-03-03",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 299,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "Zwahlen",
+            "weight": "0",
+            "photo": "players/IMG_5870.jpg",
+            "number": "7",
+            "height": "0",
+            "born": "1989-08-23",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 300,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marcel",
+            "last_name": "Feuz",
+            "weight": "0",
+            "photo": "",
+            "number": "95",
+            "height": "0",
+            "born": "1987-11-26",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 301,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Nicolas",
+            "last_name": "Nydegger",
+            "weight": "0",
+            "photo": "",
+            "number": "10",
+            "height": "0",
+            "born": "1989-11-28",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 302,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Beny",
+            "last_name": "Wittwer",
+            "weight": "0",
+            "photo": "",
+            "number": "32",
+            "height": "0",
+            "born": "1988-05-24",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 303,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Sven",
+            "last_name": "Hofmann",
+            "weight": "91",
+            "photo": "players/IMG_5864.jpg",
+            "number": "91",
+            "height": "191",
+            "born": "1985-11-02",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 304,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "",
+            "last_name": "ohne Torh\u00fcter",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 305,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Weibel",
+            "weight": "63",
+            "photo": "",
+            "number": "39",
+            "height": "176",
+            "born": "1989-11-08",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 306,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Huber",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": "1990-02-27",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 307,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "M\u00fcller",
+            "weight": "80",
+            "photo": "players/IMG_5903.jpg",
+            "number": "19",
+            "height": "183",
+            "born": "1993-08-26",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 308,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Timo",
+            "last_name": "Fuchs",
+            "weight": "0",
+            "photo": "",
+            "number": "16",
+            "height": "0",
+            "born": "1993-02-03",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 309,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "David",
+            "last_name": "Stampfli",
+            "weight": "0",
+            "photo": "",
+            "number": "9",
+            "height": "0",
+            "born": "1993-01-03",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 310,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patric",
+            "last_name": "Roth",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": "1989-03-04",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 311,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Markus",
+            "last_name": "Mathis",
+            "weight": "0",
+            "photo": "",
+            "number": "82",
+            "height": "0",
+            "born": "1990-04-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 312,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Sabit",
+            "last_name": "Alirifa",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": "1990-12-27",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 313,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Beat",
+            "last_name": "Stucki",
+            "weight": "0",
+            "photo": "",
+            "number": "8",
+            "height": "0",
+            "born": "1991-05-17",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 314,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ino",
+            "last_name": "Gillmann",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": "1993-09-04",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 315,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roman",
+            "last_name": "Schmid",
+            "weight": "0",
+            "photo": "players/IMG_5879.jpg",
+            "number": "18",
+            "height": "186",
+            "born": "1993-08-28",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 316,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Enver",
+            "last_name": "Skokic",
+            "weight": "0",
+            "photo": "",
+            "number": "20",
+            "height": "0",
+            "born": "1993-08-13",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 317,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "Streit",
+            "weight": "0",
+            "photo": "",
+            "number": "5",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 318,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Fabian",
+            "last_name": "Bohnenblust",
+            "weight": "65",
+            "photo": "",
+            "number": "52",
+            "height": "170",
+            "born": "1996-03-27",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 319,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Yanick",
+            "last_name": "Casadei",
+            "weight": "0",
+            "photo": "",
+            "number": "10",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 320,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Nicolas",
+            "last_name": "Liechti",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 321,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Robin",
+            "last_name": "Worreby",
+            "weight": "65",
+            "photo": "",
+            "number": "66",
+            "height": "185",
+            "born": "1995-06-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 322,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Pelle",
+            "last_name": "Steiger",
+            "weight": "0",
+            "photo": "",
+            "number": "1",
+            "height": "0",
+            "born": "1993-01-21",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 323,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Bj\u00f6rn",
+            "last_name": "H\u00f6nger",
+            "weight": "74",
+            "photo": "",
+            "number": "44",
+            "height": "174",
+            "born": "1993-10-07",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 324,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Hostettler",
+            "weight": "65",
+            "photo": "",
+            "number": "11",
+            "height": "180",
+            "born": "1981-06-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 325,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Stucki",
+            "weight": "0",
+            "photo": "",
+            "number": "35",
+            "height": "0",
+            "born": "1988-05-07",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 326,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Simon",
+            "last_name": "Sch\u00e4r",
+            "weight": "135",
+            "photo": "",
+            "number": "29",
+            "height": "180",
+            "born": "1979-09-26",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 327,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "S\u00e9bastien",
+            "last_name": "Pfulg",
+            "weight": "0",
+            "photo": "",
+            "number": "82",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 328,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Spycher",
+            "weight": "90",
+            "photo": "",
+            "number": "69",
+            "height": "0",
+            "born": "1982-01-14",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 329,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Marti",
+            "weight": "0",
+            "photo": "",
+            "number": "3",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 330,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Benjamin",
+            "last_name": "Grossnicklaus",
+            "weight": "0",
+            "photo": "",
+            "number": "99",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 331,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Nicklaus",
+            "last_name": "Hulliger",
+            "weight": "0",
+            "photo": "",
+            "number": "31",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 332,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Martin",
+            "last_name": "Kumli",
+            "weight": "0",
+            "photo": "",
+            "number": "16",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 333,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Stefan",
+            "last_name": "Graber",
+            "weight": "0",
+            "photo": "",
+            "number": "82",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 334,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Urs",
+            "last_name": "Gasser",
+            "weight": "0",
+            "photo": "",
+            "number": "44",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 335,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Renzo",
+            "last_name": "Thomen",
+            "weight": "0",
+            "photo": "",
+            "number": "35",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 336,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Kr\u00e4henmann",
+            "weight": "0",
+            "photo": "",
+            "number": "38",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 337,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Bernhard",
+            "last_name": "Curchod",
+            "weight": "0",
+            "photo": "",
+            "number": "1",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 338,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Br\u00f6nimann",
+            "weight": "0",
+            "photo": "",
+            "number": "20",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 339,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christoph",
+            "last_name": "Kr\u00e4henmann",
+            "weight": "0",
+            "photo": "",
+            "number": "85",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 340,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thierry",
+            "last_name": "Krebs",
+            "weight": "0",
+            "photo": "",
+            "number": "34",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 341,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "B\u00f6gli",
+            "weight": "0",
+            "photo": "",
+            "number": "84",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 342,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Zeno",
+            "last_name": "Casci",
+            "weight": "0",
+            "photo": "",
+            "number": "86",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 343,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Sandro",
+            "last_name": "Rolli",
+            "weight": "0",
+            "photo": "",
+            "number": "1",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 344,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Andr\u00e9",
+            "last_name": "Pfister",
+            "weight": "0",
+            "photo": "",
+            "number": "19",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 345,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Laumanns",
+            "weight": "0",
+            "photo": "",
+            "number": "69",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 346,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Hofer",
+            "weight": "0",
+            "photo": "",
+            "number": "80",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 347,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "Linder",
+            "weight": "0",
+            "photo": "",
+            "number": "28",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 348,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Seiler",
+            "weight": "0",
+            "photo": "",
+            "number": "21",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 349,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Claudio",
+            "last_name": "Koch",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 350,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "Dubach",
+            "weight": "0",
+            "photo": "",
+            "number": "89",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 351,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Samuel",
+            "last_name": "Jordi",
+            "weight": "0",
+            "photo": "",
+            "number": "16",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 352,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Fran\u00e7is",
+            "last_name": "Maeder",
+            "weight": "0",
+            "photo": "",
+            "number": "97",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 353,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "Fahrni",
+            "weight": "0",
+            "photo": "",
+            "number": "12",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 354,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Alain",
+            "last_name": "Rolli",
+            "weight": "0",
+            "photo": "",
+            "number": "17",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 355,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Gehri",
+            "weight": "0",
+            "photo": "",
+            "number": "13",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 356,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Simon",
+            "last_name": "Wiederkehr",
+            "weight": "0",
+            "photo": "",
+            "number": "57",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 357,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Samir",
+            "last_name": "Avdic",
+            "weight": "0",
+            "photo": "",
+            "number": "20",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 358,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Leo",
+            "last_name": "Frullini",
+            "weight": "0",
+            "photo": "",
+            "number": "28",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 359,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "St\u00e4hli",
+            "weight": "0",
+            "photo": "",
+            "number": "10",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 360,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "Rohr",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 361,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "Iseli",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 362,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Benjamin",
+            "last_name": "Roth",
+            "weight": "0",
+            "photo": "",
+            "number": "12",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 363,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ivo",
+            "last_name": "Thomen",
+            "weight": "0",
+            "photo": "",
+            "number": "18",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 364,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Bendicht",
+            "last_name": "Burkhard",
+            "weight": "0",
+            "photo": "",
+            "number": "5",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 365,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Gasser",
+            "weight": "78",
+            "photo": "",
+            "number": "98",
+            "height": "178",
+            "born": "1980-08-23",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 366,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Philippe",
+            "last_name": "M\u00fcller",
+            "weight": "0",
+            "photo": "",
+            "number": "82",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 367,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Rufener",
+            "weight": "0",
+            "photo": "",
+            "number": "5",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 368,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roland",
+            "last_name": "B\u00fchler",
+            "weight": "0",
+            "photo": "",
+            "number": "9",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 369,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jan",
+            "last_name": "R\u00f6thlisberger",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 370,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Rolf",
+            "last_name": "Baumgartner",
+            "weight": "0",
+            "photo": "",
+            "number": "20",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 371,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Matthias",
+            "last_name": "von Allmen",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 372,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Martin",
+            "last_name": "Heiniger",
+            "weight": "0",
+            "photo": "",
+            "number": "2",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 373,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Benjamin",
+            "last_name": "Nyfenegger",
+            "weight": "0",
+            "photo": "",
+            "number": "52",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 374,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tobias",
+            "last_name": "Lanz",
+            "weight": "0",
+            "photo": "",
+            "number": "53",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 375,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Manuel",
+            "last_name": "Gil",
+            "weight": "0",
+            "photo": "",
+            "number": "95",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 376,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christian",
+            "last_name": "Glatthard",
+            "weight": "0",
+            "photo": "",
+            "number": "54",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 377,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Urs",
+            "last_name": "Krebs",
+            "weight": "0",
+            "photo": "",
+            "number": "16",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 378,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tobias",
+            "last_name": "Bigler",
+            "weight": "0",
+            "photo": "",
+            "number": "82",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 379,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Philipp",
+            "last_name": "Zingg",
+            "weight": "0",
+            "photo": "",
+            "number": "57",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 380,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Garofalo",
+            "weight": "0",
+            "photo": "",
+            "number": "10",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 381,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Gerit",
+            "last_name": "Kiener",
+            "weight": "0",
+            "photo": "",
+            "number": "3",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 382,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christoph",
+            "last_name": "Trachsel",
+            "weight": "0",
+            "photo": "",
+            "number": "82",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 383,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Samuel",
+            "last_name": "Rubeli",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 384,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Adrian",
+            "last_name": "Segiser",
+            "weight": "0",
+            "photo": "",
+            "number": "77",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 385,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "B\u00fctikofer",
+            "weight": "0",
+            "photo": "",
+            "number": "29",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 386,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lars",
+            "last_name": "Zimmermann",
+            "weight": "0",
+            "photo": "",
+            "number": "78",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 387,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Kr\u00e4henb\u00fchl",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 388,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "David",
+            "last_name": "Leimgruber",
+            "weight": "0",
+            "photo": "",
+            "number": "35",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 389,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Adnan",
+            "last_name": "Lisnjic",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1990-09-19",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 390,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "Stucki",
+            "weight": "0",
+            "photo": "",
+            "number": "32",
+            "height": "180",
+            "born": "1993-11-16",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 391,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Heimer",
+            "last_name": "Gasser",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1990-11-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 392,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Hakim",
+            "last_name": "Bradi",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1990-05-28",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 393,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Egzon",
+            "last_name": "Shabanqj",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1991-07-27",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 394,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Daniel",
+            "last_name": "Gasser",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": "1992-12-05",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 395,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Benjamin",
+            "last_name": "Josi",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1992-07-18",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 396,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Isaiah Joshua",
+            "last_name": "Browne",
+            "weight": "67",
+            "photo": "",
+            "number": "40",
+            "height": "173",
+            "born": "1990-06-02",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 397,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tobias",
+            "last_name": "Lauper",
+            "weight": "0",
+            "photo": "",
+            "number": "12",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 398,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Richard",
+            "last_name": "Kurtaj",
+            "weight": "0",
+            "photo": "",
+            "number": "21",
+            "height": "0",
+            "born": "1992-02-19",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 399,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mathias",
+            "last_name": "Iseli",
+            "weight": "65",
+            "photo": "",
+            "number": "83",
+            "height": "170",
+            "born": "1990-01-21",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 400,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Dave",
+            "last_name": "Dutoit",
+            "weight": "0",
+            "photo": "",
+            "number": "32",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 401,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Fabian",
+            "last_name": "B\u00f6gli",
+            "weight": "0",
+            "photo": "",
+            "number": "61",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 402,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Manuel",
+            "last_name": "Zeller",
+            "weight": "100",
+            "photo": "",
+            "number": "38",
+            "height": "186",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 403,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Schindler",
+            "weight": "95",
+            "photo": "players/IMG_5873.jpg",
+            "number": "13",
+            "height": "187",
+            "born": "1988-02-26",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 404,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Alexander",
+            "last_name": "Z\u00fcrcher",
+            "weight": "0",
+            "photo": "",
+            "number": "88",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 405,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jonas",
+            "last_name": "Zuckschwert",
+            "weight": "72",
+            "photo": "",
+            "number": "3",
+            "height": "172",
+            "born": "1988-03-26",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 406,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Simon",
+            "last_name": "Wittwer",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 407,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Raphael",
+            "last_name": "Bill",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 408,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Dominic",
+            "last_name": "Jeanmaire",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 409,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Markus",
+            "last_name": "Mathys",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 410,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Philipp",
+            "last_name": "Gerber II",
+            "weight": "0",
+            "photo": "",
+            "number": "89",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 411,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Eric",
+            "last_name": "Blunier",
+            "weight": "90",
+            "photo": "players/IMG_5878.jpg",
+            "number": "11",
+            "height": "185",
+            "born": "1992-02-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 413,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Matthias",
+            "last_name": "L\u00fcthi",
+            "weight": "62",
+            "photo": "",
+            "number": "45",
+            "height": "170",
+            "born": "1993-07-13",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 414,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Cyrill",
+            "last_name": "M\u00fcller",
+            "weight": "68",
+            "photo": "",
+            "number": "48",
+            "height": "174",
+            "born": "1995-02-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 415,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lars",
+            "last_name": "Ramminger",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 416,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "Zwahlen",
+            "weight": "50",
+            "photo": "",
+            "number": "27",
+            "height": "160",
+            "born": "1997-11-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 417,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Patrick",
+            "last_name": "W\u00e4gli",
+            "weight": "60",
+            "photo": "",
+            "number": "9",
+            "height": "172",
+            "born": "1995-12-30",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 418,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "Schawohl",
+            "weight": "90",
+            "photo": "",
+            "number": "96",
+            "height": "191",
+            "born": "1992-04-29",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 419,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Martin",
+            "last_name": "W\u00e4gli",
+            "weight": "100",
+            "photo": "",
+            "number": "10",
+            "height": "185",
+            "born": "1993-07-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 420,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mike",
+            "last_name": "Schindler",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 421,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Sascha",
+            "last_name": "Burch",
+            "weight": "75",
+            "photo": "players/IMG_5865.jpg",
+            "number": "14",
+            "height": "183",
+            "born": "1988-04-21",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 422,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Alain",
+            "last_name": "Dubler",
+            "weight": "0",
+            "photo": "",
+            "number": "8",
+            "height": "0",
+            "born": "1989-07-24",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 423,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Sandro",
+            "last_name": "Wittwer",
+            "weight": "82",
+            "photo": "players/IMG_5888.jpg",
+            "number": "8",
+            "height": "184",
+            "born": "1987-10-08",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 424,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Fabiano",
+            "last_name": "Casci",
+            "weight": "0",
+            "photo": "",
+            "number": "76",
+            "height": "0",
+            "born": "1993-05-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 425,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Joel-Oliver",
+            "last_name": "M\u00fcller",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 426,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Adrian",
+            "last_name": "Lingeri",
+            "weight": "0",
+            "photo": "",
+            "number": "18",
+            "height": "0",
+            "born": "1985-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 427,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "Branger",
+            "weight": "0",
+            "photo": "",
+            "number": "34",
+            "height": "0",
+            "born": "1992-06-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 428,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "Stettler",
+            "weight": "60",
+            "photo": "",
+            "number": "2",
+            "height": "155",
+            "born": "1995-05-19",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 429,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Florian",
+            "last_name": "Bohnenblust",
+            "weight": "40",
+            "photo": "",
+            "number": "15",
+            "height": "150",
+            "born": "1999-01-18",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 430,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tim",
+            "last_name": "Jaberg",
+            "weight": "0",
+            "photo": "",
+            "number": "15",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 431,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Manuel",
+            "last_name": "H\u00e4mmerli",
+            "weight": "0",
+            "photo": "",
+            "number": "20",
+            "height": "0",
+            "born": "1998-12-13",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 432,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Jutzi",
+            "weight": "58",
+            "photo": "",
+            "number": "54",
+            "height": "165",
+            "born": "1996-05-25",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 433,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Nick",
+            "last_name": "Leuenberger",
+            "weight": "44",
+            "photo": "",
+            "number": "39",
+            "height": "160",
+            "born": "1998-07-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 434,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jim",
+            "last_name": "Nistas",
+            "weight": "77",
+            "photo": "",
+            "number": "12",
+            "height": "178",
+            "born": "1979-08-20",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 435,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Luca",
+            "last_name": "Tomasi",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 436,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lorenz",
+            "last_name": "Caspar",
+            "weight": "0",
+            "photo": "",
+            "number": "4",
+            "height": "0",
+            "born": "1993-11-15",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 437,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "Brodard",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 438,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Simon",
+            "last_name": "Fischer",
+            "weight": "65",
+            "photo": "",
+            "number": "6",
+            "height": "172",
+            "born": "1989-07-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 439,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Guido",
+            "last_name": "Faina ",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 440,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Brant",
+            "last_name": "Cook",
+            "weight": "86",
+            "photo": "",
+            "number": "51",
+            "height": "193",
+            "born": "1983-07-07",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 441,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Noel",
+            "last_name": "Zandolini",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1993-11-28",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 442,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ronny",
+            "last_name": "Blaser",
+            "weight": "0",
+            "photo": "",
+            "number": "0",
+            "height": "0",
+            "born": "1994-09-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 444,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "J\u00e9r\u00f4me",
+            "last_name": "Weber",
+            "weight": "0",
+            "photo": "",
+            "number": "94",
+            "height": "0",
+            "born": "1982-01-06",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 445,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Remo",
+            "last_name": "Signer",
+            "weight": "0",
+            "photo": "",
+            "number": "21",
+            "height": "0",
+            "born": "1998-11-16",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 446,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Manuel",
+            "last_name": "Hirschi",
+            "weight": "70",
+            "photo": "players/IMG_5886.jpg",
+            "number": "90",
+            "height": "180",
+            "born": "1982-09-02",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 447,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roger",
+            "last_name": "Stettler",
+            "weight": "0",
+            "photo": "",
+            "number": "72",
+            "height": "0",
+            "born": "1998-04-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 449,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Bruni",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": "1970-01-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 450,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Uttiger ",
+            "weight": "65",
+            "photo": "",
+            "number": "5",
+            "height": "172",
+            "born": "1996-07-16",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 451,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Bj\u00f6rn",
+            "last_name": "Kneub\u00fchl",
+            "weight": "80",
+            "photo": "",
+            "number": "55",
+            "height": "175",
+            "born": "1996-07-22",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 453,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mikel ",
+            "last_name": "Fairclough",
+            "weight": "0",
+            "photo": "",
+            "number": "34",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 454,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Silvio",
+            "last_name": "Bruni",
+            "weight": "0",
+            "photo": "",
+            "number": "11",
+            "height": "0",
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 455,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "C\u00e9dric",
+            "last_name": "Bielser",
+            "weight": "0",
+            "photo": "",
+            "number": "7",
+            "height": "0",
+            "born": "1996-11-05",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 456,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Christian",
+            "last_name": "Stettler",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 457,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "H\u00e4mmerli",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 458,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Luca",
+            "last_name": "Streich",
+            "weight": null,
+            "photo": "players/IMG_5901.jpg",
+            "number": "63",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 459,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "Z\u00fcrcher",
+            "weight": "74",
+            "photo": "players/IMG_5875.jpg",
+            "number": "10",
+            "height": "178",
+            "born": "1982-06-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 460,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michel",
+            "last_name": "M\u00e4der",
+            "weight": null,
+            "photo": "players/IMG_5899.jpg",
+            "number": "79",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 461,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jona",
+            "last_name": "Wegm\u00fcller",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": "2001-08-26",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 462,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ruben",
+            "last_name": "Wenger",
+            "weight": "75",
+            "photo": "",
+            "number": "67",
+            "height": "183",
+            "born": "1995-06-13",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 463,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ronny",
+            "last_name": "Beeri",
+            "weight": null,
+            "photo": "",
+            "number": "83",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 464,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Fabian",
+            "last_name": "Koller",
+            "weight": null,
+            "photo": "",
+            "number": "23",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 465,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Yanis",
+            "last_name": "Grunder",
+            "weight": null,
+            "photo": "",
+            "number": "22",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 466,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Hendrik",
+            "last_name": "Jordan",
+            "weight": null,
+            "photo": "",
+            "number": "95",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 467,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Viktor",
+            "last_name": "Br\u00fcgger",
+            "weight": null,
+            "photo": "",
+            "number": "43",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 469,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Dan",
+            "last_name": "Oppliger",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 470,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Cyrill",
+            "last_name": "Sch\u00fctz",
+            "weight": "52",
+            "photo": "",
+            "number": "26",
+            "height": "165",
+            "born": "1996-08-11",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 471,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Leibundgut",
+            "weight": "65",
+            "photo": "",
+            "number": "85",
+            "height": "177",
+            "born": "1985-08-05",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 472,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tyler",
+            "last_name": "McFadden",
+            "weight": null,
+            "photo": "",
+            "number": "41",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 473,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Sascha",
+            "last_name": "Kr\u00e4henb\u00fchl",
+            "weight": null,
+            "photo": "",
+            "number": "25",
+            "height": null,
+            "born": "2004-01-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 474,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Magnus",
+            "last_name": "Diener",
+            "weight": null,
+            "photo": "",
+            "number": "3",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 475,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jesper",
+            "last_name": "Diener",
+            "weight": null,
+            "photo": "",
+            "number": "24",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 476,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Silvan",
+            "last_name": "Tomasi",
+            "weight": null,
+            "photo": "",
+            "number": "1",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 477,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Valeria",
+            "last_name": "Tomasi",
+            "weight": null,
+            "photo": "",
+            "number": "25",
+            "height": null,
+            "born": "2003-08-20",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 479,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Schmocker",
+            "weight": null,
+            "photo": "",
+            "number": "33",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 480,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Simon",
+            "last_name": "Meir",
+            "weight": null,
+            "photo": "",
+            "number": "6",
+            "height": null,
+            "born": "2001-12-12",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 481,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Manuel",
+            "last_name": "Reiter",
+            "weight": null,
+            "photo": "",
+            "number": "22",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 482,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Teighan",
+            "last_name": "Meier",
+            "weight": null,
+            "photo": "",
+            "number": "86",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 483,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roger",
+            "last_name": "Zehnder",
+            "weight": "56",
+            "photo": "",
+            "number": "24",
+            "height": "176",
+            "born": "1996-05-19",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 484,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Oliver",
+            "last_name": "Rubitschung",
+            "weight": "71",
+            "photo": "",
+            "number": "72",
+            "height": "172",
+            "born": "1972-02-16",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 485,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jonas",
+            "last_name": "M\u00fcller",
+            "weight": null,
+            "photo": "",
+            "number": "30",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 486,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Benjamin",
+            "last_name": "Hulliger",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 487,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Peter",
+            "last_name": "Gasser",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 488,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ueli",
+            "last_name": "B\u00fchlmann",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 490,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Roman",
+            "last_name": "Hotz",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 491,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michel",
+            "last_name": "Schenkel",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 492,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Stephan",
+            "last_name": "Zb\u00e4ren",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 493,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ivo",
+            "last_name": "Weber",
+            "weight": null,
+            "photo": "",
+            "number": "75",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 494,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Robin",
+            "last_name": "Nydegger",
+            "weight": null,
+            "photo": "",
+            "number": "89",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 495,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Valentin",
+            "last_name": "Sch\u00e4rer",
+            "weight": null,
+            "photo": "",
+            "number": "38",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 497,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Florian",
+            "last_name": "Mattes",
+            "weight": null,
+            "photo": "",
+            "number": "9",
+            "height": null,
+            "born": "2002-11-28",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 498,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jindrich",
+            "last_name": "Hossinger",
+            "weight": null,
+            "photo": "",
+            "number": "96",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 499,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tim",
+            "last_name": "Wenzel",
+            "weight": null,
+            "photo": "",
+            "number": "36",
+            "height": null,
+            "born": "2003-12-28",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 500,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mathias",
+            "last_name": "Domig",
+            "weight": null,
+            "photo": "",
+            "number": "42",
+            "height": null,
+            "born": "1997-02-03",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 501,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Stefan",
+            "last_name": "Kunz (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 502,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Beat",
+            "last_name": "L\u00fcthi (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 503,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jan",
+            "last_name": "Inniger (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": "22",
+            "height": null,
+            "born": "1997-01-02",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 505,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Luca",
+            "last_name": "Grass (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": "53",
+            "height": null,
+            "born": "1997-02-02",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 506,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Raphael",
+            "last_name": "Geider (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": "94",
+            "height": null,
+            "born": "1997-04-04",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 507,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Joel",
+            "last_name": "Burri (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": "80",
+            "height": null,
+            "born": "1997-05-05",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 508,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michel",
+            "last_name": "Schmid (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": "78",
+            "height": null,
+            "born": "1998-07-01",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 509,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Silvan",
+            "last_name": "Sch\u00fcrch",
+            "weight": null,
+            "photo": "",
+            "number": "16",
+            "height": null,
+            "born": "2003-07-21",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 510,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Ryan",
+            "last_name": "Balmer",
+            "weight": null,
+            "photo": "",
+            "number": "37",
+            "height": null,
+            "born": "2006-07-14",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 511,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Noelia",
+            "last_name": "Romero",
+            "weight": null,
+            "photo": "",
+            "number": "21",
+            "height": null,
+            "born": "2003-07-21",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 512,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Leon",
+            "last_name": "Diener",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": "2007-01-04",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 513,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Dennis",
+            "last_name": "Loosli",
+            "weight": null,
+            "photo": "",
+            "number": "84",
+            "height": null,
+            "born": "2002-07-30",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 514,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Andr\u00e9",
+            "last_name": "Buri",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": "1984-05-21",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 515,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Reto",
+            "last_name": "Lingeri",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": "1985-10-02",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 516,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Thomas",
+            "last_name": "Schmidt",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": "1989-09-16",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 517,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Michel",
+            "last_name": "Schenkel",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": "1979-04-24",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 518,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mark",
+            "last_name": "Blaser (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 519,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Widmann",
+            "weight": null,
+            "photo": "",
+            "number": "7",
+            "height": null,
+            "born": "2003-05-18",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 520,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Dominique",
+            "last_name": "Etter",
+            "weight": null,
+            "photo": "",
+            "number": "93",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 521,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Dennis",
+            "last_name": "Nydegger",
+            "weight": null,
+            "photo": "",
+            "number": "80",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 522,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Florian",
+            "last_name": "H\u00e4nni",
+            "weight": null,
+            "photo": "",
+            "number": "74",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 523,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "Baumgartner",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 524,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Mario",
+            "last_name": "Br\u00f6nnimann",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 525,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Tim",
+            "last_name": "Hofer (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 526,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jan",
+            "last_name": "L\u00fcthi",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 527,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Danny",
+            "last_name": "Novis",
+            "weight": "100",
+            "photo": "",
+            "number": "39",
+            "height": "194",
+            "born": "1987-07-31",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 529,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Yannick",
+            "last_name": "Nydegger",
+            "weight": "80",
+            "photo": "",
+            "number": "13",
+            "height": "183",
+            "born": "1990-04-27",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 530,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Yannic",
+            "last_name": "L\u00fcthi (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 531,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Nicolas",
+            "last_name": "Tschirren (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 532,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Markus",
+            "last_name": "Friedli (GRL)",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 533,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lukas",
+            "last_name": "R\u00fcedlinger",
+            "weight": null,
+            "photo": "",
+            "number": "87",
+            "height": null,
+            "born": null,
+            "shoots": null
+        }
+    },
+    {
+        "pk": 534,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Jan ",
+            "last_name": "Schlechten",
+            "weight": null,
+            "photo": "",
+            "number": "10",
+            "height": null,
+            "born": "2003-07-22",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 535,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Lucien",
+            "last_name": "Christinet",
+            "weight": null,
+            "photo": "",
+            "number": "29",
+            "height": null,
+            "born": "2006-05-29",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 536,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Til",
+            "last_name": "Bucher",
+            "weight": null,
+            "photo": "",
+            "number": "17",
+            "height": null,
+            "born": "2003-12-17",
+            "shoots": null
+        }
+    }
+]

@@ -1,0 +1,252 @@
+[
+    {
+        "pk": 1,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0910",
+            "start_date": "2009-07-01",
+            "end_date": "2010-06-30"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9091",
+            "start_date": "1990-07-01",
+            "end_date": "1991-06-30"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9192",
+            "start_date": "1991-07-01",
+            "end_date": "1992-06-30"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9293",
+            "start_date": "1992-07-01",
+            "end_date": "1993-06-30"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9394",
+            "start_date": "1993-07-01",
+            "end_date": "1994-06-30"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9495",
+            "start_date": "1994-07-01",
+            "end_date": "1995-06-30"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9596",
+            "start_date": "1995-07-01",
+            "end_date": "1996-06-30"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9697",
+            "start_date": "1996-07-01",
+            "end_date": "1997-06-30"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9798",
+            "start_date": "1997-07-01",
+            "end_date": "1998-06-30"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9899",
+            "start_date": "1998-07-01",
+            "end_date": "1999-06-30"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "9900",
+            "start_date": "1999-07-01",
+            "end_date": "2000-06-30"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0001",
+            "start_date": "2000-07-01",
+            "end_date": "2001-06-30"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0102",
+            "start_date": "2001-07-01",
+            "end_date": "2002-06-30"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0203",
+            "start_date": "2002-07-01",
+            "end_date": "2003-06-30"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0304",
+            "start_date": "2003-07-01",
+            "end_date": "2004-06-30"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0405",
+            "start_date": "2004-07-01",
+            "end_date": "2005-06-30"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0506",
+            "start_date": "2005-07-01",
+            "end_date": "2006-06-30"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0607",
+            "start_date": "2006-07-01",
+            "end_date": "2007-06-30"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0708",
+            "start_date": "2007-07-01",
+            "end_date": "2008-06-30"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "0809",
+            "start_date": "2008-07-01",
+            "end_date": "2009-06-30"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "1011",
+            "start_date": "2010-07-01",
+            "end_date": "2011-06-30"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": null,
+            "code": "1112",
+            "start_date": "2011-07-01",
+            "end_date": "2012-06-30"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": 1,
+            "code": "1213",
+            "start_date": "2012-07-01",
+            "end_date": "2013-06-30"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": 2,
+            "code": "1314",
+            "start_date": "2013-07-01",
+            "end_date": "2014-06-30"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "shcbelpa.season",
+        "fields": {
+            "lm_id": 3,
+            "code": "1415",
+            "start_date": "2014-06-30",
+            "end_date": "2015-07-01"
+        }
+    }
+]
