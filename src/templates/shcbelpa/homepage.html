@@ -1,50 +1,60 @@
 {% extends "base.html" %}
-{% load pages_tags mezzanine_tags i18n future staticfiles %}
+{% load pages_tags mezzanine_tags blog_tags i18n future staticfiles %}
 
 {% block meta_title %}
-Home
+    Home
 {% endblock %}
 
 {% block subtitle %}
-SHC Belpa 1107
+    SHC Belpa 1107
 {% endblock %}
 
 {% block main %}
 
-                                      <div class="row">
-                                                        <!-- ARTICLES V3 WIDGET -->
-                                                        <section class="widget col-sm-8">
-                                                                <!-- Widget header -->
-                                                                <header class="clearfix">
-                                                                        <h4>Headlines</h4>
+    <div class="row">
+        <!-- ARTICLES V3 WIDGET -->
+        <section class="widget col-sm-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Headlines</h4>
 
-                                                                </header>
+            </header>
 
-                                                                <!-- Widget contents -->
-                                                                <article class="article-medium">
-                                                                        <!--image-->
-                                                                        <div class="frame">asdsa
+            {% for blog_post in blog_posts %}
+            <article class="article-medium">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <a href="{{ blog_post.get_absolute_url }}" class="title"><h4>{{ blog_post.title }}</h4>
+                        </a>
+
+                        <p class="post-meta">
+                            <span class="fa fa-clock-o"></span> {{ blog_post.publish_date|date:"d.m.Y" }} &nbsp;
+                            {% with blog_post.user as author %}
+                            {% if author %}
+                            <span class="fa fa-user"></span> {{ author.get_full_name|default:author.username }} &nbsp;
+                            {% endif %}
+                            {% endwith %}
+                            <span class="fa fa-tag">
+                                NLA Playoff
+                            </span>
+                            <!--<a href="#"><span class="fa fa-comments"></span> 1,324</a> &nbsp;-->
+                            <!--<a href="#"><span class="fa fa-eye"></span> 4,448</a>-->
+                        </p>
+
+                        <p>
+                            {{ blog_post.description|safe }} <a href="{{ blog_post.get_absolute_url }}"><span class="fa fa-angle-double-right">&nbsp;weiterlesen</span></a>
+                        </p>
+                    </div>
                 </div>
-    </article>
-    </section>
-
-                                                                                              <!-- ARTICLES V3 WIDGET -->
-                                                        <section class="widget col-sm-4">
-                                                                <!-- Widget header -->
-                                                                <header class="clearfix">
-                                                                        <h4>Resultbox</h4>
-
-                                                                </header>
-
-                                                                <!-- Widget contents -->
-                                                                <article class="article-medium">
-                                                                        <!--image-->
-                                                                        <div class="frame">Rasdas
+                <!--Footer-->
+                <div class="footer">
+                    <hr/>
                 </div>
-    </article>
-    </section>
-
-
+            </article>
+            {% endfor %}
+        </section>
     </div>
 
 {% endblock %}
@@ -55,58 +65,4 @@ SHC Belpa 1107
 
     {% include "shcbelpa/sidebar/facebook.html" %}
 
-{% endblock %}
-
-{% block bla %}
-<article class="article-medium">
-                                                        <div class="row">
-                                                                <!--Image-->
-                                                                <div class="col-sm-6">
-                                                                        <div class="frame">
-                                                                                <div class="image">
-                                                                                        <img src="http://placehold.it/350x185" alt="est qui dolorem ipsum quia dol consectetur amet adipisci velit sed">
-                                                                                        <div class="image-light"></div>
-                                                                                        <div class="container-link">
-                                                                                                <div class="link">
-                                                                                                        <a href="#"><i class="fa fa-link fa-flip-horizontal"></i></a>
-                                                                                                        <a href="http://placehold.it/1024x512.jpg" title="est qui dolorem ipsum quia dol consectetur amet adipisci velit sed"><i class="fa fa-search-plus"></i></a>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                </div>
-                                                                        </div>
-                                                                        <img src="img/shadow.png" class="shadow" alt="shadow">
-                                                                </div>
-
-                                                                <!--Content-->
-                                                                <div class="col-sm-6">
-                                                                        <a href="#" class="title"><h4>Est Qui Dolorem Quia Dol Consectetur Amet Adipisci Velit Sed</h4></a>
-                                                                        <p class="post-meta">
-                                                                                <a href="#"><span class="fa fa-clock-o"></span> December 4, 2013</a> &nbsp;
-                                                                                <a href="#"><span class="fa fa-user"></span> FriskaMax</a> &nbsp;
-                                                                                <a href="#"><span class="fa fa-comments"></span> 1,324</a> &nbsp;
-                                                                                <a href="#"><span class="fa fa-eye"></span> 4,448</a>
-                                                                        </p>
-                                                                        <p>
-                                                                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea consequat. Duis aute irure
-                                                                                reprehenderit...
-                                                                        </p>
-                                                                </div>
-                                                        </div>
-
-                                                        <!--Footer-->
-                                                        <div class="footer">
-                                                                <ul class="tags">
-                                                                        <li><a href="#">ellentesque</a></li>
-                                                                        <li><a href="#">molestie</a></li>
-                                                                        <li><a href="#">nisl</a></li>
-                                                                        <li><a href="#">tempus</a></li>
-                                                                        <li><a href="#">enim</a></li>
-                                                                        <li><a href="#">imperdiet</a></li>
-                                                                </ul>
-                                                                <div class="read-more">
-                                                                        <button class="btn btn-primary btn-sm">Read More</button>
-                                                                </div>
-                                                        </div>
-                                                </article>
 {% endblock %}

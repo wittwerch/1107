@@ -36,3 +36,17 @@ dd {
  float:left;
  width:85%;
 }
+
+/*Post meta*/
+.post-meta {
+  margin-top: 5px;
+  border: none;
+  color: #b0b0b8;
+  font-family: "Arial Narrow";
+  font-size: 13px;
+  line-height: 13px;
+  display: inline-block;
+  overflow: visible!important;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-stretch: condensed;
+}
