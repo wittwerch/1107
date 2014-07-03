@@ -6,6 +6,11 @@ from django.views.generic import TemplateView, DetailView
 from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League
 
 
+class HomeView(TemplateView):
+
+    template_name = 'shcbelpa/homepage.html'
+
+
 class SeasonView(TemplateView):
 
     template_name = 'shcbelpa/season.html'
@@ -101,3 +106,4 @@ class StatsView(TemplateView):
             context['active'] = self.kwargs['game_type']
 
         return context
+
