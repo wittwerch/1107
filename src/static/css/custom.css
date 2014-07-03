@@ -50,3 +50,12 @@ dd {
   font-family: "Arial Narrow", Arial, sans-serif;
   font-stretch: condensed;
 }
+
+.widget-roster {
+  margin-bottom: 15px;
+}
+
+.caption-roster {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
