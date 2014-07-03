@@ -13,7 +13,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['blog_posts'] = BlogPost.objects.published()
+        context['blog_posts'] = BlogPost.objects.published()[:10]
         return context
 
 class SeasonView(TemplateView):
