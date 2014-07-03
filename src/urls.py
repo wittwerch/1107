@@ -6,7 +6,7 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
-from shcbelpa.views import PlayerView, RosterView, SeasonView, StatsView
+from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, AlbumList, AlbumDetail
 
 admin.autodiscover()
 
@@ -17,6 +17,8 @@ urlpatterns = i18n_patterns("",
 )
 
 urlpatterns += patterns('',
+
+    url("^$", HomeView.as_view(), name='home'),
 
     url(r'^(?P<team_pk>\d{1})/season/(?P<season>\d{4})', SeasonView.as_view(), name='season'),
 
@@ -35,8 +37,6 @@ urlpatterns += patterns('',
     # commented out like the others, so it's the default. You only need
     # one homepage pattern, so if you use a different one, comment this
     # one out.
-
-    url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------

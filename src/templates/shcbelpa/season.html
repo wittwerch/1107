@@ -8,23 +8,29 @@
 {% block main %}
 
     {% for game_type, games in sections.items %}
-    <header class="clearfix">
-        <h4>{{ game_type }}</h4>
-    </header>
 
-    <div class="table-responsive">
-    <table class="table table-striped">
-        {% for game in games %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ game.date_time|date:"d.m.Y" }}</td>
-                <td>{{ game.home_team }}</td>
-                <td>{{ game.away_team }}</td>
-                <td>{{ game.result }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+
+                <header class="clearfix">
+                    <h4>{{ game_type }}</h4>
+                </header>
+
+                <div class="table-responsive">
+                <table class="table table-striped">
+                    {% for game in games %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ game.date_time|date:"d.m.Y" }}</td>
+                            <td>{{ game.home_team }}</td>
+                            <td>{{ game.away_team }}</td>
+                            <td>{{ game.result }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                </div>
+            </div>
+        </div>
 
     {% endfor %}
 
