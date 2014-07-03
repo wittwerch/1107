@@ -71,10 +71,10 @@ class RosterView(TemplateView):
 
         team = get_object_or_404(Team, pk=self.kwargs['team_pk'])
         roster = (
-            team.players.filter(roster__position='C'),
-            team.players.filter(roster__position='G'),
-            team.players.filter(roster__position='D'),
-            team.players.filter(roster__position='O')
+            ('coach', team.players.filter(roster__position='C')),
+            ('goalie', team.players.filter(roster__position='G')),
+            ('defense', team.players.filter(roster__position='D')),
+            ('offense', team.players.filter(roster__position='O'))
         )
 
         context['roster'] = roster
