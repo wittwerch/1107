@@ -2,74 +2,56 @@
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
 
 {% block meta_title %}
-{{ player.first_name }} {{ player.last_name }}
+    {{ player.first_name }} {{ player.last_name }}
 {% endblock %}
 
 {% block subtitle %}
-{% if player.number %}
-    #{{ player.number }}
- {% endif %}
+    {% if player.number %}
+        #{{ player.number }}
+    {% endif %}
 {% endblock %}
 
 {% block main %}
-   <!-- POST CONTENT -->
+    <!-- POST CONTENT -->
 
-                                                <article class="article-large entry-content">
-                                                        <!--Image-->
-                                                        <h2>{{ blog_post.title }}</h2>
-                                                        <p class="lead">{{ blog_post.description|safe }}</p>
-                                                        <p>{{ blog_post.content|richtext_filters|safe }}
-                                                        </p>
+    <article class="article-large entry-content">
+        <!--Image-->
+        <h2>{{ blog_post.title }}</h2>
 
+        <p class="lead">{{ blog_post.description|safe }}</p>
 
-                                                </article>
+        <p>{{ blog_post.content|richtext_filters|safe }}
+        </p>
 
+        <strong>{% trans "aufstellung" %}</strong><br/>
+        {% for stat in blog_post.gamerecap.game.gameplayerstats_set.all %}
 
-                                                <!-- SHARE POST -->
-                                                <section class="share-post clearfix">
-                                                        <h5>Share:</h5>
-                                                        <ul>
-                                                                <li><a href="#"><i class="sc-sm sc-facebook"></i><span>426</span></a></li>
-                                                                <li><a href="#"><i class="sc-sm sc-twitter"></i><span>526</span></a></li>
-                                                                <li><a href="#"><i class="sc-sm sc-googleplus"></i><span>429</span></a></li>
-                                                        </ul>
-                                                        <br>
-                                                </section>
+            {% if forloop.first %}
+                {{ stat.player }} ({{ stat.goal }} Tore / {{ stat.assist }} Assists)
+            {% else %}
+                {{ stat.player }} ({{ stat.goal }}/{{ stat.assist }})
+            {% endif %}
 
-                                                <!-- POST TAGS
-                                                <section class="post-tags clearfix">
-                                                        <h5>Tags: </h5>
-                                                        <ul class="tags">
-                                                                <li><a href="#">ellentesque</a></li>
-                                                                <li><a href="#">molestie</a></li>
-                                                                <li><a href="#">nisl</a></li>
-                                                                <li><a href="#">tempus</a></li>
-                                                                <li><a href="#">enim</a></li>
-                                                                <li><a href="#">imperdiet</a></li>
-                                                        </ul>
-                                                </section>-->
+            {% if not forloop.last %}
+                ,
+            {% endif %}
 
-                                                <!-- AUTHOR -->
-                                                {% with blog_post.user as author %}
-                                                <section class="widget author">
-                                                        <!--Widget header-->
-                                                        <header class="clearfix"><h4>Author</h4></header>
+        {% endfor %}
 
-                                                        <!--Widget content-->
-                                                        <a href="#" class="avatar">
-                                                                <img src="http://placehold.it/75x75" alt="Siska">
-                                                                <div class="image-light"></div>
-                                                        </a>
-                                                        <a href="#" class="name">{{ author.get_full_name|default:author.username }}</a>
-                                                        <br>
-                                                        <p>
-                                                            Ehemaliger NLA Spieler, Junioren B Head-Coach und Webmaster
-                                                        </p>
-                                                        <br>
-                                                </section>
-                                                {% endwith %}
+    </article>
 
 
 
+    <!-- SHARE POST
+    <section class="share-post clearfix">
+        <h5>Share:</h5>
+        <ul>
+            <li><a href="#"><i class="sc-sm sc-facebook"></i><span>426</span></a></li>
+            <li><a href="#"><i class="sc-sm sc-twitter"></i><span>526</span></a></li>
+            <li><a href="#"><i class="sc-sm sc-googleplus"></i><span>429</span></a></li>
+        </ul>
+        <br>
+    </section>
+    -->
 
 {% endblock %}

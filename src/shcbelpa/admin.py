@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import League, Club, Game, Team, Player, Season
+from .models import League, Club, Game, Team, Player, Season, GameRecap
 
 class LeagueAdmin(admin.ModelAdmin):
     pass
@@ -25,3 +25,7 @@ admin.site.register(Player, PlayerAdmin)
 class SeasonAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Season, SeasonAdmin)
+
+class GameRecapAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(GameRecap, GameRecapAdmin)

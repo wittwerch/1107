@@ -2,8 +2,11 @@ from datetime import date
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.db.models import Q, Sum
+from django.db.models import Q
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.utils.encoding import smart_unicode
+
+from mezzanine.blog.models import BlogPost
 
 class League(models.Model):
     name = models.CharField(max_length=60)
@@ -87,8 +90,15 @@ class Team(models.Model):
     level = models.CharField(max_length=1,choices=LEVEL_CHOICES)
     players = models.ManyToManyField(Player, through='Roster',blank=True,null=True)
 
+    @property
+    def name(self):
+        if self.level == '2':
+            return "%s II" % self.club.name
+        else:
+            return self.club.name
+
     def __unicode__(self):
-        return self.club.name
+        return "%s (%s)" % (self.club.name, self.get_level_display())
 
 
 class Roster(models.Model):
@@ -159,7 +169,14 @@ class Game(models.Model):
     # id from LigaManager
     lm_id = models.IntegerField(blank=True,null=True,unique=True)
 
+    def __unicode__(self):
+        return smart_unicode("%s, %s - %s" % (self.date_time, self.home_team, self.away_team))
+
     objects = GameManager()
+
+
+class GameRecap(BlogPost):
+    game = models.ForeignKey(Game)
 
 
 class CommonPlayerStats(models.Model):
@@ -262,3 +279,8 @@ class SeasonPlayerStats(CommonPlayerStats):
     objects = SeasonPlayerStatsManager()
 
 
+class GamePlayerStats(CommonPlayerStats):
+    game = models.ForeignKey(Game, limit_choices_to={'season': 1})
+
+    class Meta:
+        unique_together = (("player", "game"),)

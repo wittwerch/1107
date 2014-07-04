@@ -22,8 +22,8 @@
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ game.date_time|date:"d.m.Y" }}</td>
-                            <td>{{ game.home_team }}</td>
-                            <td>{{ game.away_team }}</td>
+                            <td>{{ game.home_team.name }}</td>
+                            <td>{{ game.away_team.name }}</td>
                             <td>{{ game.result }}</td>
                         </tr>
                     {% endfor %}
