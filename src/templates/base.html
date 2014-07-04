@@ -134,7 +134,14 @@
 <aside class="col-md-4">
 <div class="row">
 
-{% block sidebar %}{% endblock %}
+{% block sidebar %}
+
+    {% include "shcbelpa/sidebar/gallery.html" %}
+
+    {% include "shcbelpa/sidebar/facebook.html" %}
+
+
+{% endblock %}
 
 
 </div>
