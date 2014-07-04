@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
 
+{% block meta_title %}
+Kader {{ team.get_level_display }}
+{% endblock %}
+
+{% block subtitle %}
+Kader {{ team.get_level_display }}
+{% endblock %}
+
 {% block main %}
 
     {% for position, players in roster %}
