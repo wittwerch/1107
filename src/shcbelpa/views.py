@@ -1,10 +1,10 @@
 from collections import OrderedDict
 
 from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import TemplateView, DetailView, ListView
 from mezzanine.blog.models import BlogPost
 
-from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League
+from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album
 
 
 class HomeView(TemplateView):
@@ -112,3 +112,15 @@ class StatsView(TemplateView):
 
         return context
 
+
+class GalleryView(ListView):
+    queryset = Album.objects.all().order_by('-updated')
+    template_name = 'shcbelpa/gallery.html'
+    context_object_name = "albums"
+    paginate_by = 16
+
+
+class AlbumView(DetailView):
+    model = Album
+    context_object_name = 'album'
+    template_name = 'shcbelpa/album.html'

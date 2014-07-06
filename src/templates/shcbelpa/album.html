@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block subtitle %}
+ {{ album.title }}
+{% endblock %}
+
+{% block main %}
+
+        <article class="article-large entry-content">
+            <!-- IMAGES -->
+            <div class="images">
+                <ul class="clearfix da-thumbs">
+                    {% for photo in album.photos.all %}
+                    <li>
+                        <a href="{{ photo.content_url }}" data-lightbox-gallery="album" data-lightbox-type="ajax">
+                            <img src="{{ photo.medium_url }}">
+                        </a>
+                    </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </article>
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+        /*
+         * Nivo Lightbox
+         * =============
+         */
+        $(
+                '.image a:has(.fa-search-plus), ' +
+                '#main-content :not(.widget) .frame > a:has(img), ' +
+                '.da-thumbs a'
+        ).nivoLightbox({
+                effect  : 'fadeScale'
+        });
+</script>
+
+{% endblock %}
+
+{% block sidebar %}
+
+    {% include "shcbelpa/sidebar/facebook.html" %}
+
+{% endblock sidebar %}

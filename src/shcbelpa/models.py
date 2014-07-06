@@ -284,3 +284,55 @@ class GamePlayerStats(CommonPlayerStats):
 
     class Meta:
         unique_together = (("player", "game"),)
+
+
+class Photo(models.Model):
+
+    gphoto_id = models.CharField(max_length=50, unique=True, db_index=True) # or big numeric field?
+    owner = models.CharField(max_length=50)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True) # summary in api
+    taken_date = models.DateTimeField()
+    photopage_url = models.URLField()
+    small_url = models.URLField()
+    medium_url = models.URLField()
+    thumbnail_url = models.URLField()
+    content_url = models.URLField()
+    geo_latitude = models.CharField(max_length=50, blank=True)
+    geo_longitude = models.CharField(max_length=50, blank=True)
+    updated = models.DateTimeField()
+
+    players = models.ManyToManyField(Player,related_name='photos',blank=True,null=True)
+
+    def __unicode__(self):
+        return u'%s' % self.title
+
+    class Meta:
+        ordering = ('-taken_date',)
+        get_latest_by = 'taken_date'
+
+
+class Album(models.Model):
+    gphoto_id = models.CharField(max_length=50, unique=True, db_index=True) # or big numeric field?
+    owner = models.CharField(max_length=50)	   # author in api
+    albumname = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=512) # summary in api
+    location = models.CharField(max_length=200)
+    updated = models.DateTimeField()
+
+    photos = models.ManyToManyField('Photo')
+
+    game = models.ForeignKey(Game,blank=True,null=True)
+
+    def numPhotos(self):
+        return len(self.photos.objects.all())
+
+    def __unicode__(self):
+        return u"%s photo set by %s" % (self.title, self.owner)
+
+    def numPhotos(self):
+        return len(self.photos.all())
+
+    class Meta:
+        ordering = ('-updated',)

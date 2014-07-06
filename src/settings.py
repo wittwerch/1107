@@ -296,6 +296,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "mezzanine.conf.context_processors.settings",
     "mezzanine.pages.context_processors.page",
+    "shcbelpa.context_processors.gallery_processor",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -367,6 +368,7 @@ OPTIONAL_APPS = (
 ##################
 
 HOME_CLUB = 'SHC Belpa 1107'
+PICASA_IMGMAX = 1024
 
 ##################
 # LOCAL SETTINGS #

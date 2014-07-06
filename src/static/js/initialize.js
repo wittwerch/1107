@@ -31,18 +31,6 @@
         });
         
         /*
-         * Nivo Lightbox 
-         * =============
-         */
-        $(
-                '.image a:has(.fa-search-plus), ' + 
-                '#main-content :not(.widget) .frame > a:has(img), ' +
-                '.da-thumbs a'
-        ).nivoLightbox({ 
-                effect  : 'fadeScale'
-        });
-
-        /*
          * jQuery Marquee 
          * ==============
          */

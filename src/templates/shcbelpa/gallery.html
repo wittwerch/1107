@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+{% block subtitle %}
+    Gallery
+{% endblock %}
+
+{% block main %}
+
+    <article class="article-large entry-content">
+        <!-- IMAGES -->
+        <div class="images">
+            <ul class="clearfix da-thumbs">
+                {% for album in albums %}
+                    <li>
+                        <a href="{% url 'album' album.pk %}"
+                           title="{{ album.title }}"
+                                >
+                            <img src="{{ album.photos.all.0.medium_url }}">
+
+                            <div class="image-caption">
+                                <h5>{{ album.title }}</h5>
+                                {{ album.updated }}
+                            </div>
+                            <span class="image-light"></span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </article>
+
+{% endblock %}
+
+{% block sidebar %}
+
+    {% include "shcbelpa/sidebar/facebook.html" %}
+
+{% endblock sidebar %}
