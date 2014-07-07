@@ -94,6 +94,9 @@ class Team(models.Model):
     def name(self):
         if self.level == '2':
             return "%s II" % self.club.name
+        elif self.level == '3':
+            return "%s II" % self.club.name
+
         else:
             return self.club.name
 
@@ -116,7 +119,8 @@ class Roster(models.Model):
 
 class SeasonManager(models.Manager):
 
-    def get_current_season(self):
+    @staticmethod
+    def get_current_season():
         return Season.objects.get(start_date__lte=date.today(),end_date__gte=date.today())
 
 
@@ -230,7 +234,8 @@ class SeasonPlayerStatsManager(models.Manager):
         return stats
 
 
-    def _generate_stats(self, player, season_player_stats):
+    @staticmethod
+    def _generate_stats(player, season_player_stats):
         stats = {}
         for field in ['gp', 'goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','pm','ppg','ppa','shg','sha', 'gw', 'gt']:
             values = (stat.__dict__.get(field) for stat in season_player_stats)
@@ -330,9 +335,6 @@ class Album(models.Model):
 
     def __unicode__(self):
         return u"%s photo set by %s" % (self.title, self.owner)
-
-    def numPhotos(self):
-        return len(self.photos.all())
 
     class Meta:
         ordering = ('-updated',)

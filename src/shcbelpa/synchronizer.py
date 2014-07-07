@@ -10,8 +10,10 @@ from django.db.models import Q
 
 from .models import Team, GameType, League, Game, Season, Club, Player, SeasonPlayerStats
 
+
 class LigaManagerError(Exception):
     pass
+
 
 class LigaManager:
 
@@ -21,14 +23,9 @@ class LigaManager:
     MAPPING_FILE = "%s/shcbelpa/mapping.json" % settings.PROJECT_ROOT
 
     def __init__(self):
-        self._load_mapping()
-        # Get an instance of a logger
-
-
-    def _load_mapping(self):
+        # load data mapping from file
         with open(self.MAPPING_FILE) as data_file:
             self._mapping = json.load(data_file)
-
 
     def _call_webservice(self, url, params):
         _url = "%s?%s" % (url, urllib.urlencode(params))
@@ -88,7 +85,6 @@ class LigaManager:
             stat.save()
 
     def _get_team(self, string):
-        import locale
         #locale.setlocale(locale.LC_ALL, 'de_DE')
         pattern = re.compile('((?u)[\w\- ]*) J?([1-9ABC]*)$')
 
