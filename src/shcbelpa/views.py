@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
 from mezzanine.blog.models import BlogPost
 
-from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album
+from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor
 
 
 class HomeView(TemplateView):
@@ -124,3 +124,9 @@ class AlbumView(DetailView):
     model = Album
     context_object_name = 'album'
     template_name = 'shcbelpa/album.html'
+
+
+class SponsorView(ListView):
+    queryset = Sponsor.objects.all()
+    template_name = 'shcbelpa/sponsor.html'
+    context_object_name = "sponsors"

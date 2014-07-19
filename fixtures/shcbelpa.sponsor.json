@@ -1,0 +1,352 @@
+[
+    {
+        "pk": 1,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.energie-belp.ch/",
+            "logo": "sponsors/Energie_Belp.jpg",
+            "name": "Energie Belp AG",
+            "address": "Postfach 193\r\n3123 Belp\r\n031 818 82 82"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.walo.ch/",
+            "logo": "sponsors/WALO.jpg",
+            "name": "Walo Bertschinger AG",
+            "address": "H\u00fchnerhubelstrasse 92a\r\n3123 Belp\r\n031 819 90 91"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.fuchspartner.ch/",
+            "logo": "sponsors/FuchsPartner.jpg",
+            "name": "Fuchs & Partner",
+            "address": "Treuhand und Revisions AG\r\nRosenstrasse 2\r\n3800 Interlaken\r\n033 826 60 40"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.tech-ag.ch/",
+            "logo": "sponsors/Tech_AG.jpg",
+            "name": "Tech AG",
+            "address": "Hofmattstrasse 19\r\n3360 Herzogenbuchsee\r\n062 956 60 30"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "",
+            "logo": "sponsors/Stucki_Landtechnik.jpg",
+            "name": "Stucki Landtechnik AG",
+            "address": "H\u00fchnerhubelstrasse 67\r\n3123 Belp\r\n031 819 02 03"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.seilpark-gantrisch.ch/",
+            "logo": "sponsors/Seilpark_Gantrisch.jpg",
+            "name": "Seilpark Gantrisch AG",
+            "address": "L\u00e4ngeneybad\r\n3154 R\u00fcschegg Heubach\r\n031 739 01 00"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.ochsner-eishockey.ch/de/proshop/ittigen/",
+            "logo": "sponsors/Ochsner_Hockey_Ittigen.jpg",
+            "name": "Ochsner Hockey Pro",
+            "address": "Shop Ittigen\r\nTalgutzentrum 19\r\n3063 Ittigen\r\n031 922 01 01"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "",
+            "logo": "sponsors/Utiger.jpg",
+            "name": "Utiger Bau Belp",
+            "address": "H\u00fchnerhubelstrasse 99\r\n3123 Belp\r\n079 651 47 27"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.zauggbelp.ch/",
+            "logo": "sponsors/Zaugg_Belp.jpg",
+            "name": "Zaugg Belp AG",
+            "address": "Fahrhubelweg 5\r\n3123 Belp\r\n031 818 38 38"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.airportfitness.ch/",
+            "logo": "sponsors/Airportfitness.jpg",
+            "name": "Airportfitness Belp",
+            "address": "H\u00fchnerhubelstrasse 64\r\n3123 Belp\r\n031 812 11 33"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.rugenbraeu.ch/",
+            "logo": "sponsors/Rugenbr\u00e4u.jpg",
+            "name": "Rugenbr\u00e4u AG",
+            "address": "Wagnerenstrasse 40\r\n3800 Interlaken\r\n033 826 46 46"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.champignon-zuercher.ch/",
+            "logo": "sponsors/Z\u00fcrcher_Champignons.jpg",
+            "name": "Z\u00fcrcher Champignonkulturen AG",
+            "address": "3123 Belp\r\n031 960 46 46"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.landiaare.ch/",
+            "logo": "sponsors/LANDI_AareGen_fbg1.PNG",
+            "name": "Landi Aare",
+            "address": "S\u00e4getstrasse 20\r\n3123 Belp\r\n031 812 90 90"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "",
+            "logo": "sponsors/Snacksbox.jpg",
+            "name": "Snacksbox",
+            "address": "Roger Reber\r\nBantigerweg 5\r\n3123 Belp\r\n079 689 11 64"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "",
+            "logo": "sponsors/W\u00e4gli_Holzbau.jpg",
+            "name": "Holzbau W\u00e4gli AG",
+            "address": "Allmendweg 251\r\n3123 Belp\r\n031 819 13 12"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.roderoptik.ch/",
+            "logo": "sponsors/Roder_Optik.jpg",
+            "name": "Roder Optik",
+            "address": "Bahnhofstrasse 11\r\n3123 Belp\r\n031 819 21 81"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.belwag.ch/",
+            "logo": "sponsors/Belwag.jpg",
+            "name": "Belwag AG Bern",
+            "address": "Betrieb Belp\r\nViehweidstrasse 12\r\n3123 Belp\r\n031 819 11 55"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.valiant.ch/",
+            "logo": "sponsors/Valiant.jpg",
+            "name": "Valiant Bank AG",
+            "address": "Bahnhofstrasse 3\r\n3123 Belp\r\n031 818 21 11"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.highland-gurten.ch/",
+            "logo": "sponsors/Highland.jpg",
+            "name": "Highland Gurten",
+            "address": "Familie Ruedi Balsiger\r\nIm Aebersold\r\n3084 Wabern/Gurten\r\n079 442 81 09"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "",
+            "logo": "sponsors/Fasnacht_Malerei.jpg",
+            "name": "Malerei Fasnacht",
+            "address": "Samuel Fasnacht\r\n3123 Belp\r\n079 354 70 74"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.mobibelp.ch/",
+            "logo": "sponsors/Die_Mobiliar.jpg",
+            "name": "Die Mobiliar",
+            "address": "Generalagentur Belp\r\nBahnhofplatz 9-11\r\n3123 Belp\r\n031 818 44 44"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.steibachbeck.ch/",
+            "logo": "sponsors/Steibach.jpg",
+            "name": "Steibach AG",
+            "address": "Neumattstrasse 8\r\n3123 Belp\r\n031 819 15 65"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.dragon-cycle.ch/",
+            "logo": "sponsors/Dragon_Cycle.jpg",
+            "name": "Dragon-Cycle",
+            "address": "Dorfstrasse 22\r\n3123 Belp\r\n031 819 47 36"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.rosserelektro.ch/",
+            "logo": "sponsors/Rosser_Elektro.jpg",
+            "name": "Rosser Elektro AG",
+            "address": "K\u00e4sereistrasse 8\r\n3123 Belp\r\n031 819 15 03"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.mmp-klima.ch/",
+            "logo": "sponsors/MMP_Klima.jpg",
+            "name": "MMP Klima AG",
+            "address": "H\u00fchnerhubelstrasse 62\r\n3123 Belp\r\n031 818 24 24"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://moser-brennstoffe.ch/",
+            "logo": "sponsors/Moser_Brennstoffe.jpg",
+            "name": "Moser Brennstoffe AG",
+            "address": "Bernstrasse 89\r\n3110 M\u00fcnsingen\r\n031 720 44 44"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.weber-architekten.ch/",
+            "logo": "sponsors/Weber_Architekten.jpg",
+            "name": "Weber Architekten",
+            "address": "G\u00fcrbeweg 14\r\n3123 Belp\r\n031 819 00 72"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.jabergag.ch/",
+            "logo": "sponsors/Jaberg_Carrosserie.jpg",
+            "name": "Jaberg AG",
+            "address": "H\u00fchnerhubelstrasse 84\r\n3123 Belp\r\n031 819 60 60"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.wittwer-mode.ch/",
+            "logo": "sponsors/Wittwer_Sports.jpg",
+            "name": "Wittwer Sports",
+            "address": "Mittelstrasse 8\r\n3123 Belp\r\n031 819 11 65"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.schmidtgmbh.ch/",
+            "logo": "sponsors/Schmidt_Belp.jpg",
+            "name": "Schmidt GmbH",
+            "address": "Moosblickweg 3\r\n3123 Belp\r\n031 819 25 75"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.bettmeralp.ch/sites/de/bettmeralp/unterkunft/hotels_und_pensionen.html?hotel:view=details&id=bb669c6a-2f71-49d9-9791-4aa8da68da32",
+            "logo": "sponsors/Hotel_Sporting_Bettmeralp.jpg",
+            "name": "Hotel Garni Sporting",
+            "address": "Familie Imhof\r\n3992 Bettmeralp\r\n027 927 22 52"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.meyergarten.ch/",
+            "logo": "sponsors/meyer_g\u00e4rten.jpg",
+            "name": "Meyer G\u00e4rten",
+            "address": "Fahrhubel\r\n3123 Belp\r\n031 819 56 40"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.schreinerei-imwinkelried.ch/",
+            "logo": "sponsors/Imwinkelried_bande.jpg",
+            "name": "Schreinerei Imwinkelried GmbH",
+            "address": "Belpbergstrasse 15\r\n3123 Belp\r\n031 819 96 06\r\n\r\n"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.kiora.ch/",
+            "logo": "sponsors/sportdurstkiora200x100cm.jpg",
+            "name": "Kiora",
+            "address": "Restaurant&Bar\r\nSchl\u00f6ssliweg 5\r\n3123 Belp\r\n031 819 17 04"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "shcbelpa.sponsor",
+        "fields": {
+            "url": "http://www.transportebelp.ch/",
+            "logo": "sponsors/Loosli_Transporte_Entwurf_Kleber.jpg",
+            "name": "Transporte Belp Loosli GmbH",
+            "address": "Zimmerwaldweg 3\r\n3123 Belp\r\n031 812 03 53\r\n\r\n"
+        }
+    }
+]

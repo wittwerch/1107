@@ -6,6 +6,8 @@ from django.db.models import Q
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.utils.encoding import smart_unicode
 
+from sorl.thumbnail import ImageField
+
 from mezzanine.blog.models import BlogPost
 
 class League(models.Model):
@@ -336,3 +338,17 @@ class Album(models.Model):
 
     class Meta:
         ordering = ('-updated',)
+
+
+class Sponsor(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.TextField()
+    url = models.URLField(blank=True, null=True)
+    logo = ImageField(upload_to='sponsors', blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Sponsor"
+        verbose_name_plural = "Sponsoren"
