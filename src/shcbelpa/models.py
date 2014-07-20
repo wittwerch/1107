@@ -57,16 +57,13 @@ class Player(models.Model):
     )
     shoots = models.CharField(max_length=1,choices=SHOOTS_CHOICES,blank=True,null=True)
 
-    photo = models.ImageField (
-        upload_to='players',
-        blank=True,
-    )
+    photo = ImageField(upload_to='players', blank=True)
 
-    def photo_url(self):
+    def get_photo(self):
         try:
-            return self.photo.url
+            return self.photo.path
         except ValueError:
-            return static("img/empty-profile.jpg")
+            return "players/johndoe.jpg"
 
     def __unicode__(self):
         return "%s %s" % (self.first_name, self.last_name)

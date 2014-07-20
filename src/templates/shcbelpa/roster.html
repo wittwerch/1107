@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load pages_tags mezzanine_tags i18n future staticfiles %}
+{% load pages_tags mezzanine_tags i18n future staticfiles thumbnail %}
 
 {% block meta_title %}
 Kader {{ team.get_level_display }}
@@ -37,8 +37,9 @@ Kader {{ team.get_level_display }}
 
                             <div class="">
                             <a href="{% url "player" player.pk %}">
-                                <img src="http://placehold.it/200x150" class="img-thumbnail"
-                                     alt="{{ player.first_name }} {{ player.last_name }}">
+                                {% thumbnail player.get_photo "200x250" crop="center" as im %}
+                                    <img src="{{ im.url }}" class="img-thumbnail" alt="{{ player.first_name }} {{ player.last_name }}">
+                                {% endthumbnail %}
                             </a>
 
                             <div class="caption caption-roster text-center">
