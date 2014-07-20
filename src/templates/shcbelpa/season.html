@@ -22,8 +22,14 @@
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ game.date_time|date:"d.m.Y" }}</td>
-                            <td>{{ game.home_team.name }}</td>
-                            <td>{{ game.away_team.name }}</td>
+                                {% if game.get_absolute_url %}
+                                    <td><a href="{{ game.get_absolute_url }}">{{ game.home_team.name }}</a></td>
+                                    <td><a href="{{ game.get_absolute_url }}">{{ game.away_team.name }}</a></td>
+                                {% else %}
+                                    <td>{{ game.home_team.name }}</td>
+                                    <td>{{ game.away_team.name }}</td>
+                                {% endif %}
+
                             <td>{{ game.result }}</td>
                         </tr>
                     {% endfor %}

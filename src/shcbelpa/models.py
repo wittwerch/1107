@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.utils.encoding import smart_unicode
+from django.core.urlresolvers import reverse
 
 from sorl.thumbnail import ImageField
 
@@ -170,6 +171,20 @@ class Game(models.Model):
 
     # id from LigaManager
     lm_id = models.IntegerField(blank=True,null=True,unique=True)
+
+
+    def get_absolute_url(self):
+        """
+        Return URL to GameRecap if available
+        """
+        try:
+            return GameRecap.objects.get(game=self).get_absolute_url()
+        except GameRecap.DoesNotExist:
+            return None
+        except GameRecap.MultipleObjectsReturned:
+            # TODO: select by language
+            return None
+
 
     def __unicode__(self):
         return smart_unicode("%s, %s - %s" % (self.date_time, self.home_team, self.away_team))
