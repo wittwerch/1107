@@ -59,3 +59,17 @@ dd {
   margin-top: 5px;
   margin-bottom: 20px;
 }
+
+/* Column widths are based on these cells */
+.row-nr {
+  width: 25px;
+}
+.row-name {
+  width: auto;
+}
+.row-gp .row-goal .row-assist .row-points .row-pm {
+  width: 25px;
+}
+.row-points_avg .row-pm_avg {
+ width: 40px;
+}
