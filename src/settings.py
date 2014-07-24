@@ -123,6 +123,8 @@ LANGUAGES = (
 # production. Best set to ``True`` in local_settings.py
 DEBUG = False
 
+THUMBNAIL_DEBUG = False
+
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
@@ -277,6 +279,7 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "sorl.thumbnail",
     "shcbelpa",
     #"mezzanine.accounts",
     #"mezzanine.mobile",

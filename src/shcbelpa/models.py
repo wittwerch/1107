@@ -5,6 +5,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.utils.encoding import smart_unicode
+from django.core.urlresolvers import reverse
+
+from sorl.thumbnail import ImageField
 
 from mezzanine.blog.models import BlogPost
 
@@ -54,16 +57,13 @@ class Player(models.Model):
     )
     shoots = models.CharField(max_length=1,choices=SHOOTS_CHOICES,blank=True,null=True)
 
-    photo = models.ImageField (
-        upload_to='players',
-        blank=True,
-    )
+    photo = ImageField(upload_to='players', blank=True)
 
-    def photo_url(self):
+    def get_photo(self):
         try:
-            return self.photo.url
+            return self.photo.path
         except ValueError:
-            return static("img/empty-profile.jpg")
+            return "players/johndoe.jpg"
 
     def __unicode__(self):
         return "%s %s" % (self.first_name, self.last_name)
@@ -94,9 +94,6 @@ class Team(models.Model):
     def name(self):
         if self.level == '2':
             return "%s II" % self.club.name
-        elif self.level == '3':
-            return "%s II" % self.club.name
-
         else:
             return self.club.name
 
@@ -119,8 +116,7 @@ class Roster(models.Model):
 
 class SeasonManager(models.Manager):
 
-    @staticmethod
-    def get_current_season():
+    def get_current_season(self):
         return Season.objects.get(start_date__lte=date.today(),end_date__gte=date.today())
 
 
@@ -172,6 +168,20 @@ class Game(models.Model):
 
     # id from LigaManager
     lm_id = models.IntegerField(blank=True,null=True,unique=True)
+
+
+    def get_absolute_url(self):
+        """
+        Return URL to GameRecap if available
+        """
+        try:
+            return GameRecap.objects.get(game=self).get_absolute_url()
+        except GameRecap.DoesNotExist:
+            return None
+        except GameRecap.MultipleObjectsReturned:
+            # TODO: select by language
+            return None
+
 
     def __unicode__(self):
         return smart_unicode("%s, %s - %s" % (self.date_time, self.home_team, self.away_team))
@@ -234,8 +244,7 @@ class SeasonPlayerStatsManager(models.Manager):
         return stats
 
 
-    @staticmethod
-    def _generate_stats(player, season_player_stats):
+    def _generate_stats(self, player, season_player_stats):
         stats = {}
         for field in ['gp', 'goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','pm','ppg','ppa','shg','sha', 'gw', 'gt']:
             values = (stat.__dict__.get(field) for stat in season_player_stats)
@@ -336,5 +345,22 @@ class Album(models.Model):
     def __unicode__(self):
         return u"%s photo set by %s" % (self.title, self.owner)
 
+    def numPhotos(self):
+        return len(self.photos.all())
+
     class Meta:
         ordering = ('-updated',)
+
+
+class Sponsor(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.TextField()
+    url = models.URLField(blank=True, null=True)
+    logo = ImageField(upload_to='sponsors', blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Sponsor"
+        verbose_name_plural = "Sponsoren"

@@ -6,7 +6,7 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
-from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView
+from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, SponsorView
 
 admin.autodiscover()
 
@@ -31,6 +31,7 @@ urlpatterns += patterns('',
     url(r'^gallery/$', GalleryView.as_view(), name='gallery'),
     url(r'^album/(?P<pk>\d+)/$', AlbumView.as_view(), name='album'),
 
+    url(r'^sponsoring/$', SponsorView.as_view(), name='sponsor'),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.

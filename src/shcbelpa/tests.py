@@ -5,4 +5,5 @@ class PlayerTestCase(TestCase):
     def setUp(self):
         pass
 
-    def test_
+    def test_foo(self):
+        pass
