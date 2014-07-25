@@ -1,30 +1,40 @@
+exec { "/usr/bin/apt-get update":
+  alias => "update"
+}
+
 package { "python2.7-dev":
   ensure => installed,
+  require => Exec['update'],
 }
 
 package { "python-virtualenv":
   ensure => installed,
-  require => Package['python2.7-dev']
+  require => [Package['python2.7-dev'], Exec['update']]
 }
 
 package { "libjpeg-dev":
   ensure => installed,
+  require => Exec['update'],
 }
 
 package { "zlib1g-dev":
   ensure => installed,
+  require => Exec['update'],
 }
 
 package { "libpng12-dev":
   ensure => installed,
+  require => Exec['update'],
 }
 
 package { "mysql-server-5.5":
   ensure => installed,
+  require => Exec['update'],
 }
 
 package { "libmysqlclient-dev":
   ensure => installed,
+  require => Exec['update'],
 }
 
 # Create virtualenv
