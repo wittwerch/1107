@@ -1011,7 +1011,7 @@
         "pk": 302,
         "model": "shcbelpa.player",
         "fields": {
-            "first_name": "Beny",
+            "first_name": "Benjamin",
             "last_name": "Wittwer",
             "weight": "0",
             "photo": "",
@@ -2327,7 +2327,7 @@
         "pk": 396,
         "model": "shcbelpa.player",
         "fields": {
-            "first_name": "Isaiah Joshua",
+            "first_name": "Isaiah",
             "last_name": "Browne",
             "weight": "67",
             "photo": "",
@@ -2454,7 +2454,7 @@
         "model": "shcbelpa.player",
         "fields": {
             "first_name": "Jonas",
-            "last_name": "Zuckschwert",
+            "last_name": "Zuckschwerdt",
             "weight": "72",
             "photo": "",
             "number": "3",
@@ -3097,7 +3097,7 @@
         "pk": 455,
         "model": "shcbelpa.player",
         "fields": {
-            "first_name": "C\u00e9dric",
+            "first_name": "C\u00e9dric Luc",
             "last_name": "Bielser",
             "weight": "0",
             "photo": "",
@@ -3321,7 +3321,7 @@
         "pk": 472,
         "model": "shcbelpa.player",
         "fields": {
-            "first_name": "Tyler",
+            "first_name": "Tyler Robert",
             "last_name": "McFadden",
             "weight": null,
             "photo": "",
@@ -3447,7 +3447,7 @@
         "pk": 482,
         "model": "shcbelpa.player",
         "fields": {
-            "first_name": "Teighan",
+            "first_name": "Teighan Wade",
             "last_name": "Meier",
             "weight": null,
             "photo": "",
@@ -3547,20 +3547,6 @@
         "fields": {
             "first_name": "Roman",
             "last_name": "Hotz",
-            "weight": null,
-            "photo": "",
-            "number": null,
-            "height": null,
-            "born": null,
-            "shoots": null
-        }
-    },
-    {
-        "pk": 491,
-        "model": "shcbelpa.player",
-        "fields": {
-            "first_name": "Michel",
-            "last_name": "Schenkel",
             "weight": null,
             "photo": "",
             "number": null,
@@ -4154,6 +4140,20 @@
             "number": "17",
             "height": null,
             "born": "2003-12-17",
+            "shoots": null
+        }
+    },
+    {
+        "pk": 537,
+        "model": "shcbelpa.player",
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Utiger",
+            "weight": null,
+            "photo": "",
+            "number": null,
+            "height": null,
+            "born": null,
             "shoots": null
         }
     }
