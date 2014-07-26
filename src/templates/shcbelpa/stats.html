@@ -16,7 +16,7 @@
     </div>
 
 <!-- Nav tabs -->
-<ul id="statsTab" class="nav nav-pills" role="tablist">
+<ul id="statsTab" class="nav nav-tabs" role="tablist">
 {% for game_type, stats in sections.items %}
 
   {% if stats|length > 0 %}
@@ -90,6 +90,9 @@ $(document).ready(function() {
     var url = document.location.toString();
     if (url.match('#')) {
         $('.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show');
+    }
+    else {
+        $('.nav-tabs a[href=#all]').tab('show');
     }
 })
 </script>

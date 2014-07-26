@@ -8,22 +8,40 @@
 {% block main %}
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12">
-            <select>
-                <option>2012-2013</option>
-            </select>
+        <div class="col-md-offset-5 col-md-2">
+            <form method="GET">
+                Saison: <select id="season_select">
+                    <option value="1314">2013-2014</option>
+                    <option value="1213">2012-2013</option>
+                    <option value="1112">2011-2012</option>
+                </select>
+            </form>
         </div>
     </div>
 
+    <!-- Nav tabs -->
+    <ul id="seasonTab" class="nav nav-tabs" role="tablist">
     {% for game_type, games in sections.items %}
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12">
+      {% if games|length > 0 %}
 
-                <header class="clearfix">
-                    <h4>{{ game_type }}</h4>
-                </header>
+      <li {% if game_type == active %}class="active"{% endif %}>
+          <a href="#{{ game_type }}" role="tab" data-toggle="tab">{{ game_type }}</a>
+      </li>
 
+      {% endif %}
+
+    {% endfor %}
+    </ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    {% for game_type, games in sections.items %}
+
+
+  {% if games|length > 0 %}
+
+    <div class="tab-pane{% if game_type == active %} active{% endif %} fade" id="{{ game_type }}">
                 <div class="table-responsive">
                 <table class="table table-striped">
                     {% for game in games %}
@@ -43,10 +61,10 @@
                     {% endfor %}
                 </table>
                 </div>
-            </div>
-        </div>
 
+   </div>
+    {% endif %}
     {% endfor %}
-
+</div>
 
 {% endblock %}
