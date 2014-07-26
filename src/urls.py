@@ -3,8 +3,7 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
-
-from mezzanine.core.views import direct_to_template
+from django.views.generic import RedirectView
 
 from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, SponsorView
 
@@ -32,6 +31,9 @@ urlpatterns += patterns('',
     url(r'^album/(?P<pk>\d+)/$', AlbumView.as_view(), name='album'),
 
     url(r'^sponsoring/$', SponsorView.as_view(), name='sponsor'),
+
+    # Redirect from legacy url to mezzanine blog feed
+    url(r'^feed/$', RedirectView.as_view(url='/blog/feeds/atom')),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
