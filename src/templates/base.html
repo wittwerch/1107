@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
-    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Die Homepage des Strassenhockey Clubs Belpa 1107. Hier finden Sie alles, von Spielberichten, Statistiken, dem aktuellen Kader und vielem mehr.{% endblock %}">
 
     <!-- Stylesheets -->
     <link href="{% static "css/style.css" %}" rel="stylesheet">
@@ -59,16 +59,16 @@
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Kontakt</a></li>
                     </ul>-->
-
-                <form class="navbar-form navbar-right" role="search">
+            <!--
+                <form class="navbar-form navbar-right" role="search" method="GET" target="{% url "search" %}">
                     <label class="sr-only" for="top_search_form">Search for</label>
-                    <input id="top_search_form" type="search" placeholder="Search">
+                    <input id="top_search_form" type="search" placeholder="Search" name="q">
                     <button type="submit">
                         <span class="fa fa-search"></span>
                         <span class="sr-only">Search/submit</span>
                     </button>
                 </form>
-
+             -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="https://www.facebook.com/shcbelpa" title="Facebook" target="_blank"><span class="sc-sm sc-dark sc-facebook"></span></a></li>
                     <li><a href="https://twitter.com/shcbelpa" title="Twitter" target="_blank"><span class="sc-sm sc-dark sc-twitter"></span></a></li>
