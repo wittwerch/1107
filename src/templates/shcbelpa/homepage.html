@@ -61,7 +61,9 @@
 
 {% block sidebar %}
 
-    {% include "shcbelpa/sidebar/flyer.html" %}
+    {% if teasers|length > 0 %}
+        {% include "shcbelpa/sidebar/teaser.html" %}
+    {% endif %}
 
     {% include "shcbelpa/sidebar/gallery.html" %}
 

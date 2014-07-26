@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
 from mezzanine.blog.models import BlogPost
 
-from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor
+from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor, Teaser
 
 
 class HomeView(TemplateView):
@@ -14,6 +14,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['blog_posts'] = BlogPost.objects.published()[:10]
+        context['teasers'] = Teaser.objects.published()
         return context
 
 class SeasonView(TemplateView):

@@ -1,0 +1,23 @@
+{% load staticfiles thumbnail %}
+
+{% for teaser in teasers %}
+
+<!-- SOCIALS WIDGET -->
+<section class="col-sm-6 col-md-12 widget">
+    <!-- Widget header -->
+    <header class="clearfix"><h4>{{ teaser.title }}</h4></header>
+
+
+    <!-- Widget Content -->
+    <div class="frame thick">
+        {% if teaser.link %}<a href="{{ teaser.link }}">{% endif %}
+            {% thumbnail teaser.image "160" as im %}
+                <img src="{{ im.url }}" alt="{{ teaser.title }}" />
+            {% endthumbnail %}
+        {% if teaser.link %}</a>{% endif %}
+    </div>
+    <img src="{% static "img/shadow.png" %}" class="shadow" alt="shadow">
+
+</section>
+
+{% endfor %}

@@ -1,4 +1,5 @@
 from datetime import date
+from django.utils.timezone import now
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -364,3 +365,21 @@ class Sponsor(models.Model):
     class Meta:
         verbose_name = "Sponsor"
         verbose_name_plural = "Sponsoren"
+
+
+class TeaserManager(models.Manager):
+
+    def published(self):
+        return self.filter(
+            Q(publish_date__lte=now()) | Q(publish_date__isnull=True),
+            Q(expiry_date__gte=now()) | Q(expiry_date__isnull=True))
+
+
+class Teaser(models.Model):
+    title = models.CharField(max_length=100)
+    link = models.URLField(blank=True, null=True)
+    image = ImageField(upload_to='teaser', blank=False)
+    publish_date = models.DateTimeField()
+    expiry_date = models.DateTimeField()
+
+    objects = TeaserManager()
