@@ -660,7 +660,7 @@
         "pk": 173,
         "model": "shcbelpa.roster",
         "fields": {
-            "player": 491,
+            "player": 517,
             "position": "O",
             "team": 6
         }
@@ -1092,7 +1092,7 @@
         "pk": 231,
         "model": "shcbelpa.roster",
         "fields": {
-            "player": 491,
+            "player": 517,
             "position": "D",
             "team": 132
         }
