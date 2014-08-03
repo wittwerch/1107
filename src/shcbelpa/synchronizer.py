@@ -84,6 +84,40 @@ class LigaManager:
 
             stat.save()
 
+    def sync_penalties(self, team, league, game_type, league_ssha_id):
+        url = "%s/strafenliste.aspx" % self.WS_URL
+        params = {
+            "typ": "liga",
+            "id": league_ssha_id
+        }
+        response = self._call_webservice(url, params)
+        season = Season.objects.get(lm_id=self._mapping['season_id'])
+        xml_stats = untangle.parse(response.content)
+        for xml in xml_stats.ihs.Spieler:
+
+            if xml.vereinshort.cdata != 'BLP':
+                continue
+
+            player = self._get_player(xml.vorname.cdata, xml.nachname.cdata)
+            if player is None:
+                continue
+
+            filter = {
+                'player': player,
+                'season': season,
+                'team': team,
+                'league': league,
+                'game_type': game_type
+            }
+            try:
+                stat = SeasonPlayerStats.objects.get(**filter)
+            except SeasonPlayerStats.DoesNotExist:
+                stat = SeasonPlayerStats(**filter)
+
+            stat.pm = xml.totalstrafen.cdata
+
+            stat.save()
+
     def _get_team(self, string):
         #locale.setlocale(locale.LC_ALL, 'de_DE')
         pattern = re.compile('((?u)[\w\- ]*) J?([1-9ABC]*)$')
@@ -157,3 +191,4 @@ class LigaManager:
                     self.sync_game(xml, team, league, type)
 
                 self.sync_stats(team, league, type, league_lm_id)
+                self.sync_penalties(team, league, type, league_lm_id)
