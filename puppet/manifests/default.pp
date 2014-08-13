@@ -27,6 +27,16 @@ package { "libpng12-dev":
   require => Exec['update'],
 }
 
+package { "git":
+  ensure => installed,
+  require => Exec['update'],
+}
+
+package { "gettext":
+  ensure => installed,
+  require => Exec['update'],
+}
+
 package { "mysql-server-5.5":
   ensure => installed,
   require => Exec['update'],
