@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
 
+{% block subtitle %}
+{{ team.get_level_display }} / {{ current_season.code }}
+{% endblock %}
+
 {% block main %}
 
     <div class="row">
-        <div class="col-md-offset-5 col-md-2">
-            <form method="GET">
-                Saison: <select id="season_select">
-                    <option value="1314">2013-2014</option>
-                    <option value="1213">2012-2013</option>
-                    <option value="1112">2011-2012</option>
+        <div class="col-md-offset-2 col-md-10">
+            <form class="form-horizontal" role="form" method="GET">
+
+                <div class="form-group">
+            <label for="inputSeason" class="col-sm-2 control-label">Saison:</label>
+            <div class="col-sm-4">
+
+                <select id="season_select">
+                    {% for season in seasons %}
+                        <option value="{{ season.code }}"{% if season == current_season %} selected{% endif %}>{{ season.start_date.year }}-{{ season.end_date.year }}</option>
+                    {% endfor %}
                 </select>
+         </div>
+            </div>
             </form>
         </div>
     </div>
@@ -80,21 +91,21 @@
 
 <script>
 $(document).ready(function() {
-    $('#statsTab a').click(function (e) {
-        window.location.hash = this.href.split('#')[1];
-        e.preventDefault();
-        $(this).tab('show');
-    });
-
-    // Javascript to enable link to tab
-    var url = document.location.toString();
-    if (url.match('#')) {
-        $('.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show');
-    }
-    else {
-        $('.nav-tabs a[href=#all]').tab('show');
-    }
+    $('#statsTab a:first').tab('show')
 })
+
+$(function(){
+      // bind change event to select
+      $('#season_select').bind('change', function () {
+          var baseUrl = "/{{ team.pk }}/season/";
+          var code = $(this).val(); // get selected value
+          if (code) { // require a code
+              window.location = baseUrl+code; // redirect
+          }
+          return false;
+      });
+ });
+
 </script>
 
 {% endblock %}

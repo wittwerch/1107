@@ -153,6 +153,16 @@ class GameManager(models.Manager):
         # filter queryset by team where either home_team or away_team matches
         return super(GameManager, self).get_query_set().filter(Q(home_team=team) | Q(away_team=team))
 
+    def get_seasons(self, team):
+        """
+        Return seasons that have Games for that team
+        """
+        seasons = []
+        for season in Season.objects.all().order_by('-start_date'):
+            if len(Game.objects.filter(season=season).filter(Q(home_team=team) | Q(away_team=team))) > 0:
+                seasons.append(season)
+        return seasons
+
 
 class Game(models.Model):
     date_time = models.DateTimeField()
@@ -260,6 +270,80 @@ class SeasonPlayerStatsManager(models.Manager):
         #stats['pm'] = sps.pm_2*2 + sps.pm_5*5 + sps.pm_10*10 + sps.pm_20*20 + sps.pm_25*25
 
         return stats
+
+
+    def get_seasons(self, team):
+        """
+        Return seasons that have SeasonPlayerStats for that team
+        """
+        seasons = []
+        for season in Season.objects.all().order_by('-start_date'):
+            if len(SeasonPlayerStats.objects.filter(team=team, season=season)) > 0:
+                seasons.append(season)
+        return seasons
+
+    #
+    # def _accumulatedStats(self, stats):
+    #     # generate temporary SeasonPlayerStats object which will hold the values, but never gets saved to the database
+    #     sps = SeasonPlayerStats()
+    #
+    #
+    #     len(stats)
+    #     #print stats
+    #     for (counter, field) in enumerate(['goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','ppg','ppa','shg','sha', 'gw', 'gt']):
+    #         values = (stat.__dict__.get(field) for stat in stats)
+    #         #print values
+    #         sps.__dict__[field] = sum(values)
+    #
+    #     sps.pm = sps.pm_2*2 + sps.pm_5*5 + sps.pm_10*10 + sps.pm_20*20 + sps.pm_25*25
+    #     sps.points = sps.goal + sps.assist
+    #
+    #     if isinstance(stats[0], GamePlayerStats):
+    #         sps.gp = len(stats)
+    #     else:
+    #         sps.gp = sum((stat.__dict__.get("gp") for stat in stats))
+    #
+    #     return sps
+    #
+    # def _getSeasonStats(self, season, team, type, player):
+    #     try:
+    #         return SeasonPlayerStats.objects.get(season=season, team=team, game_type=type, player=player)
+    #     except SeasonPlayerStats.DoesNotExist:
+    #         stat = GamePlayerStats.objects.filter(game__season=season, game__game_type=type, player=player).filter(
+    #             Q(game__home_team=team) | Q(game__away_team=team)
+    #         )
+    #
+    #         if (len(stat)==0):
+    #             return None
+    #
+    #         sps = self._accumulatedStats(stat)
+    #         sps.player = player
+    #         sps.team = team
+    #         sps.season = season
+    #         sps.game_type = type
+    #         return sps
+    #
+    #
+    # def getSeasonStats(self, season, team, type):
+    #
+    #     # ok, calculate stats out of gameplayerstats
+    #     seasonStats = []
+    #
+    #     # get all player which played for this team in this season
+    #     players = Player.objects.filter(
+    #         Q(seasonplayerstats__team=team) & Q(seasonplayerstats__season=season) |
+    #         Q(gameplayerstats__game__home_team=team) & Q(gameplayerstats__game__season=season) |
+    #         Q(gameplayerstats__game__away_team=team) & Q(gameplayerstats__game__season=season)
+    #     ).distinct()
+    #
+    #     for player in players:
+    #         stat = self._getSeasonStats(season, team, type, player)
+    #         if stat:
+    #             seasonStats.append(stat)
+    #
+    #     seasonStats.sort(key=lambda x: x.points, reverse=True)
+    #
+    #     return seasonStats
 
 
 class SeasonPlayerStats(CommonPlayerStats):

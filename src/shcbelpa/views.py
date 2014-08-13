@@ -32,7 +32,8 @@ class SeasonView(TemplateView):
             sections[game_type] = Game.objects.filter_by_team(team).filter(season=season, game_type=game_type)
 
         context['team'] = team
-        context['season'] = season
+        context['current_season'] = season
+        context['seasons'] = Game.objects.get_seasons(team)
         context['sections'] = sections
 
         return context
@@ -98,18 +99,18 @@ class StatsView(TemplateView):
         season = get_object_or_404(Season, code=self.kwargs['season'])
         team = get_object_or_404(Team, pk=self.kwargs['team_pk'])
 
-        sections = OrderedDict()
-        sections['all'] = SeasonPlayerStats.objects.get_season_stats(season, team)
+        context['team'] = team
+        context['current_season'] = season
+        context['seasons'] = SeasonPlayerStats.objects.get_seasons(team)
 
-        for game_type in GameType.objects.all():
+        sections = OrderedDict()
+        sections['Total'] = SeasonPlayerStats.objects.get_season_stats(season, team)
+
+        for game_type in GameType.objects.all().order_by('pk'):
             stats = SeasonPlayerStats.objects.get_season_stats_by_type(season, team, game_type)
             sections[game_type.name] = stats
 
         context['sections'] = sections
-
-        context['active'] = 'all'
-        if self.kwargs['game_type']:
-            context['active'] = self.kwargs['game_type']
 
         return context
 
