@@ -97,7 +97,7 @@ $(document).ready(function() {
 $(function(){
       // bind change event to select
       $('#season_select').bind('change', function () {
-          var baseUrl = "/{{ team.pk }}/season/";
+          var baseUrl = "/{{ team.pk }}/stats/";
           var code = $(this).val(); // get selected value
           if (code) { // require a code
               window.location = baseUrl+code; // redirect
