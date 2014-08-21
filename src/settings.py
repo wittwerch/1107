@@ -110,12 +110,12 @@ USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = "de"
 
 # Supported languages
 _ = lambda s: s
 LANGUAGES = (
-    ('en', _('English')),
+    ('de', _('Deutsch')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
@@ -132,7 +132,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -205,7 +205,7 @@ LOGGING = {
     'loggers': {
         'shcbelpa': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'ERROR',
             'propagate': True,
             }
         }
@@ -300,6 +300,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "mezzanine.conf.context_processors.settings",
     "mezzanine.pages.context_processors.page",
     "shcbelpa.context_processors.gallery_processor",
+    "shcbelpa.context_processors.ga_tracking",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -372,6 +373,11 @@ OPTIONAL_APPS = (
 
 HOME_CLUB = 'SHC Belpa 1107'
 PICASA_IMGMAX = 1024
+
+##################
+# GA SETTINGS #
+##################
+GA_TRACKING_CODE = None
 
 ##################
 # LOCAL SETTINGS #
