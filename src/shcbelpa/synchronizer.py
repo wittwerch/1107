@@ -187,8 +187,11 @@ class LigaManager:
                 response = self._call_webservice(url, params)
                 xml_games = untangle.parse(response.content)
 
-                for xml in xml_games.ihs.Spiel:
-                    self.sync_game(xml, team, league, type)
+                try:
+                    for xml in xml_games.ihs.Spiel:
+                        self.sync_game(xml, team, league, type)
+                except IndexError:
+                    self._logger.debug("No games found!")
 
                 self.sync_stats(team, league, type, league_lm_id)
                 self.sync_penalties(team, league, type, league_lm_id)
