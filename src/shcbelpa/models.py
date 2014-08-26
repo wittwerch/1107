@@ -464,6 +464,6 @@ class Teaser(models.Model):
     link = models.URLField(blank=True, null=True)
     image = ImageField(upload_to='teaser', blank=False)
     publish_date = models.DateTimeField()
-    expiry_date = models.DateTimeField()
+    expiry_date = models.DateTimeField(blank=True, null=True)
 
     objects = TeaserManager()
