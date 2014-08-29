@@ -143,19 +143,21 @@ class LigaManager:
         spielnr = int(xml.spielnr.cdata)
         season = Season.objects.get(lm_id=self._mapping['season_id'])
 
+        date_time = datetime.strptime(xml.datum.cdata, "%d.%m.%Y %H:%M:%S")
+
         try:
-            game = Game.objects.get(lm_id=spielnr)
+            game = Game.objects.get(season=season, league=league, game_type=type, date_time=date_time)
+            if game.lm_id and game.lm_id != spielnr:
+                raise Exception("Inconsistent data! Game found: pk=%i, lm_id=%i but spielnr=%i" % (game.pk, game.lm_id, spielnr))
         except Game.DoesNotExist:
             game = Game(season=season, league=league, game_type=type)
+            game.date_time = date_time
 
         game.lm_id = spielnr
-        game.date_time = datetime.strptime(xml.datum.cdata, "%d.%m.%Y %H:%M:%S")
         game.location = xml.spielort.cdata
-        try:
-            game.home_team = self._get_team(xml.heim.cdata)
-            game.away_team = self._get_team(xml.gast.cdata)
-        except:
-            return
+
+        game.home_team = self._get_team(xml.heim.cdata)
+        game.away_team = self._get_team(xml.gast.cdata)
 
         game.result = xml.resultat.cdata
 

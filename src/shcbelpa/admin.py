@@ -11,7 +11,7 @@ class ClubAdmin(admin.ModelAdmin):
 admin.site.register(Club, ClubAdmin)
 
 class TeamAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('club', 'level')
 admin.site.register(Team, TeamAdmin)
 
 class GameAdmin(admin.ModelAdmin):
