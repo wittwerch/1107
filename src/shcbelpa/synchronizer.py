@@ -118,9 +118,9 @@ class LigaManager:
 
             stat.save()
 
-    def _get_team(self, string):
+    def _get_team(self, string, force_level=None):
         #locale.setlocale(locale.LC_ALL, 'de_DE')
-        pattern = re.compile('((?u)[\w\- ]*) J?([1-9ABC]*)$')
+        pattern = re.compile('((?u)[\w\- ]*) J?([1-9ABCI]*)$')
 
         self._logger.debug("Matching %s" % string)
         match = pattern.match(string)
@@ -128,9 +128,14 @@ class LigaManager:
         if match:
             club_name = match.group(1)
             level = match.group(2)
+            if level == 'II':
+                level = 2
         else:
             club_name = string
             level = 1
+
+        if force_level:
+            level = force_level
 
         self._logger.debug("Search club '%s'" % club_name)
         club = Club.objects.get(Q(name=club_name) | Q(alias=club_name))
@@ -156,8 +161,12 @@ class LigaManager:
         game.lm_id = spielnr
         game.location = xml.spielort.cdata
 
-        game.home_team = self._get_team(xml.heim.cdata)
-        game.away_team = self._get_team(xml.gast.cdata)
+        force_level = None
+        if team.level in ('A', 'B', 'C'):
+            force_level = team.level
+
+        game.home_team = self._get_team(xml.heim.cdata, force_level)
+        game.away_team = self._get_team(xml.gast.cdata, force_level)
 
         game.result = xml.resultat.cdata
 
