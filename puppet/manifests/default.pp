@@ -47,6 +47,11 @@ package { "libmysqlclient-dev":
   require => Exec['update'],
 }
 
+package { "node-less":
+  ensure => installed,
+  require => Exec['update'],
+}
+
 # Create virtualenv
 exec { "/usr/bin/virtualenv /virtualenv":
   creates => "/virtualenv",
