@@ -115,6 +115,26 @@ class StatsView(TemplateView):
         return context
 
 
+class HallOfFameView(TemplateView):
+
+    template_name = 'shcbelpa/hall-of-fame.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HallOfFameView, self).get_context_data(**kwargs)
+        stats = SeasonPlayerStats.objects.get_hall_of_fame_stats()
+
+        stats.sort(key=lambda x: x['points'], reverse=True)
+        context['best_scorer'] = stats[:3]
+
+        stats.sort(key=lambda x: x['gp'], reverse=True)
+        context['most_games'] = stats[:3]
+
+        stats.sort(key=lambda x: x['pm'], reverse=True)
+        context['most_penalties'] = stats[:3]
+
+        return context
+
+
 class GalleryView(ListView):
     queryset = Album.objects.all().order_by('-updated')
     template_name = 'shcbelpa/gallery.html'

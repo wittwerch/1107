@@ -14,6 +14,7 @@ from mezzanine.blog.models import BlogPost
 
 class League(models.Model):
     name = models.CharField(max_length=60)
+    is_junior = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.name
@@ -258,10 +259,28 @@ class SeasonPlayerStatsManager(models.Manager):
         return stats
 
 
-    def _generate_stats(self, player, season_player_stats):
+    def get_hall_of_fame_stats(self):
+        hall_of_fame_stats = []
+        for player in Player.objects.all():
+            stats_per_league = []
+            for league in League.objects.filter(is_junior=False):
+                stats = self.get_alltime_stats_by_player(player, league)
+                stats_per_league.append(stats)
+            stats = self._generate_stats(player, stats_per_league, from_dict=True)
+            hall_of_fame_stats.append(stats)
+
+        hall_of_fame_stats.sort(key=lambda x: x['points'], reverse=True)
+        return hall_of_fame_stats
+
+
+    def _generate_stats(self, player, season_player_stats, from_dict=False):
         stats = {}
         for field in ['gp', 'goal','assist','pm_2','pm_5','pm_10','pm_20','pm_25','pm','ppg','ppa','shg','sha', 'gw', 'gt']:
-            values = (stat.__dict__.get(field) for stat in season_player_stats)
+            if from_dict:
+                values = (stat[field] for stat in season_player_stats)
+            else:
+                values = (stat.__dict__.get(field) for stat in season_player_stats)
+
             stats[field] = sum(values)
 
         stats['points'] = stats['goal'] + stats['assist']

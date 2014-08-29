@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles thumbnail %}
+
+{% block meta_title %}
+Hall of Fame
+{% endblock %}
+
+{% block subtitle %}
+Hall of Fame
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <section class="widget widget-roster col-sm-12">
+            <header class="clearfix">
+                <h4>Punkte</h4>
+            </header>
+        </section>
+    </div>
+            <div class="row">
+                <!-- IMAGES -->
+                {% for scorer in best_scorer %}
+                    <div class="col-xs-6 col-md-4 col-lg-3">
+                        <div class="thumbnail">
+
+                            <div class="">
+                            <a href="{% url "player" scorer.player.pk %}">
+                                {% thumbnail scorer.player.get_photo "200x250" crop="center" as im %}
+                                    <img src="{{ im.url }}" class="img-thumbnail" alt="{{ scorer.player.first_name }} {{ scorer.player.last_name }}">
+                                {% endthumbnail %}
+                            </a>
+
+                            <div class="caption caption-roster text-center">
+                                <h5>{{ scorer.points }} Punkte</h5>
+                                <h5>{{ scorer.player.first_name }} {{ scorer.player.last_name }}</h5>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+             </div>
+
+<div class="row">
+    <section class="widget widget-roster col-sm-12">
+            <header class="clearfix">
+                <h4>Spiele</h4>
+            </header>
+        </section>
+    </div>
+            <div class="row">
+                <!-- IMAGES -->
+                {% for scorer in most_games %}
+                    <div class="col-xs-6 col-md-4 col-lg-3">
+                        <div class="thumbnail">
+
+                            <div class="">
+                            <a href="{% url "player" scorer.player.pk %}">
+                                {% thumbnail scorer.player.get_photo "200x250" crop="center" as im %}
+                                    <img src="{{ im.url }}" class="img-thumbnail" alt="{{ scorer.player.first_name }} {{ scorer.player.last_name }}">
+                                {% endthumbnail %}
+                            </a>
+
+                            <div class="caption caption-roster text-center">
+                                <h5>{{ scorer.gp }} Spiele</h5>
+                                <h5>{{ scorer.player.first_name }} {{ scorer.player.last_name }}</h5>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+             </div>
+
+    <div class="row">
+    <section class="widget widget-roster col-sm-12">
+            <header class="clearfix">
+                <h4>Strafminuten</h4>
+            </header>
+        </section>
+    </div>
+            <div class="row">
+                <!-- IMAGES -->
+                {% for scorer in most_penalties %}
+                    <div class="col-xs-6 col-md-4 col-lg-3">
+                        <div class="thumbnail">
+
+                            <div class="">
+                            <a href="{% url "player" scorer.player.pk %}">
+                                {% thumbnail scorer.player.get_photo "200x250" crop="center" as im %}
+                                    <img src="{{ im.url }}" class="img-thumbnail" alt="{{ scorer.player.first_name }} {{ scorer.player.last_name }}">
+                                {% endthumbnail %}
+                            </a>
+
+                            <div class="caption caption-roster text-center">
+                                <h5>{{ scorer.pm }} Strafminuten</h5>
+                                <h5>{{ scorer.player.first_name }} {{ scorer.player.last_name }}</h5>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+             </div>
+
+{% endblock %}
