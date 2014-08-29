@@ -197,6 +197,9 @@ class Game(models.Model):
     def __unicode__(self):
         return smart_unicode("%s, %s - %s" % (self.date_time, self.home_team, self.away_team))
 
+    class Meta:
+        ordering = ['date_time']
+
     objects = GameManager()
 
 
