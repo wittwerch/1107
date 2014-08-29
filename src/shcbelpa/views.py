@@ -15,6 +15,8 @@ class HomeView(TemplateView):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['blog_posts'] = BlogPost.objects.published()[:10]
         context['teasers'] = Teaser.objects.published()
+        context['resultbox'] = Game.objects.get_games_for_resultbox()
+        context['topscorer'] = SeasonPlayerStats.objects.get_topscorer()
         return context
 
 class SeasonView(TemplateView):

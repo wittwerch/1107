@@ -12,8 +12,16 @@
 {% block main %}
 
     <div class="row">
+
+         <!-- TABS WIDGET -->
+        <section class="col-sm-4 widget">
+            {% include "shcbelpa/sidebar/resultbox.html" %}
+            {% include "shcbelpa/sidebar/topscorer.html" %}
+        </section>
+
+
         <!-- ARTICLES V3 WIDGET -->
-        <section class="widget col-sm-12">
+        <section class="widget col-sm-8">
             <!-- Widget header -->
             <header class="clearfix">
                 <h4>Headlines</h4>

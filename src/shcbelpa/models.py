@@ -1,6 +1,8 @@
-from datetime import date
+from datetime import date, datetime
 from django.utils.timezone import now
 
+from collections import OrderedDict
+from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
@@ -24,6 +26,8 @@ class Club(models.Model):
     name = models.CharField(max_length=60)
     # alternative name, used if a Club changes his name
     alias = models.CharField(max_length=60, blank=True)
+    # Abbreviation for that club, used for the result box
+    code = models.CharField(max_length=60, blank=False)
     # city where the club plays
     city = models.CharField(max_length=60, blank=False)
     # URL to official website
@@ -119,7 +123,11 @@ class Roster(models.Model):
 class SeasonManager(models.Manager):
 
     def get_current_season(self):
-        return Season.objects.get(start_date__lte=date.today(),end_date__gte=date.today())
+        try:
+            return Season.objects.get(start_date__lte=date.today(),end_date__gte=date.today())
+        except Season.DoesNotExist:
+            # TODO: do something
+            return Season.objects.order_by('-start_date')[0]
 
 
 class Season(models.Model):
@@ -163,6 +171,30 @@ class GameManager(models.Manager):
             if len(Game.objects.filter(season=season).filter(Q(home_team=team) | Q(away_team=team))) > 0:
                 seasons.append(season)
         return seasons
+
+    def get_games_for_resultbox(self):
+
+        season = Season.objects.get_current_season()
+        resultbox = OrderedDict()
+
+        for team in Team.objects.filter(club__name=settings.HOME_CLUB):
+            last_game = None
+            next_game = None
+            # search last game
+            games = Game.objects.filter(season=season, date_time__lte=datetime.now()).filter(Q(home_team=team) | Q(away_team=team)).order_by("-date_time")
+            if len(games) > 0:
+                last_game = games[0]
+
+            games = Game.objects.filter(season=season, date_time__gte=datetime.now()).filter(Q(home_team=team) | Q(away_team=team)).order_by("date_time")
+            if len(games) > 0:
+                next_game = games[0]
+
+            resultbox[team.league] = {
+                'last_game': last_game,
+                'next_game': next_game
+            }
+
+        return resultbox
 
 
 class Game(models.Model):
@@ -271,6 +303,16 @@ class SeasonPlayerStatsManager(models.Manager):
 
         hall_of_fame_stats.sort(key=lambda x: x['points'], reverse=True)
         return hall_of_fame_stats
+
+
+    def get_topscorer(self):
+        topscorer = OrderedDict()
+        season = Season.objects.get_current_season()
+        for team in Team.objects.filter(club__name=settings.HOME_CLUB).order_by('pk'):
+            stats = self.get_season_stats(season, team)
+            if len(stats) > 0:
+                topscorer[team.league] = stats[0]
+        return topscorer
 
 
     def _generate_stats(self, player, season_player_stats, from_dict=False):

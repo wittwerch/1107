@@ -1,0 +1,19 @@
+{% if topscorer|length > 0 %}
+
+<header class="clearfix">
+    <h4>Topscorer</h4>
+</header>
+
+{% for league,stats in topscorer.items %}
+
+<div class="article-tiny">
+        <p class="post-meta">{{ league }}</p>
+        <p>
+            <span>{{ stats.player }}</span> <span style="float: right;">G: {{ stats.goal }} A: {{ stats.assist }} P: <strong>{{ stats.points }}</strong></span>
+        </p>
+        <hr/>
+</div>
+
+{% endfor %}
+
+{% endif %}
