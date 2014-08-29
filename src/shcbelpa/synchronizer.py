@@ -204,5 +204,7 @@ class LigaManager:
                 except IndexError:
                     self._logger.debug("No games found!")
 
-                self.sync_stats(team, league, type, league_lm_id)
-                self.sync_penalties(team, league, type, league_lm_id)
+                # TODO: Don't import Cup stats, because they are wrong
+                if type.id != 5:
+                    self.sync_stats(team, league, type, league_lm_id)
+                    self.sync_penalties(team, league, type, league_lm_id)
