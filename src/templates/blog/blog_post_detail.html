@@ -28,6 +28,14 @@
         <p>{{ blog_post.content|richtext_filters|safe }}
         </p>
 
+        <small>
+        {% if blog_post.user %}
+        {{ blog_post.user.get_full_name|default:blog_post.user.username }}, {{ blog_post.publish_date|date:"d. F o" }}
+        {% endif %}
+        <br />
+        <br />
+        </small>
+
         {% if blog_post.gamerecap.game %}
             <strong>{% trans "aufstellung" %}</strong><br/>
             {% for stat in blog_post.gamerecap.game.gameplayerstats_set.all %}
@@ -45,6 +53,32 @@
         {% endif %}
     </article>
 
+    {% if blog_post.related_posts.all %}
+        <!-- RELATED POSTS -->
+        <section class="widget">
+            <!--Widget header-->
+            <header class="clearfix"><h4>Related</h4></header>
+
+            <!--Widget Contents-->
+            <div class="row">
+                {% for post in blog_post.related_posts.all %}
+                    <div class="article-small col-md-3 col-sm-6">
+                                                <a href="{{ post.get_absolute_url }}" class="title"><h4>{{ post.title }}</h4>
+                        </a>
+                        <p class="post-meta">
+                            <span class="fa fa-clock-o"></span> {{ post.publish_date|date:"d.m.Y" }} &nbsp;
+                            {% with post.user as author %}
+                            {% if author %}
+                            <span class="fa fa-user"></span> {{ author.get_full_name|default:author.username }} &nbsp;
+                            {% endif %}
+                            {% endwith %}
+                        </p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 
 
     <!-- SHARE POST
