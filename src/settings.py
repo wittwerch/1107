@@ -152,6 +152,7 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -378,6 +379,12 @@ PICASA_IMGMAX = 1024
 # GA SETTINGS #
 ##################
 GA_TRACKING_CODE = None
+
+##################
+# DJANGO COMPRESSOR #
+##################
+
+COMPRESS_ENABLED = True
 
 ##################
 # LOCAL SETTINGS #

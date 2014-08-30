@@ -1,4 +1,4 @@
-{% load pages_tags mezzanine_tags i18n future staticfiles %}
+{% load pages_tags mezzanine_tags i18n future staticfiles compress %}
 
 <!DOCTYPE html>
 <html id="{% block page_id %}home-version-2{% endblock %}" class="boxed-style flat-style">
@@ -9,6 +9,8 @@
 
     <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
     <meta name="description" content="{% block meta_description %}Die Homepage des Strassenhockey Clubs Belpa 1107. Hier finden Sie alles, von Spielberichten, Statistiken, dem aktuellen Kader und vielem mehr.{% endblock %}">
+
+    {% compress css %}
 
     <!-- Stylesheets -->
     <link href="{% static "css/style.css" %}" rel="stylesheet">
@@ -25,6 +27,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <script src="{% static "js/ie8.js" %}"></script>
     <![endif]-->
+
+    {% endcompress %}
 
     {% ifinstalled mezzanine.blog %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
@@ -190,6 +194,8 @@
 </footer>
 <!--footer-->
 
+{% compress js %}
+
 <!-- jQuery  -->
 <script src="{% static "js/jquery.min.js" %}"></script>
 <script src="{% static "js/jquery-ui.custom.min.js" %}"></script>
@@ -202,6 +208,8 @@
 <script src="{% static "js/bootstrap-sortable.js" %}"></script>
 
 {% block extra_js %}{% endblock %}
+
+{% endcompress %}
 
 </body>
 </html>
