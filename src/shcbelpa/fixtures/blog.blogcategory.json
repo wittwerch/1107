@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "blog.blogcategory", "fields": {"slug": "transfer", "site": 1, "title": "Transfer"}}, {"pk": 2, "model": "blog.blogcategory", "fields": {"slug": "news", "site": 1, "title": "News"}}]

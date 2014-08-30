@@ -45,7 +45,15 @@
                             {% endif %}
                             {% endwith %}
                             <span class="fa fa-tag">
-                                NLA Playoff
+                                {% if blog_post.gamerecap.game %}
+                                    {{ blog_post.gamerecap.game.league }} {{ blog_post.gamerecap.game.game_type }}
+                                {% else %}
+                                    {% with blog_post.categories.all as categories %}
+                                        {% for category in categories %}
+                                            {{ category }}{% if not forloop.last %}, {% endif %}
+                                        {% endfor %}
+                                    {% endwith %}
+                                {% endif %}
                             </span>
                             <!--<a href="#"><span class="fa fa-comments"></span> 1,324</a> &nbsp;-->
                             <!--<a href="#"><span class="fa fa-eye"></span> 4,448</a>-->
