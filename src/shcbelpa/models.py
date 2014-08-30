@@ -465,7 +465,7 @@ class Photo(models.Model):
     geo_longitude = models.CharField(max_length=50, blank=True)
     updated = models.DateTimeField()
 
-    players = models.ManyToManyField(Player,related_name='photos',blank=True,null=True)
+    #players = models.ManyToManyField(Player,related_name='photos',blank=True,null=True)
 
     def __unicode__(self):
         return u'%s' % self.title
@@ -474,6 +474,11 @@ class Photo(models.Model):
         ordering = ('-taken_date',)
         get_latest_by = 'taken_date'
 
+class AlbumManager(models.Manager):
+
+    def get_albums(self):
+        queryset = super(AlbumManager, self).get_query_set()
+        return queryset.exclude(title='Profilfotos').order_by('-updated')
 
 class Album(models.Model):
     gphoto_id = models.CharField(max_length=50, unique=True, db_index=True) # or big numeric field?
@@ -500,6 +505,7 @@ class Album(models.Model):
     class Meta:
         ordering = ('-updated',)
 
+    objects = AlbumManager()
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)

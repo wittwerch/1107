@@ -11,7 +11,7 @@
         <!-- IMAGES -->
         <div class="images">
             <ul class="clearfix da-thumbs">
-                {% for album in albums %}
+                {% for album in album_list %}
                     <li>
                         <a href="{% url 'album' album.pk %}"
                            title="{{ album.title }}"
@@ -29,6 +29,21 @@
             </ul>
         </div>
     </article>
+        {% if is_paginated %}
+        <div class="pagination">
+            <ul style="padding-left: 0px;">
+            {% for page in paginator.page_range %}
+
+            {% if page == page_obj.number %}
+                <li class="active"><a href="#">{{ page }}</a></li>
+            {% else %}
+                <li><a href="?page={{ page }}">{{ page }}</a></li>
+            {% endif %}
+        {% endfor %}
+            </ul>
+       </div>
+
+        {% endif %}
 
 {% endblock %}
 
