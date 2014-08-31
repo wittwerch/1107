@@ -1,0 +1,23 @@
+
+{% load twitter_tags i18n %}
+
+{% tweets_default as tweets %}
+
+{% if tweets %}
+
+<header class="clearfix">
+    <h4>Tweets</h4>
+</header>
+
+<ul class="list-unstyled tweets">
+    {% for tweet in tweets %}
+    <li class="tweet">
+        <p>{{ tweet.text|safe }}<br>
+        <small class="timespan">
+        {% blocktrans with sometime=tweet.created_at|timesince %}{{ sometime }} ago{% endblocktrans %}
+        <a href="http://twitter.com/{{ tweet.user_name }}/status/{{ tweet.remote_id }}"><span class="glyphicon glyphicon-new-window"></span></a>
+        </small></p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
