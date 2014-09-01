@@ -77,8 +77,26 @@ class SeasonStatsTestCase(TestCase):
         self.assertEqual(stat.points, 52)
 
 
+class TeamTestCase(TestCase):
 
+    fixtures = [
+        'shcbelpa.club.json',
+        'shcbelpa.team.json',
+        'shcbelpa.league.json'
+    ]
 
+    def test_team_code_property(self):
+        blp = Team.objects.get(pk=1)
+        self.assertEqual(blp.club.code, 'BLP')
+        self.assertEqual(blp.code, 'BLP')
+
+        blp2 = Team.objects.get(pk=2)
+        self.assertEqual(blp2.club.code, 'BLP')
+        self.assertEqual(blp2.code, 'BL2')
+
+        juna = Team.objects.get(pk=3)
+        self.assertEqual(juna.club.code, 'BLP')
+        self.assertEqual(juna.code, 'BLP')
 
 
 

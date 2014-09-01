@@ -103,6 +103,12 @@ class Team(models.Model):
         else:
             return self.club.name
 
+    @property
+    def code(self):
+        if self.level.isdigit() and self.level != '1':
+            return "%s%s" % (self.club.code[:2], self.level)
+        return self.club.code
+
     def __unicode__(self):
         return "%s (%s)" % (self.club.name, self.get_level_display())
 

@@ -7,7 +7,8 @@ class LeagueAdmin(admin.ModelAdmin):
 admin.site.register(League, LeagueAdmin)
 
 class ClubAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'alias', 'code', 'city')
+    search_fields = ['name', 'alias', 'code']
 admin.site.register(Club, ClubAdmin)
 
 class TeamAdmin(admin.ModelAdmin):

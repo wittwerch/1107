@@ -7,13 +7,13 @@
 <div class="article-tiny">
     {% if games.last_game %}
         <p class="post-meta">{{ games.last_game.league }} - {{ games.last_game.game_type }}</p>
-        <p style="text-align: center;">{{ games.last_game.home_team.club.code }} <strong>{{ games.last_game.result }}</strong> {{ games.last_game.away_team.club.code }}</p>
+        <p style="text-align: center;">{{ games.last_game.home_team.code }} <strong>{{ games.last_game.result }}</strong> {{ games.last_game.away_team.code }}</p>
         {% if games.next_game %}
         {% endif %}
     {% elif games.next_game %}
         {% with games.next_game as game %}
             <p class="post-meta">{{ game.league }} - {{ game.game_type }}</p>
-            <p style="text-align: center;">{{ game.home_team.club.code }} vs. {{ game.away_team.club.code }}</p>
+            <p style="text-align: center;">{{ game.home_team.code }} vs. {{ game.away_team.code }}</p>
             <p class="post-meta">{{ game.date_time|date:"d.m.Y, G:i" }} in {{ game.location }}</p>
         {% endwith %}
         <hr/>
