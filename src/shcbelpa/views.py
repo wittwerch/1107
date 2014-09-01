@@ -140,7 +140,6 @@ class HallOfFameView(TemplateView):
 class GalleryView(ListView):
     queryset = Album.objects.all().order_by('-updated')
     template_name = 'shcbelpa/gallery.html'
-    context_object_name = "albums"
     paginate_by = 16
 
 
