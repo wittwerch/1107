@@ -86,3 +86,9 @@
     {% include "shcbelpa/sidebar/facebook.html" %}
 
 {% endblock %}
+
+{% block extra_js %}
+    <script>
+    $("body").tooltip({ selector: '[data-toggle="tooltip"]' });
+    </script>
+{% endblock %}
