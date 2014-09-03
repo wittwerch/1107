@@ -55,8 +55,13 @@ class LigaManager:
         }
         response = self._call_webservice(url, params)
         season = Season.objects.get(lm_id=self._mapping['season_id'])
-        xml_stats = untangle.parse(response.content)
-        for xml in xml_stats.ihs.Spieler:
+        xml_stats = {}
+        try:
+            xml_stats = untangle.parse(response.content).ihs.Spieler
+        except IndexError:
+            self._logger.info("No stats found")
+
+        for xml in xml_stats:
 
             if xml.vereinshort.cdata != 'BLP':
                 continue
@@ -92,8 +97,13 @@ class LigaManager:
         }
         response = self._call_webservice(url, params)
         season = Season.objects.get(lm_id=self._mapping['season_id'])
-        xml_stats = untangle.parse(response.content)
-        for xml in xml_stats.ihs.Spieler:
+        xml_stats = {}
+        try:
+            xml_stats = untangle.parse(response.content).ihs.Spieler
+        except IndexError:
+            self._logger.info("No penalties found")
+
+        for xml in xml_stats:
 
             if xml.vereinshort.cdata != 'BLP':
                 continue
