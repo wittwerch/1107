@@ -62,7 +62,7 @@
             <!--Widget Contents-->
             <div class="row">
                 {% for post in blog_post.related_posts.all %}
-                    <div class="article-small col-md-3 col-sm-6">
+                    <div class="article-small col-xs-12 col-md-4">
                                                 <a href="{{ post.get_absolute_url }}" class="title"><h4>{{ post.title }}</h4>
                         </a>
                         <p class="post-meta">
@@ -73,6 +73,7 @@
                             {% endif %}
                             {% endwith %}
                         </p>
+                        <p></p>
                     </div>
 
                 {% endfor %}
