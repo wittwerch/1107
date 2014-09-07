@@ -132,8 +132,10 @@ class SeasonManager(models.Manager):
         try:
             return Season.objects.get(start_date__lte=date.today(),end_date__gte=date.today())
         except Season.DoesNotExist:
-            # TODO: do something
-            return Season.objects.order_by('-start_date')[0]
+            if len(Season.objects.all()) > 0:
+                # fallback to latest season
+                return Season.objects.order_by('-start_date')[0]
+            raise Exception("No season found!")
 
 
 class Season(models.Model):

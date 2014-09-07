@@ -28,6 +28,24 @@ class SeasonTestCase(TestCase):
         self.assertEqual(season.start_date.month, start_date.month)
         self.assertEqual(season.start_date.day, start_date.day)
 
+    def test_no_valid_season(self):
+        Season.objects.all().delete()
+        with self.assertRaises(Exception):
+            Season.objects.get_current_season()
+
+    def test_fallback_to_last_season(self):
+        Season.objects.all().delete()
+
+        now = datetime.now()
+        start_date = now - timedelta(days=365)
+        end_date = now - timedelta(days=1)
+
+        Season(start_date=start_date, end_date=end_date).save()
+        season = Season.objects.get_current_season()
+        self.assertEqual(season.start_date.year, start_date.year)
+        self.assertEqual(season.start_date.month, start_date.month)
+        self.assertEqual(season.start_date.day, start_date.day)
+
 
 class GameTestCase(TestCase):
 
@@ -41,12 +59,11 @@ class GameTestCase(TestCase):
     ]
 
     def test_date_time_of_existing_game(self):
-        # NLA 1314 / 13.09.2013 against Kernenried
+        # NLA 1314 / 13.09.2013 19:30 against Kernenried
         game = Game.objects.get(pk=961)
 
-        #from django.utils import timezone
-        #date_time = timezone.make_aware(datetime(year=2013,month=9, day=13, hour=19, minute=30), timezone.get_default_timezone())
-        date_time = datetime(year=2013,month=9, day=13, hour=19, minute=30)
+        from django.utils import timezone
+        date_time = timezone.make_aware(datetime(year=2013,month=9, day=13, hour=19, minute=30), timezone.get_default_timezone())
 
         self.assertEqual(game.date_time, date_time)
 
@@ -70,10 +87,14 @@ class SeasonStatsTestCase(TestCase):
         game_type = GameType.objects.get(name='Qualifikation')
 
         stats = SeasonPlayerStats.objects.get_season_stats_by_type(season, team, game_type)
+        # test if there are 20 records
         self.assertEqual(len(stats), 20)
 
+        # get the topscorer
         stat = stats[0]
+        # check if it's the right player
         self.assertEqual(stat.player.pk, 231)
+        # check the sum of the points he scored
         self.assertEqual(stat.points, 52)
 
 
