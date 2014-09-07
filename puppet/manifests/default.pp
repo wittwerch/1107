@@ -47,6 +47,11 @@ package { "libmysqlclient-dev":
   require => Exec['update'],
 }
 
+package { "memcached":
+  ensure => installed,
+  require => Exec['update'],
+}
+
 package { "node-less":
   ensure => installed,
   require => Exec['update'],
