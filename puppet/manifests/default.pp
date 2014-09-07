@@ -63,3 +63,13 @@ exec { "/usr/bin/virtualenv /virtualenv":
 exec { "/virtualenv/bin/pip install -r /vagrant/src/requirements.txt":
   require => Exec['virtualenv'],
 }
+
+file { "/etc/timezone":
+  content => "Europe/Zurich"
+}
+
+exec { "dpkg-reconfigure --frontend noninteractive tzdata":
+  subscribe   => File["/etc/timezone"],
+  refreshonly => true
+}
+
