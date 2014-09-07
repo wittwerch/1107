@@ -7,6 +7,7 @@ import logging
 import untangle
 from django.conf import settings
 from django.db.models import Q
+import pytz
 
 from .models import Team, GameType, League, Game, Season, Club, Player, SeasonPlayerStats
 
@@ -158,10 +159,12 @@ class LigaManager:
         spielnr = int(xml.spielnr.cdata)
         season = Season.objects.get(lm_id=self._mapping['season_id'])
 
-        date_time = datetime.strptime(xml.datum.cdata, "%d.%m.%Y %H:%M:%S")
+        naive = datetime.strptime(xml.datum.cdata, "%d.%m.%Y %H:%M:%S")
+        date_time = pytz.timezone(settings.TIME_ZONE).localize(naive, is_dst=None)
 
         try:
             game = Game.objects.get(season=season, league=league, game_type=type, date_time=date_time)
+            print game
             if game.lm_id and game.lm_id != spielnr:
                 raise Exception("Inconsistent data! Game found: pk=%i, lm_id=%i but spielnr=%i" % (game.pk, game.lm_id, spielnr))
         except Game.DoesNotExist:

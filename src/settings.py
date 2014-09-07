@@ -106,7 +106,7 @@ ALLOWED_HOSTS = []
 TIME_ZONE = 'Europe/Zurich'
 
 # If you set this to True, Django will use timezone-aware datetimes.
-USE_TZ = False
+USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -229,6 +229,8 @@ PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
 # project specific.
 CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 
+CACHE_MIDDLEWARE_SECONDS = 300
+
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = "/static/"
@@ -278,8 +280,6 @@ INSTALLED_APPS = (
     "mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.pages",
-    "mezzanine.galleries",
-    "mezzanine.twitter",
     "sorl.thumbnail",
     "shcbelpa",
     #"mezzanine.accounts",
