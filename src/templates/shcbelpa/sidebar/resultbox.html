@@ -4,24 +4,38 @@
 
 {% for league,games in resultbox.items %}
 
+    {% if games.last_game or games.next_game %}
 <div class="article-tiny">
     {% if games.last_game %}
-        <p class="post-meta">{{ games.last_game.league }} - {{ games.last_game.game_type }}</p>
-        <p style="text-align: center;">{{ games.last_game.home_team.code }} <strong>{{ games.last_game.result }}</strong> {{ games.last_game.away_team.code }}</p>
+        {% with games.last_game as game %}
+        <p class="resultbox-top">{{ games.last_game.league }} - {{ games.last_game.game_type }}</p>
+        <p class="resultbox-game">
+            <a rel="tooltip" data-toggle="tooltip" data-placement="top" title="{{ game.home_team.name }}">{{ game.home_team.code }}</a>
+            <strong>{{ games.last_game.result }}</strong>
+            <a rel="tooltip" data-toggle="tooltip" data-placement="top" title="{{ game.away_team.name }}">{{ game.away_team.code }}</a>
+        </p>
+        {% endwith %}
         {% if games.next_game %}
+            {% with games.next_game as game %}
+            <p class="resultbox-bottom">
+            Next: <a rel="tooltip" data-toggle="tooltip" data-placement="top" title="{{ game.opponent_team.name }}">{{ game.opponent_team.code }}</a>, {{ game.game_type }}<br/>
+            {{ game.date_time|date:"d.m.Y, G:i" }}{% if game.location %} in {{ game.location }}{% endif %}
+            </p>
+            {% endwith %}
         {% endif %}
     {% elif games.next_game %}
         {% with games.next_game as game %}
-            <p class="post-meta">{{ game.league }} - {{ game.game_type }}</p>
-            <p style="text-align: center;">
+            <p class="resultbox-top">{{ game.league }} - {{ game.game_type }}</p>
+            <p class="resultbox-game">
                 <a rel="tooltip" data-toggle="tooltip" data-placement="top" title="{{ game.home_team.name }}">{{ game.home_team.code }}</a>
                 vs.
                 <a rel="tooltip" data-toggle="tooltip" data-placement="top" title="{{ game.away_team.name }}">{{ game.away_team.code }}</a>
             </p>
-            <p class="post-meta">{{ game.date_time|date:"d.m.Y, G:i" }}{% if game.location %} in {{ game.location }}{% endif %}</p>
+            <p class="resultbox-bottom">{{ game.date_time|date:"d.m.Y, G:i" }}{% if game.location %} in {{ game.location }}{% endif %}</p>
         {% endwith %}
-        <hr/>
+
     {% endif %}
 </div>
+    {% endif %}
 
 {% endfor %}

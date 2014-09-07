@@ -221,6 +221,15 @@ class Game(models.Model):
     # id from LigaManager
     lm_id = models.IntegerField(blank=True,null=True,unique=True)
 
+    def opponent_team(self):
+        if self.home_team.club.name == settings.HOME_CLUB:
+            return self.away_team
+        return self.home_team
+
+    def is_home(self):
+        if self.home_team.club.name == settings.HOME_CLUB:
+            return True
+        return False
 
     def get_absolute_url(self):
         """

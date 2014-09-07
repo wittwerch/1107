@@ -16,7 +16,9 @@ class TeamAdmin(admin.ModelAdmin):
 admin.site.register(Team, TeamAdmin)
 
 class GameAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['date_time', 'home_team', 'away_team', 'season', 'game_type']
+    list_filter = ('league', 'season', 'game_type')
+    ordering = ['-date_time']
 admin.site.register(Game, GameAdmin)
 
 class PlayerAdmin(admin.ModelAdmin):

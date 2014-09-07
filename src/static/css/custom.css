@@ -51,6 +51,48 @@ dd {
   font-stretch: condensed;
 }
 
+.resultbox-top {
+  margin-top: 5px;
+  margin-left: 10px;
+      text-align: center;
+
+  border: none;
+  color: #606068;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 13px;
+  display: inline-block;
+  overflow: visible!important;
+}
+
+.resultbox-bottom {
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+      text-align: left;
+  border: none;
+  color: #606068;
+  font-size: 13px;
+  line-height: 13px;
+  display: inline-block;
+  overflow: visible!important;
+}
+
+.resultbox-game {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.article-tiny {
+    margin-top: 0px;
+  border: 1px solid #e0e0e8;
+}
+
+.resultbox {
+
+}
+
 .widget-roster {
   margin-bottom: 15px;
 }
