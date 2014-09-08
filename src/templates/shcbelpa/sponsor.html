@@ -20,7 +20,9 @@ Sponsoren
 
                             <div class="thumbnail">
                                 {% thumbnail sponsor.logo "200" as im %}
-                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-thumbnail" alt="{{ sponsor.name }}">
+                                    <a href="{{ sponsor.url }}" target='_blank'>
+                                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-thumbnail" alt="{{ sponsor.name }}">
+                                    </a>
                                 {% endthumbnail %}
 
                             <div class="caption caption-roster text-center">
@@ -35,7 +37,5 @@ Sponsoren
                     </div>
                 {% endfor %}
             </div>
-
-
 
 {% endblock %}
