@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import League, Club, Game, Team, Player, Season, GameRecap, Teaser
+from .models import League, Club, Game, Team, Player, Season, GameRecap, Teaser, Roster, Sponsor
 
 class LeagueAdmin(admin.ModelAdmin):
     pass
@@ -37,3 +37,12 @@ admin.site.register(GameRecap, GameRecapAdmin)
 class TeaserAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Teaser, TeaserAdmin)
+
+class RosterAdmin(admin.ModelAdmin):
+    list_display = ['team', 'player', 'position']
+    list_filter = ('team', 'position')
+admin.site.register(Roster, RosterAdmin)
+
+class SponsorAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Sponsor, SponsorAdmin)
