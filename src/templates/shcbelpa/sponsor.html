@@ -16,12 +16,12 @@ Sponsoren
                 <!-- IMAGES -->
                 {% for sponsor in sponsors %}
                     <div class="col-xs-6 col-md-4 col-lg-3">
-                        <div class="thumbnail">
+                        <div class="thumbnail" style="height: 300px;">
 
                             <div class="thumbnail">
                                 {% thumbnail sponsor.logo "200" as im %}
                                     <a href="{{ sponsor.url }}" target='_blank'>
-                                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-thumbnail" alt="{{ sponsor.name }}">
+                                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="img-thumbnail" style="border: none;" alt="{{ sponsor.name }}">
                                     </a>
                                 {% endthumbnail %}
 
