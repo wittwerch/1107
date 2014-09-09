@@ -1,4 +1,5 @@
 from collections import OrderedDict
+import json
 
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
@@ -148,6 +149,18 @@ class AlbumView(DetailView):
     context_object_name = 'album'
     template_name = 'shcbelpa/album.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(AlbumView, self).get_context_data(**kwargs)
+        album = context['album']
+        photos = []
+        for photo in album.photos.all():
+            photos.append({
+                'thumb': photo.medium_url,
+                'big': photo.content_url
+            })
+
+        context['json'] = json.dumps(photos)
+        return context
 
 class SponsorView(ListView):
     queryset = Sponsor.objects.all()

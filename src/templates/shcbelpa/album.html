@@ -10,11 +10,7 @@
         <article class="article-large entry-content">
             <!-- IMAGES -->
         <div class="galleria">
-            {% for photo in album.photos.all %}
-                <a href="{{ photo.content_url }}">
-                    <img src="{{ photo.medium_url }}">
-                </a>
-            {% endfor %}
+
         </div>
         </article>
         <p>
@@ -25,8 +21,6 @@
 
 {% block extra_css %}
 
-    <link rel="stylesheet" href="{% static "css/colorbox.css" %}"/>
-
 <style>
     .galleria{ height: 500px; background: #fff }
     body .galleria-thumbnails .galleria-image { width:160px }
@@ -36,15 +30,18 @@
 
 {% block extra_js %}
 
-    <script src="{% static "js/galleria/galleria-1.3.5.js" %}"></script>
+    <script src="{% static "js/galleria/galleria-1.4.2.js" %}"></script>
 
+     {% autoescape off %}
     <script>
         Galleria.loadTheme('{% static "js/galleria/themes/folio/galleria.folio.min.js" %}');
         Galleria.run('.galleria', {
             theme: 'folio',
-            preload: 5
+            preload: 5,
+            dataSource: {{ json }}
         });
     </script>
+    {% endautoescape %}
 
 {% endblock %}
 

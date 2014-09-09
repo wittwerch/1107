@@ -9,3 +9,4 @@ django-compressor==1.4
 python-memcached==1.53
 django_extensions
 setproctitle
+gunicorn
