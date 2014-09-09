@@ -75,7 +75,7 @@ class Player(models.Model):
         return "%s %s" % (self.first_name, self.last_name)
 
     class Meta:
-        ordering = ['last_name']
+        ordering = ['first_name']
 
     objects = PlayerManager()
 
