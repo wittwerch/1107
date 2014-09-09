@@ -9,7 +9,7 @@
 
         <article class="article-large entry-content">
             <!-- IMAGES -->
-        <div class="galleria">
+        <div id="galleria">
 
         </div>
         </article>
@@ -22,8 +22,7 @@
 {% block extra_css %}
 
 <style>
-    .galleria{ height: 500px; background: #fff }
-    body .galleria-thumbnails .galleria-image { width:160px }
+    #galleria{ height: 500px; }
 </style>
 
     <link href="{% static "js/galleria/themes/folio/galleria.folio.css" %}" rel="stylesheet">
@@ -32,16 +31,16 @@
 
 {% block extra_js %}
 
-    <script src="{% static "js/galleria/galleria-1.4.2.js" %}"></script>
+    <script src="{% static "js/galleria/galleria-1.2.9.min.js" %}"></script>
 
      {% autoescape off %}
     <script>
         Galleria.loadTheme('{% static "js/galleria/themes/folio/galleria.folio.min.js" %}');
-        Galleria.run('.galleria', {
-            theme: 'folio',
-            preload: 5,
-            dataSource: {{ json }}
+        Galleria.run('#galleria', {
+            dataSource: {{ json }},
+            preload: 5
         });
+
     </script>
     {% endautoescape %}
 

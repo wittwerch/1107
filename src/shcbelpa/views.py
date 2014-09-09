@@ -156,7 +156,7 @@ class AlbumView(DetailView):
         for photo in album.photos.all():
             photos.append({
                 'thumb': photo.medium_url,
-                'big': photo.content_url
+                'image': photo.content_url
             })
 
         context['json'] = json.dumps(photos)
