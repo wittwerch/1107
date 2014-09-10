@@ -18,6 +18,7 @@ sys.path.append('../src/')
 
 from shcbelpa.models import *
 
+exit()
 
 season = Season.objects.get(pk=20)
 team = Team.objects.get(pk=5)
