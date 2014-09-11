@@ -37,6 +37,10 @@ urlpatterns += patterns('',
     # Redirect from legacy url to mezzanine blog feed
     url(r'^feed/$', RedirectView.as_view(url='/blog/feeds/atom')),
 
+    url(r'^news/[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/(?P<slug>[-\w]+)/$',
+        RedirectView.as_view(url='/blog/%(slug)s/')
+    ),
+
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
