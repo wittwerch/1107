@@ -21,6 +21,9 @@ class League(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name = "Liga"
+        verbose_name_plural = "Ligen"
 
 class Club(models.Model):
     name = models.CharField(max_length=60)
@@ -76,6 +79,8 @@ class Player(models.Model):
 
     class Meta:
         ordering = ['first_name']
+        verbose_name = "Spieler"
+        verbose_name_plural = "Spieler"
 
     objects = PlayerManager()
 
@@ -125,6 +130,9 @@ class Roster(models.Model):
     )
     position = models.CharField(max_length=1,choices=POSITION_CHOICES)
 
+    class Meta:
+        verbose_name = "Kader"
+        verbose_name_plural = "Kader"
 
 class SeasonManager(models.Manager):
 
@@ -155,6 +163,8 @@ class Season(models.Model):
 
     class Meta:
         ordering = ['-start_date']
+        verbose_name = "Saison"
+        verbose_name_plural = "Saisons"
 
     objects = SeasonManager()
 
@@ -249,6 +259,8 @@ class Game(models.Model):
 
     class Meta:
         ordering = ['date_time']
+        verbose_name = "Spiel"
+        verbose_name_plural = "Spiele"
 
     objects = GameManager()
 
@@ -256,6 +268,9 @@ class Game(models.Model):
 class GameRecap(BlogPost):
     game = models.ForeignKey(Game)
 
+    class Meta:
+        verbose_name = "Matchbericht"
+        verbose_name_plural = "Matchberichte"
 
 class CommonPlayerStats(models.Model):
     player = models.ForeignKey(Player)
