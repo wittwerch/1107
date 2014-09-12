@@ -4,6 +4,9 @@ from __future__ import absolute_import, unicode_literals
 # MEZZANINE SETTINGS #
 ######################
 
+# All logged-in user can edit/view all BlogPosts
+OWNABLE_MODELS_ALL_EDITABLE = ('blog.BlogPost',)
+
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are
 # common enough to be put here, commented out, for convenient
