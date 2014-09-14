@@ -35,22 +35,6 @@
         <br />
         <br />
         </small>
-
-        {% if blog_post.gamerecap.game %}
-            <strong>{% trans "aufstellung" %}</strong><br/>
-            {% for stat in blog_post.gamerecap.game.gameplayerstats_set.all %}
-
-                {% if forloop.first %}
-                    {{ stat.player }} ({{ stat.goal }} Tore / {{ stat.assist }} Assists)
-                {% else %}
-                    {{ stat.player }} ({{ stat.goal }}/{{ stat.assist }})
-                {% endif %}
-
-                {% if not forloop.last %}
-                    ,
-                {% endif %}
-            {% endfor %}
-        {% endif %}
     </article>
 
     {% if blog_post.related_posts.all %}
