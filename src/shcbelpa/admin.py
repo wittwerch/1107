@@ -1,8 +1,10 @@
+from copy import deepcopy
+
 from django.contrib import admin
 from django.conf import settings
+from mezzanine.blog.admin import blogpost_fieldsets, DisplayableAdmin
 
 from .models import League, Club, Game, Team, Player, Season, GameRecap, Teaser, Roster, Sponsor
-
 from django.contrib.admin import SimpleListFilter
 
 class HomeTeamFilter(SimpleListFilter):
@@ -53,8 +55,13 @@ class SeasonAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Season, SeasonAdmin)
 
+# Import admin fields layout from the mezzanine blog app
+gamerecap_fieldsets = deepcopy(blogpost_fieldsets)
+# add custom field game on top
+gamerecap_fieldsets[0][1]["fields"].insert(1, "game")
+
 class GameRecapAdmin(admin.ModelAdmin):
-    pass
+    fieldsets = gamerecap_fieldsets
 admin.site.register(GameRecap, GameRecapAdmin)
 
 class TeaserAdmin(admin.ModelAdmin):
