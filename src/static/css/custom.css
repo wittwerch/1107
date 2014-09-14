@@ -222,3 +222,23 @@ dd {
   border-width: 0 5px 5px;
   border-bottom-color: #000000;
 }
+
+.topscorer-top {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom:5px;
+  text-align: center;
+
+  border: none;
+  color: #606068;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 13px;
+  display: inline-block;
+  overflow: visible!important;
+}
+
+.topscorer-player {
+  margin: 0px;
+  margin-left: 10px;
+}
