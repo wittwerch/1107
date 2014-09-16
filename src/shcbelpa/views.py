@@ -4,8 +4,9 @@ import json
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
 from mezzanine.blog.models import BlogPost
+from annoying.functions import get_object_or_None
 
-from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor, Teaser
+from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor, Teaser, Table
 
 
 class HomeView(TemplateView):
@@ -38,6 +39,10 @@ class SeasonView(TemplateView):
         context['current_season'] = season
         context['seasons'] = Game.objects.get_seasons(team)
         context['sections'] = sections
+
+        # Table
+        context['table'] = Table.objects.filter(season=season, league=team.league, game_type=game_type).order_by('position')
+        print context['table']
 
         return context
 

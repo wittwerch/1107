@@ -8,8 +8,9 @@ import untangle
 from django.conf import settings
 from django.db.models import Q
 import pytz
+from annoying.functions import get_object_or_None
 
-from .models import Team, GameType, League, Game, Season, Club, Player, SeasonPlayerStats
+from .models import Team, GameType, League, Game, Season, Club, Player, SeasonPlayerStats, Table
 
 
 class LigaManagerError(Exception):
@@ -153,7 +154,34 @@ class LigaManager:
         self._logger.debug("Search team with level '%s'" % level)
         return Team.objects.get(club=club, level=level)
 
+    def sync_table(self, season, league, league_ssha_id, game_type):
+        url = "%s/tabelle.aspx" % self.WS_URL
+        params = {
+            "typ": "liga",
+            "id": league_ssha_id
+        }
+        self._logger.info("Fetching table for league %s" % (league_ssha_id, ))
+        response = self._call_webservice(url, params)
 
+        xml_table = untangle.parse(response.content)
+
+        try:
+            for xml in xml_table.ihs.Mannschaften.Mannschaft:
+                team = self._get_team(xml.Team.cdata)
+                table = get_object_or_None(Table, team=team, season=season, league=league, game_type=game_type)
+                if table is None:
+                    table = Table(team=team, season=season, league=league, game_type=game_type)
+                table.position = int(xml.Rang.cdata)
+                table.gp = int(xml.Spiele.cdata)
+                table.win = int(xml.Siege.cdata)
+                table.loss = int(xml.Niederlagen.cdata)
+                table.tie = int(xml.Remis.cdata)
+                table.diff = xml.Tore.cdata
+                table.points = int(xml.Punkte.cdata)
+
+                table.save()
+        except IndexError:
+            self._logger.debug("No table entries found!")
 
     def sync_game(self, xml, team, league, type):
         spielnr = int(xml.spielnr.cdata)
@@ -221,3 +249,7 @@ class LigaManager:
                 if type.id != 5:
                     self.sync_stats(team, league, type, league_lm_id)
                     self.sync_penalties(team, league, type, league_lm_id)
+
+                if type.id == 2:
+                    season = Season.objects.get(lm_id=self._mapping['season_id'])
+                    self.sync_table(season, league, league_lm_id, type)

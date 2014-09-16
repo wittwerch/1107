@@ -284,6 +284,7 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.pages",
     "sorl.thumbnail",
+    "annoying",
     "shcbelpa",
     #"mezzanine.accounts",
     #"mezzanine.mobile",

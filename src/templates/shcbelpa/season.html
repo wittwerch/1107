@@ -77,6 +77,43 @@
 
 {% endblock %}
 
+    {% block sidebar %}
+
+     {% if table|length > 0 %}
+
+        <section class="col-sm-6 col-md-12 widget">
+            <!-- Widget header -->
+            <header class="clearfix"><h4>Tabelle</h4></header>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>P</th>
+                            <th>Mannschaft</th>
+                            <th>SP</th>
+                            <th>Tore</th>
+                            <th>Punkte</th>
+                        </thead>
+                        <tbody>
+                            {% for entry in table %}
+                                <tr>
+                                    <td>{{ entry.position }}</td>
+                                    <td>{{ entry.team.name }}</td>
+                                    <td>{{ entry.gp }}</td>
+                                    <td>{{ entry.diff }}</td>
+                                    <td>{{ entry.points }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+        </section>
+    {% endif %}
+
+    {{ block.super }}
+
+    {% endblock %}
+
+
 
 {% block extra_js %}
 

@@ -174,6 +174,20 @@ class GameType(models.Model):
     def __unicode__(self):
         return self.name
 
+class Table(models.Model):
+    season = models.ForeignKey(Season)
+    league = models.ForeignKey(League)
+    game_type = models.ForeignKey(GameType)
+    position = models.PositiveIntegerField(default=0)
+    team = models.ForeignKey(Team)
+    gp = models.PositiveIntegerField(default=0)
+    win = models.PositiveIntegerField(default=0)
+    loss = models.PositiveIntegerField(default=0)
+    tie = models.PositiveIntegerField(default=0)
+    diff = models.CharField(max_length=12)
+    points = models.PositiveIntegerField(default=0)
+
+
 class GameManager(models.Manager):
 
     def filter_by_team(self, team):
