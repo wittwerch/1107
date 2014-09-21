@@ -1,6 +1,7 @@
 from collections import OrderedDict
 import json
 
+from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
 from mezzanine.blog.models import BlogPost
@@ -31,10 +32,33 @@ class SeasonView(TemplateView):
         team = get_object_or_404(Team, pk=self.kwargs['team_pk'])
         season = get_object_or_404(Season, code=self.kwargs['season'])
 
+        is_tournament_mode = False
+
         sections = {}
         for game_type in GameType.objects.all():
-            sections[game_type] = Game.objects.filter_by_team(team).filter(season=season, game_type=game_type)
+            # fetch games for this team, season and game_type
+            games = Game.objects.filter_by_team(team).filter(season=season, game_type=game_type).order_by('date_time')
+            # aggregate by date to find out if there are more than 1 game per day
+            clustering = games.extra({'date':"date(date_time)"}).values('date').annotate(count=Count('id'))
 
+            dates = OrderedDict()
+            for day in clustering:
+                dates[str(day['date'])] = []
+                # if there are more than 1 game per day, it's a league which plays tournaments => different presentation
+                if day['count'] > 1:
+                    is_tournament_mode = True
+
+            if is_tournament_mode:
+                for game in games:
+                    date = game.date_time.date()
+                    # group games per day and then append it to the section
+                    dates[str(date)].append(game)
+
+                sections[game_type] = dates
+            else:
+                sections[game_type] = games
+
+        context['is_tournament_mode'] = is_tournament_mode
         context['team'] = team
         context['current_season'] = season
         context['seasons'] = Game.objects.get_seasons(team)
@@ -42,7 +66,6 @@ class SeasonView(TemplateView):
 
         # Table
         context['table'] = Table.objects.filter(season=season, league=team.league, game_type=game_type).order_by('position')
-        print context['table']
 
         return context
 
