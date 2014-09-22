@@ -1,0 +1,29 @@
+{% load twitter_tags i18n %}
+
+<!-- SOCIALS WIDGET -->
+<section class="col-sm-6 col-md-12 widget">
+    <!-- Widget header -->
+    <header class="clearfix"><h4>Twitter</h4></header>
+
+    {% tweets_default as tweets %}
+
+    {% if tweets %}
+<ul class="list-unstyled tweets">
+    {% for tweet in tweets %}
+    <li class="tweet">
+        <h4>{{ tweet.full_name }} <small><a href="http://twitter.com/{{ tweet.user_name }}" title="{{ tweet.full_name }}">@{{ tweet.user_name }}</a></small></h4>
+        {% if tweet.is_retweet %}
+        <h6><span class="glyphicon glyphicon-retweet"></span>
+        <a href="http://twitter.com/{{ tweet.retweeter_user_name }}" title="{{ tweet.retweeter_full_name }}">{{ tweet.retweeter_full_name }}</a></h6>
+        {% endif %}
+        <p>{{ tweet.text|safe }}<br>
+        <small class="timespan">
+        {% blocktrans with sometime=tweet.created_at|timesince %}{{ sometime }} ago{% endblocktrans %}
+        <a href="http://twitter.com/{{ tweet.user_name }}/status/{{ tweet.remote_id }}"><span class="glyphicon glyphicon-new-window"></span></a>
+        </small></p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+</section>
+

@@ -209,7 +209,7 @@ LOGGING = {
     'loggers': {
         'shcbelpa': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
             }
         }
@@ -283,6 +283,7 @@ INSTALLED_APPS = (
     "mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.pages",
+    "mezzanine.twitter",
     "sorl.thumbnail",
     "annoying",
     "shcbelpa",
