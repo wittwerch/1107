@@ -1,10 +1,10 @@
 language: python
 python:
   - "2.7"
-  - "3.3"
 # command to install dependencies
 install:
   - "pip install -r src/requirements.txt"
+  - "cp src/local_settings-travis.py src/local_settings.py"
 # command to run tests
 script:
- - python src/manage.py test shcbelpa
+  - "python src/manage.py test shcbelpa"
