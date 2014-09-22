@@ -69,6 +69,13 @@ class SeasonView(TemplateView):
 
         return context
 
+
+class GameView(DetailView):
+    model = Game
+    template_name = 'shcbelpa/game.html'
+    context_object_name = 'game'
+
+
 class PlayerView(DetailView):
     model = Player
     template_name = 'shcbelpa/player.html'
