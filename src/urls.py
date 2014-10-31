@@ -17,6 +17,10 @@ urlpatterns = i18n_patterns("",
 
 urlpatterns += patterns('',
 
+    # Cartridge URLs.
+    ("^shop/", include("cartridge.shop.urls")),
+    url("^account/orders/$", "cartridge.shop.views.order_history", name="shop_order_history"),
+
     url("^$", HomeView.as_view(), name='home'),
 
     url(r'^(?P<team_pk>\d{1})/season/(?P<season>\d{4})', SeasonView.as_view(), name='season'),
