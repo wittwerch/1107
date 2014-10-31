@@ -19,6 +19,9 @@
 {% block main %}
     <!-- POST CONTENT -->
 
+        {% with blog_post.game as game %}
+
+
     <article class="article-large entry-content">
         <!--Image-->
         <h2>{{ blog_post.title }}</h2>
@@ -36,6 +39,9 @@
         <br />
         </small>
     </article>
+
+
+    {% include "shcbelpa/widget/gameplayerstats.html" %}
 
     {% if blog_post.related_posts.all %}
         <!-- RELATED POSTS -->
@@ -77,5 +83,7 @@
         <br>
     </section>
     -->
+
+     {% endwith %}
 
 {% endblock %}

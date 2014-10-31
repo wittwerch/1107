@@ -8,6 +8,19 @@
 {% block main %}
 
     <div class="row">
+        <!-- ARTICLES V3 WIDGET -->
+        <section class="widget widget-roster col-sm-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Spiele</h4>
+
+            </header>
+
+
+        </section>
+    </div>
+
+    <div class="row">
         <div class="col-md-offset-2 col-md-10">
             <form class="form-horizontal" role="form" method="GET">
 
@@ -43,31 +56,46 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-    {% for game_type, games in sections.items %}
+    {% for game_type, section in sections.items %}
 
 
   {% if games|length > 0 %}
 
     <div class="tab-pane{% if game_type == active %} active{% endif %} fade" id="{{ game_type }}">
                 <div class="table-responsive">
-                <table class="table table-striped">
-                    {% for game in games %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ game.date_time|date:"d.m.Y" }}</td>
-                            <td>{{ game.date_time|date:"H:i" }}</td>
-                                {% if game.get_absolute_url %}
-                                    <td><a href="{{ game.get_absolute_url }}">{{ game.home_team.name }}</a></td>
-                                    <td><a href="{{ game.get_absolute_url }}">{{ game.away_team.name }}</a></td>
-                                {% else %}
+                    {% if is_tournament_mode %}
+                        <table class="table table-striped">
+                            {% for date, games in section.items %}
+                                <tr>
+                                    <td colspan="5" style="font-weight: bold;">
+                                        {{ games.0.date_time|date:"d.m.Y" }} in {{ games.0.location }}
+                                    </td>
+                                </tr>
+                                {% for game in games %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ game.date_time|date:"H:i" }}</td>
                                     <td>{{ game.home_team.name }}</td>
                                     <td>{{ game.away_team.name }}</td>
-                                {% endif %}
-
-                            <td>{{ game.result }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
+                                    <td>{{ game.result }}</td>
+                                </tr>
+                                    {% endfor %}
+                            {% endfor %}
+                        </table>
+                    {% else %}
+                        <table class="table table-striped">
+                            {% for game in section %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ game.date_time|date:"d.m.Y" }}</td>
+                                    <td>{{ game.date_time|date:"H:i" }}</td>
+                                    <td>{{ game.home_team.name }}</td>
+                                    <td>{{ game.away_team.name }}</td>
+                                    <td>{{ game.result }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% endif %}
                 </div>
 
    </div>
@@ -75,7 +103,7 @@
     {% endfor %}
 </div>
 
-{% endblock %}
+   {% endblock %}
 
     {% block sidebar %}
 

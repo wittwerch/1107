@@ -255,18 +255,17 @@ class Game(models.Model):
             return True
         return False
 
-    def get_absolute_url(self):
-        """
-        Return URL to GameRecap if available
-        """
-        try:
-            return GameRecap.objects.get(game=self).get_absolute_url()
-        except GameRecap.DoesNotExist:
-            return None
-        except GameRecap.MultipleObjectsReturned:
-            # TODO: select by language
-            return None
+    @property
+    def stats(self):
+        return self.gameplayerstats_set.all()
 
+    def get_absolute_url(self):
+        return reverse('game', kwargs={
+            'year': self.date_time.year,
+            'month': self.date_time.month,
+            'day': self.date_time.day,
+            'pk': self.id
+        })
 
     def __unicode__(self):
         return smart_unicode("%s, %s - %s" % (self.date_time, self.home_team, self.away_team))
@@ -285,6 +284,7 @@ class GameRecap(BlogPost):
     class Meta:
         verbose_name = "Matchbericht"
         verbose_name_plural = "Matchberichte"
+
 
 class CommonPlayerStats(models.Model):
     player = models.ForeignKey(Player)

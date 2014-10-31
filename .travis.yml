@@ -1,0 +1,13 @@
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+install:
+  - "pip install -r src/requirements.txt"
+  - "pip install coveralls"
+  - "cp src/local_settings-travis.py src/local_settings.py"
+# command to run tests
+script:
+  - "coverage run --source=shcbelpa src/manage.py test shcbelpa"
+after_success:
+  coveralls

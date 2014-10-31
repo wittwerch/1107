@@ -5,7 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
 
-from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, SponsorView, HallOfFameView
+from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, SponsorView, HallOfFameView, GameView
 
 admin.autodiscover()
 
@@ -24,6 +24,8 @@ urlpatterns += patterns('',
     url("^$", HomeView.as_view(), name='home'),
 
     url(r'^(?P<team_pk>\d{1})/season/(?P<season>\d{4})', SeasonView.as_view(), name='season'),
+
+    url(r"^game/(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<pk>\d+)/", GameView.as_view(), name="game"),
 
     url(r'^player/(?P<pk>\d+)/$', PlayerView.as_view(), name='player'),
 
