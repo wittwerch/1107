@@ -583,3 +583,6 @@ class Teaser(models.Model):
     expiry_date = models.DateTimeField(blank=True, null=True)
 
     objects = TeaserManager()
+
+# load Cartridge customizing
+from shop import *

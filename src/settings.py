@@ -30,7 +30,7 @@ from __future__ import absolute_import, unicode_literals
 # Controls the formatting of monetary values accord to the locale
 # module in the python standard library. If an empty string is
 # used, will fall back to the system's locale.
-# SHOP_CURRENCY_LOCALE = ""
+SHOP_CURRENCY_LOCALE = "de_CH"
 
 # Dotted package path and name of the function that
 # is called on submit of the billing/shipping checkout step. This
@@ -68,6 +68,28 @@ from __future__ import absolute_import, unicode_literals
 # control how the options should be ordered in the admin,
 # eg for "Colour" then "Size" given the above:
 # SHOP_OPTION_ADMIN_ORDER = (2, 1)
+
+EXTRA_MODEL_FIELDS = (
+    (
+         "cartridge.shop.models.Product.require_number",
+         "BooleanField",
+         ("Require Player number",),
+         {"help_text": 'Check if a player number should be collected when this product is purchased',
+          "default": False},
+     ),
+     (
+         "cartridge.shop.models.CartItem.player_number",
+         "DecimalField",
+         ("Player number",),
+         {"blank": True, "null": True, "max_digits": 2, "decimal_places": 0},
+     ),
+     (
+         "cartridge.shop.models.OrderItem.player_number",
+         "DecimalField",
+         ("Player number",),
+         {"blank": True, "null": True, "max_digits": 2, "decimal_places": 0},
+     ),
+)
 
 ######################
 # MEZZANINE SETTINGS #
@@ -142,6 +164,8 @@ OWNABLE_MODELS_ALL_EDITABLE = ('blog.BlogPost',)
 #         {"blank": True, "default": 1},
 #     ),
 # )
+
+
 
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
