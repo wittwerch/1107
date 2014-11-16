@@ -11,3 +11,4 @@ django_extensions
 setproctitle
 gunicorn
 django-annoying
+South==1.0.1
