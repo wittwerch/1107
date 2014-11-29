@@ -1,0 +1,81 @@
+{% extends "shop/base.html" %}
+
+{% load mezzanine_tags shop_tags i18n %}
+{% block body_id %}category{% endblock %}
+
+{% block main %}{{ block.super }}
+
+{% if child_categories %}
+    {{ page.category.content|safe }}
+{% endif %}
+
+{% if child_categories %}
+<div class="row shop-category-list">
+{% if settings.SHOP_CATEGORY_USE_FEATURED_IMAGE %}
+    {% for category in child_categories %}
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+    <div class="thumbnail">
+        <div>
+        <a href="{{ category.get_absolute_url }}">
+            <img src="{{ MEDIA_URL }}{% thumbnail category.featured_image 148 148 %}" class="img-thumbnail" alt="{{ product }}">
+        </a>
+        <div class="caption caption-roster text-center">
+            <h5>{{ category.title }}</h5>
+        </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+{% else %}
+    {% for category in child_categories %}
+    <div class="col-xs-6 col-sm-4 col-lg-3">
+    <a href="{{ category.get_absolute_url }}" class="thumbnail">
+        <div class="caption"><h4>{{ category.title }}</h4></div>
+    </a>
+    </div>
+    {% endfor %}
+{% endif %}
+</div>
+{% endif %}
+
+{% if products.paginator.count != 0 %}
+
+<div class="row product-list">
+{% for product in products.object_list %}
+    <div class="col-xs-6 col-sm-4 col-lg-3 product-thumb">
+
+    <div class="thumbnail">
+        <div>
+        <a href="{{ product.get_absolute_url }}">
+            <img src="{{ MEDIA_URL }}{% thumbnail product.image 148 148 %}" class="img-thumbnail" alt="{{ product }}">
+        </a>
+        <div class="caption caption-roster text-center">
+            <h5>{{ product }}</h5>
+            {% if product.has_price %}
+                {% if product.on_sale %}
+                    <span class="price oldPrice">{{ product.unit_price|currency }}</span> <span class="price specialPrice">{{ product.price|currency }}</span>
+                {% else %}
+                    <span class="price">{{ product.price|currency }}</span>
+                {% endif %}
+            {% else %}
+                <span class="coming-soon">{% trans "Coming soon" %}</span>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+
+    </div>
+{% endfor %}
+</div>
+
+{% pagination_for products %}
+
+{% endif %}
+
+{% endblock %}
+
+{% block sidebar %}
+
+    {% include "shcbelpa/sidebar/cart.html" %}
+
+{% endblock %}

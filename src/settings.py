@@ -14,7 +14,7 @@ from __future__ import absolute_import, unicode_literals
 # SHOP_CARD_TYPES = ("Mastercard", "Visa", "Diners", "Amex")
 
 # Setting to turn on featured images for shop categories. Defaults to False.
-# SHOP_CATEGORY_USE_FEATURED_IMAGE = True
+SHOP_CATEGORY_USE_FEATURED_IMAGE = True
 
 # Set an alternative OrderForm class for the checkout process.
 # SHOP_CHECKOUT_FORM_CLASS = 'cartridge.shop.forms.OrderForm'
@@ -68,6 +68,9 @@ SHOP_CURRENCY_LOCALE = "de_CH"
 # control how the options should be ordered in the admin,
 # eg for "Colour" then "Size" given the above:
 # SHOP_OPTION_ADMIN_ORDER = (2, 1)
+
+SHOP_USE_RATINGS = False
+SHOP_USE_WISHLIST = False
 
 EXTRA_MODEL_FIELDS = (
     (
