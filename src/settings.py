@@ -51,10 +51,10 @@ SHOP_CURRENCY_LOCALE = "de_CH"
 # SHOP_HANDLER_PAYMENT = "cartridge.shop.checkout.default_payment_handler"
 
 # Sequence of value/name pairs for order statuses.
-# SHOP_ORDER_STATUS_CHOICES = (
-#     (1, "Unprocessed"),
-#     (2, "Processed"),
-# )
+SHOP_ORDER_STATUS_CHOICES = (
+     (1, "Neu"),
+     (2, "Bezahlt"),
+)
 
 # Sequence of value/name pairs for types of product options,
 # eg Size, Colour. NOTE: Increasing the number of these will
@@ -72,6 +72,7 @@ SHOP_CURRENCY_LOCALE = "de_CH"
 SHOP_USE_RATINGS = False
 SHOP_USE_WISHLIST = False
 SHOP_PAYMENT_STEP_ENABLED = False
+SHOP_DEFAULT_SHIPPING_VALUE = 0
 
 EXTRA_MODEL_FIELDS = (
     (
@@ -520,3 +521,6 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+# necessary that post_save signal always gets registered!
+from shcbelpa.shop import shop_order_status_handler
