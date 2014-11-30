@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load pages_tags mezzanine_tags i18n future staticfiles compress %}
+
+{% block left_navigation %}
+<!-- LEFT NAVIGATION
+============ -->
+<aside class="col-md-2">
+<div class="row">
+     <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+</div>
+<!--.row-->
+</aside>
+{% endblock %}
+
+{% block sidebar_class %}col-md-2{% endblock %}
+
+{% block sidebar %}
+    {% include "shop/includes/cart.html" %}
+{% endblock %}

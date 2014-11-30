@@ -142,9 +142,24 @@
 <div id="content">
 <div class="container">
 <div class="row">
+    <div class="col-md-12">
+  <!-- BREAKING NEWS -->
+
+    <ul class="breadcrumb">
+    {% include "pages/menus/breadcrumb.html" %}
+    </ul>
+
+    </div>
+</div>
+<div class="row">
+
+
+{% block left_navigation %}{% endblock %}
+
+
 <!-- MAIN CONTENT
 ================= -->
-<main id="main-content" class="col-md-8">
+<main id="main-content" class="{% block main_class %}col-md-8{% endblock %}">
 
 {% block main %}{% endblock %}
 
@@ -153,7 +168,7 @@
 
 <!-- SIDEBAR
 ============ -->
-<aside class="col-md-4">
+<aside class="{% block sidebar_class %}col-md-4{% endblock %}">
 <div class="row">
 
 {% block sidebar %}
