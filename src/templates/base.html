@@ -141,16 +141,18 @@
 ============ -->
 <div id="content">
 <div class="container">
-<div class="row">
-    <div class="col-md-12">
-  <!-- BREAKING NEWS -->
 
-    <ul class="breadcrumb">
-    {% include "pages/menus/breadcrumb.html" %}
-    </ul>
-
+{% if not on_home %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BREAKING NEWS -->
+            <ul class="breadcrumb">
+                {% include "pages/menus/breadcrumb.html" %}
+            </ul>
+        </div>
     </div>
-</div>
+{% endif %}
+
 <div class="row">
 
 
