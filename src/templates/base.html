@@ -142,16 +142,20 @@
 <div id="content">
 <div class="container">
 
+{% block breadcrumb %}
 {% if not on_home %}
     <div class="row">
         <div class="col-md-12">
             <!-- BREAKING NEWS -->
             <ul class="breadcrumb">
-                {% include "pages/menus/breadcrumb.html" %}
+                {% block breadcrumb_menu %}
+                    {% include "pages/menus/breadcrumb.html" %}
+                {% endblock %}
             </ul>
         </div>
     </div>
 {% endif %}
+{% endblock %}
 
 <div class="row">
 
