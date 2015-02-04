@@ -174,22 +174,23 @@
 
 <!-- SIDEBAR
 ============ -->
+{% block sidebar_wrapper %}
 <aside class="{% block sidebar_class %}col-md-4{% endblock %}">
-<div class="row">
+    <div class="row">
 
-{% block sidebar %}
+    {% block sidebar %}
 
-    {% include "shcbelpa/sidebar/gallery.html" %}
+        {% include "shcbelpa/sidebar/gallery.html" %}
 
-    {% include "shcbelpa/sidebar/facebook.html" %}
+        {% include "shcbelpa/sidebar/facebook.html" %}
 
+    {% endblock %}
 
+    </div>
+    <!--.row-->
+</aside>
 {% endblock %}
 
-
-</div>
-<!--.row-->
-</aside>
 </div>
 <!--.row-->
 

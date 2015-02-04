@@ -22,6 +22,10 @@
         #gallery-page #title    { background-image: url('../img/title-background-gallery-page-large.jpg') }
 }
 
+#content {
+  padding-top: 25px;
+}
+
 dl {
  width:100%;
  overflow:hidden;

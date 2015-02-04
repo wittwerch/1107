@@ -4,6 +4,7 @@ import json
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
+from cartridge.shop.models import Order
 from mezzanine.blog.models import BlogPost
 from annoying.functions import get_object_or_None
 
@@ -201,3 +202,22 @@ class SponsorView(ListView):
     queryset = Sponsor.objects.all()
     template_name = 'shcbelpa/sponsor.html'
     context_object_name = "sponsors"
+
+
+class OrderListView(TemplateView):
+    """
+    Display all order made in the shop by it's status
+    """
+
+    template_name = 'shcbelpa/shop/order_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(OrderListView, self).get_context_data(**kwargs)
+
+        # get all new order
+        context['new_orders'] = Order.objects.filter(status=1).order_by('-time')
+
+        # get all payed order
+        context['payed_orders'] = Order.objects.filter(status=2).order_by('-time')
+
+        return context
