@@ -524,3 +524,7 @@ else:
 
 # necessary that post_save signal always gets registered!
 from shcbelpa.shop import shop_order_status_handler
+
+from compressor.conf import CompressorConf
+for key, value in CompressorConf().configured_data.iteritems():
+    locals()['COMPRESS_' + key] = value
