@@ -5,7 +5,8 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
 
-from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, SponsorView, HallOfFameView, GameView
+from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, \
+    SponsorView, HallOfFameView, GameView, OrderListView
 from shcbelpa.forms import CustomOrderForm
 
 admin.autodiscover()
@@ -19,6 +20,8 @@ urlpatterns = i18n_patterns("",
 urlpatterns += patterns('',
 
     url("^shop/checkout/$", "cartridge.shop.views.checkout_steps", name = "checkout_steps", kwargs=dict(form_class=CustomOrderForm)),
+
+    url(r"^shop-backend/orders/$", OrderListView.as_view(), name="order_list"),
 
     # Cartridge URLs.
     ("^shop/", include("cartridge.shop.urls")),

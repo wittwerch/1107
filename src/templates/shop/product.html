@@ -41,20 +41,31 @@ $(document).ready(function() {
 <script src="{% static "cartridge/js/product_variations.js" %}"></script>
 {% endblock %}
 
-{% block breadcrumb_menu %}
-{{ block.super }}
-<li>{{ product.title }}</li>
-{% endblock %}
-
 {% block title %}
 {% editable product.title %}{{ product.title }}{% endeditable %}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+{% with product.categories.all as categories %}
+  {% if categories %}
+   {% for cat in categories|slice:':1' %}
+        <li>
+            <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+        </li>
+   {% endfor %}
+{% endif %}
+ {% endwith %}
+    <li class="active">
+        {{ product.title }}
+    </li>
 {% endblock %}
 
 {% block main %}
 
 <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-md-5">
 
         <h3>{{ product.title }}</h3>
 

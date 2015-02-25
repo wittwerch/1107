@@ -1,6 +1,9 @@
 {% extends "shop/checkout.html" %}
 {% load staticfiles i18n future mezzanine_tags %}
 
+{% block sidebar_wrapper %}
+{% endblock %}
+
 {% block extra_head %}
 {{ block.super }}
 <script src="{% static "cartridge/js/shipping_fields.js" %}"></script>
@@ -25,6 +28,10 @@ If you have an existing account or would like to create one, please
 {% endif %}
 
 {% errors_for form %}
+
+<div class="alert alert-warning">
+<strong>Wichtig:</strong> Bitte gib eine korrekte E-Mail Adresse an, damit dich Wittwer Sport benachrichtigen kann wenn die Artikel abgeholt werden können!
+</div>
 
 <fieldset>
     <legend>{% trans "Address" %}</legend>

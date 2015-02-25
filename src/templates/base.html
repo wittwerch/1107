@@ -141,16 +141,22 @@
 ============ -->
 <div id="content">
 <div class="container">
-<div class="row">
-    <div class="col-md-12">
-  <!-- BREAKING NEWS -->
 
-    <ul class="breadcrumb">
-    {% include "pages/menus/breadcrumb.html" %}
-    </ul>
-
+{% block breadcrumb %}
+{% if not on_home %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BREAKING NEWS -->
+            <ul class="breadcrumb">
+                {% block breadcrumb_menu %}
+                    {% include "pages/menus/breadcrumb.html" %}
+                {% endblock %}
+            </ul>
+        </div>
     </div>
-</div>
+{% endif %}
+{% endblock %}
+
 <div class="row">
 
 
@@ -168,22 +174,23 @@
 
 <!-- SIDEBAR
 ============ -->
+{% block sidebar_wrapper %}
 <aside class="{% block sidebar_class %}col-md-4{% endblock %}">
-<div class="row">
+    <div class="row">
 
-{% block sidebar %}
+    {% block sidebar %}
 
-    {% include "shcbelpa/sidebar/gallery.html" %}
+        {% include "shcbelpa/sidebar/gallery.html" %}
 
-    {% include "shcbelpa/sidebar/facebook.html" %}
+        {% include "shcbelpa/sidebar/facebook.html" %}
 
+    {% endblock %}
 
+    </div>
+    <!--.row-->
+</aside>
 {% endblock %}
 
-
-</div>
-<!--.row-->
-</aside>
 </div>
 <!--.row-->
 
