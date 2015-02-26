@@ -4,6 +4,8 @@ python:
 env:
   - DJANGO_SETTINGS_MODULE="settings"
 # command to install dependencies
+before_install:
+  - "locale-gen de_CH.UTF-8 de_CH" 
 install:
   - "pip install -r src/requirements.txt"
   - "pip install coveralls"
