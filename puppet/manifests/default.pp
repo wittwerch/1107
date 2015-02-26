@@ -73,7 +73,7 @@ file { "/etc/timezone":
   content => "Europe/Zurich"
 }
 
-exec { "dpkg-reconfigure --frontend noninteractive tzdata":
+exec { "/usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata":
   subscribe   => File["/etc/timezone"],
   refreshonly => true
 }
