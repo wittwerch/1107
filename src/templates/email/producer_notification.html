@@ -1,0 +1,12 @@
+{% extends "email/base.html" %}
+{% load i18n %}
+
+
+{% block main %}
+
+{% load shop_tags i18n %}
+
+<p>Es ist eine neue Bestellung im Online Shop vom SHC Belpa 1107 eingegangen.</p>
+{% include "shop/includes/order_details.html" %}
+
+{% endblock %}

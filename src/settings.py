@@ -74,6 +74,11 @@ SHOP_USE_WISHLIST = False
 SHOP_PAYMENT_STEP_ENABLED = False
 SHOP_DEFAULT_SHIPPING_VALUE = 0
 
+SHOP_ORDER_FROM_EMAIL = "shop@shcbelpa.ch"
+SHOP_ORDER_EMAIL_BCC = "shop@shcbelpa.ch"
+
+SHOP_PRODUCER_EMAIL = 'info@wittwer-mode.ch'
+
 EXTRA_MODEL_FIELDS = (
     (
          "cartridge.shop.models.Product.require_number",
@@ -521,9 +526,6 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
-
-# necessary that post_save signal always gets registered!
-from shcbelpa.shop import shop_order_status_handler
 
 from compressor.conf import CompressorConf
 for key, value in CompressorConf().configured_data.iteritems():

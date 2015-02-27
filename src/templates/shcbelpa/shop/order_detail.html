@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles thumbnail shop_tags %}
+
+{% block meta_title %}
+Bestellungen
+{% endblock %}
+
+{% block subtitle %}
+Bestellungen
+{% endblock %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block main %}
+
+<div class="row">
+
+<div class="col-md-8">
+
+<a href="{% url 'order_list' %}">zurück zur Übersicht</a>
+
+<table class="table table-striped">
+    <tr><td>Bestellnummer:&nbsp;&nbsp;&nbsp;</td><td>{{ order.id }}</td></tr>
+    <tr><td>Datum:&nbsp;&nbsp;&nbsp;</td><td>{{ order.time|date:"d.m.Y" }}</td></tr>
+    <tr><td>Status:&nbsp;&nbsp;&nbsp;</td><td><span class="label {% if order.status == 2 %}label-success{% else %}label-danger{% endif %}">{{ order.get_status_display }}</span></td></tr>
+</table>
+
+<h2>Anschrift</h2>
+<table class="table table-striped">
+            <tr><td>Name:&nbsp;&nbsp;&nbsp;</td><td>{{ order.billing_detail_first_name }} {{ order.billing_detail_last_name }}</td></tr>
+            <tr><td>Strasse:&nbsp;&nbsp;&nbsp;</td><td>{{ order.billing_detail_street }}</td></tr>
+            <tr><td>Ort:&nbsp;&nbsp;&nbsp;</td><td>{{ order.billing_detail_postcode }} {{ order.billing_detail_city }}</td></tr>
+            <tr><td>E-Mail:&nbsp;&nbsp;&nbsp;</td><td>{{ order.billing_detail_email }}</td></tr>
+</table>
+
+<h2>{% trans "Items Ordered" %}</h2>
+<table class="table table-striped">
+    <tr>
+        <th align="left">{% trans "Item" %}</th>
+        <th align="right">{% trans "Unit Price" %}</th>
+        <th align="right">{% trans "Qty" %}</th>
+        <th align="right">{% trans "Price" %}</th>
+    </tr>
+    {% for item in order.items.all %}
+    <tr>
+        <td>{{ item.description }}</td>
+        <td align="right" valign="top">{{ item.unit_price|currency }}</td>
+        <td align="right" valign="top">{{ item.quantity }}</td>
+        <td align="right" valign="top">{{ item.total_price|currency }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4" align="right">{% order_totals %}</td>
+    </tr>
+</table>
+
+
+{% if order.status == 1 %}
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="payed" value="1">
+    <button type="submit" class="btn btn-success">Bestellung wurde bezahlt</button>
+</form>
+
+{% endif %}
+
+
+
+</div>
+
+</div>
+
+{% endblock %}

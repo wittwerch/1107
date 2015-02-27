@@ -6,7 +6,7 @@ from django.contrib import admin
 from django.views.generic import RedirectView
 
 from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, \
-    SponsorView, HallOfFameView, GameView, OrderListView
+    SponsorView, HallOfFameView, GameView, OrderListView, OrderDetailView
 from shcbelpa.forms import CustomOrderForm
 
 admin.autodiscover()
@@ -22,6 +22,7 @@ urlpatterns += patterns('',
     url("^shop/checkout/$", "cartridge.shop.views.checkout_steps", name = "checkout_steps", kwargs=dict(form_class=CustomOrderForm)),
 
     url(r"^shop-backend/orders/$", OrderListView.as_view(), name="order_list"),
+    url(r"^shop-backend/order/(?P<pk>\d+)$", OrderDetailView.as_view(), name="order_detail"),
 
     # Cartridge URLs.
     ("^shop/", include("cartridge.shop.urls")),

@@ -120,19 +120,3 @@ def setup(self, request):
         item = dict([(f, getattr(item, f)) for f in product_fields])
         self.items.create(**item)
 Order.setup = setup
-
-
-def shop_order_status_handler(sender, instance, **kwargs):
-    """
-    Signal that listens on a order for a status change
-    """
-    try:
-        obj = Order.objects.get(pk=instance.pk)
-    except Order.DoesNotExist:
-        pass # Object is new, so field hasn't technically changed, but you may want to do something else here.
-    else:
-        if obj.status == 1 and instance.status == 2: # Field has changed from "Neu" to "Bezahlt"
-            print "Mail sent"
-
-
-pre_save.connect(shop_order_status_handler, sender=Order, weak=False, dispatch_uid="shop_order_status_handler")
