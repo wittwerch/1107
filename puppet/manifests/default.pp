@@ -78,3 +78,13 @@ exec { "dpkg-reconfigure --frontend noninteractive tzdata":
   refreshonly => true
 }
 
+package { "libsqlite3-dev":
+  ensure => installed,
+  require => Exec['update'],
+}
+
+exec { "/usr/bin/gem1.9.1 install mailcatcher":
+  creates => "/usr/local/bin/mailcatcher",
+  require => Package["libsqlite3-dev"],
+  alias => "mailcatcher"
+}
