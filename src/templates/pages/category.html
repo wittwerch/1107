@@ -5,6 +5,16 @@
 
 {% block main %}{{ block.super }}
 
+<div class="row">
+        <section class="widget widget-roster col-sm-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>{{ page.title }}</h4>
+
+            </header>
+        </section>
+</div>
+
 {% if child_categories %}
     {{ page.category.content|safe }}
 {% endif %}

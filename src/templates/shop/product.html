@@ -64,10 +64,18 @@ $(document).ready(function() {
 {% block main %}
 
 <div class="row">
+        <section class="widget widget-roster col-sm-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>{{ product.title }}</h4>
 
-    <div class="col-md-5">
+            </header>
+        </section>
+</div>
 
-        <h3>{{ product.title }}</h3>
+<div class="row">
+
+    <div class="col-md-4">
 
         {{ product.content|richtext_filters|safe }}
 
