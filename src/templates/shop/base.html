@@ -10,8 +10,15 @@
 </div>
 {% endblock %}
 
-{% block sidebar_wrapper %}
+{% block main_class %}col-md-7{% endblock %}
+{% block sidebar_class %}col-md-3{% endblock %}
+
+{% block sidebar %}
+
 {% include "shop/includes/cart.html" %}
+
+{% include "shcbelpa/sidebar/instructions.html" %}
+
 {% endblock %}
 
 {% block breadcrumb %}

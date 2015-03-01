@@ -90,13 +90,13 @@ EXTRA_MODEL_FIELDS = (
      (
          "cartridge.shop.models.CartItem.player_number",
          "DecimalField",
-         ("Player number",),
+         ("Spielernummer",),
          {"blank": True, "null": True, "max_digits": 2, "decimal_places": 0},
      ),
      (
          "cartridge.shop.models.OrderItem.player_number",
          "DecimalField",
-         ("Player number",),
+         ("Spielernummer",),
          {"blank": True, "null": True, "max_digits": 2, "decimal_places": 0},
      ),
 )
