@@ -5,10 +5,25 @@
 {% block title %}{% trans "Your Cart" %}{% endblock %}
 {% block body_id %}cart{% endblock %}
 
-{% block sidebar_wrapper %}
+{% block sidebar %}
+    {% include "shcbelpa/sidebar/instructions.html" %}
 {% endblock %}
 
 {% block main %}
+
+        <div class="row">
+        <!-- ARTICLES V3 WIDGET -->
+        <section class="widget widget-roster col-sm-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Warenkorb</h4>
+
+            </header>
+
+
+        </section>
+    </div>
+
 {% if request.cart.has_items %}
 <form method="post" class="cart-form">
 {% csrf_token %}
