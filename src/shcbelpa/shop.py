@@ -5,10 +5,9 @@ http://bitofpixels.com/blog/collecting-additional-information-on-a-per-product-b
 from copy import deepcopy
 
 from django import forms
-from django.db.models.signals import pre_save
 from cartridge.shop.forms import AddProductForm, ADD_PRODUCT_ERRORS
 from cartridge.shop.models import ProductVariation, Cart, Order, force_text, Decimal, SelectedProduct
-from mezzanine.conf import settings
+
 
 original_product_add_init = deepcopy(AddProductForm.__init__)
 def product_add_init(self, *args, **kwargs):
@@ -17,7 +16,10 @@ def product_add_init(self, *args, **kwargs):
     """
     original_product_add_init(self, *args, **kwargs)
     if self._product and self._product.require_number:
-        self.fields['player_number'] = forms.DecimalField(max_value=99, min_value=0, decimal_places=0)
+        self.fields['player_number'] = forms.DecimalField(max_value=99,
+                                                          min_value=0,
+                                                          decimal_places=0,
+                                                          label='Spielernummer')
 
 AddProductForm.__init__ = product_add_init
 
