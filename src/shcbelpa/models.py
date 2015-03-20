@@ -585,4 +585,5 @@ class Teaser(models.Model):
     objects = TeaserManager()
 
 # load Cartridge customizing
+# necessary that post_save signal always gets registered!
 from shop import *

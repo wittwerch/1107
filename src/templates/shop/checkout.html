@@ -12,24 +12,10 @@ $(function() {$('.middle :input:visible:enabled:first').focus();});
 </script>
 {% endblock %}
 
-{% block breadcrumb_menu %}
-{% for step in steps %}
-<li>
-    {% if step.title == step_title %}
-    <strong>{{ step.title }}</strong>
-    {% else %}
-    {{ step.title }}
-    {% endif %}
-</li>
-{% endfor %}
-<li>{% trans "Complete" %}</li>
-{% endblock %}
-
-{% block left_navigation %}
-{% endblock %}
-
 {% block breadcrumb %}
 {% endblock %}
+
+{% block main_class %}col-md-12{% endblock %}
 
 {% block main %}
 
@@ -87,3 +73,5 @@ $(function() {$('.middle :input:visible:enabled:first').focus();});
 {% block after-form %}{% endblock %}
 </div>
 {% endblock %}
+
+
