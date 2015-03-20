@@ -12,23 +12,24 @@ $(function() {$('.middle :input:visible:enabled:first').focus();});
 </script>
 {% endblock %}
 
-{% block left_navigation %}
-{% endblock %}
-
 {% block breadcrumb %}
 {% endblock %}
 
 {% block sidebar_wrapper %}{% endblock %}
 {% block sidebar %}{% endblock %}
 
-{% block main_class %}col-md-10 col-md-offset-1{% endblock %}
+{% block main_class %}col-md-10{% endblock %}
 
 {% block main %}
 
     <div class="row">
+        <section class="widget widget-roster col-md-4">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Adresse</h4>
 
-        <div class="confirmation col-md-4">
-        <h4>Adresse</h4>
+            </header>
+        <div>
     <ul class="list-unstyled">
 
         {% for field, value in form.billing_detail_fields.values %}
@@ -41,10 +42,17 @@ $(function() {$('.middle :input:visible:enabled:first').focus();});
 
     </ul>
         </div>
+        </section>
 
 
-        <div class="confirmation col-md-8">
-            <h4>Bestellung</h4>
+        <section class="widget widget-roster col-md-8">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Bestellung</h4>
+
+            </header>
+        <div class="row">
+            <div class="col-md-12">
             {% if request.cart.has_items %}
             <table class="table table-striped">
                 <thead>
@@ -77,23 +85,14 @@ $(function() {$('.middle :input:visible:enabled:first').focus();});
                 </tr>
                 {% endfor %}
                 <tr>
-                    <td colspan="5">{% order_totals %}</td>
-                    <td>&nbsp;</td>
+                    <td colspan="7" style="text-align: right;">{% order_totals %}</td>
                 </tr>
                 </tbody>
             </table>
             {% endif %}
-    </div>
-
-    </div>
-
-    <div class="confirmation col-md-8 col-md-offset-4">
-    <div class="panel panel-default">
-    <div class="panel-body">
-<h3>Bestätigung</h3>
-<p>blabla bla</p>
-
-    <form method="post" class="col-md-4 checkout-form">
+        </div>
+         <div class="col-md-12">
+    <form method="post" class="col-md-12 checkout-form">
     {% csrf_token %}
     {% for field in form %}{{ field }}{% endfor %}
                     <div class="form-actions">
@@ -103,8 +102,14 @@ $(function() {$('.middle :input:visible:enabled:first').focus();});
                 {% endif %}
             </div>
         </form>
+             </div>
+
+        </div>
+
+            </section>
+
+
     </div>
-    </div>
-</div>
+
 
 {% endblock %}
