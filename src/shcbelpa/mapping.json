@@ -1,1 +1,48 @@
-mapping1415.json
+{
+    "_comment": "SSHA Mapping for Season 2014/2015",
+    "season_id": 3,
+    "teams": {
+        "1": {
+            "team_id": 233,
+            "league_id": 1,
+            "map": {
+                "2": 57,
+                "3": 68,
+                "5": 48
+            }
+        },
+        "2": {
+            "team_id": 234,
+            "league_id": 3,
+            "map": {
+                "2": 45,
+                "3": 63,
+                "5": 48
+            }
+        },
+        "3": {
+            "team_id": 235,
+            "league_id": 5,
+            "map": {
+                "2": 59,
+                "3": 61,
+                "3": 65
+            }
+        },
+        "4": {
+            "team_id": 236,
+            "league_id": 6,
+            "map": {
+                "2": 60,
+                "5": 55
+            }
+        },
+        "5": {
+            "team_id": 237,
+            "league_id": 7,
+            "map": {
+                "2": 56
+            }
+        }
+    }
+}
