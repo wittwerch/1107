@@ -10,7 +10,7 @@
 
     <!-- Widget Content -->
     <div class="frame thick">
-        {% if teaser.link %}<a href="{{ teaser.link }}">{% endif %}
+        {% if teaser.link %}<a href="{{ teaser.link }}" onclick="_gaq.push(['_trackEvent','Download','PDF','{{ teaser.title }}']);">{% endif %}
             {% thumbnail teaser.image "160" as im %}
                 <img src="{{ im.url }}" alt="{{ teaser.title }}" />
             {% endthumbnail %}
