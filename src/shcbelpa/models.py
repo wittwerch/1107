@@ -572,7 +572,7 @@ class TeaserManager(models.Manager):
     def published(self):
         return self.filter(
             Q(publish_date__lte=now()) | Q(publish_date__isnull=True),
-            Q(expiry_date__gte=now()) | Q(expiry_date__isnull=True))
+            Q(expiry_date__gte=now()) | Q(expiry_date__isnull=True)).order_by('-publish_date')
 
 
 class Teaser(models.Model):
@@ -583,3 +583,6 @@ class Teaser(models.Model):
     expiry_date = models.DateTimeField(blank=True, null=True)
 
     objects = TeaserManager()
+
+    def __unicode__(self):
+        return self.title
