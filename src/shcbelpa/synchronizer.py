@@ -126,6 +126,9 @@ class LigaManager:
             except SeasonPlayerStats.DoesNotExist:
                 stat = SeasonPlayerStats(**filter)
 
+            # player with zero points won't have any game played, but still be shown due to the penalties
+            if stat.gp == 0:
+                stat.gp = xml.anzahlspiele.cdata
             stat.pm = xml.totalstrafen.cdata
 
             stat.save()
