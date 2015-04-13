@@ -28,6 +28,7 @@
 <h2>{% trans "Items Ordered" %}</h2>
 <table width="100%" border="1" cellspacing="0" cellpadding="10">
     <tr>
+        <th align="left">Artikel Nr</th>
         <th align="left">{% trans "Item" %}</th>
         <th align="left">Spielernummer</th>
         <th align="right">{% trans "Unit Price" %}</th>
@@ -36,6 +37,7 @@
     </tr>
     {% for item in order.items.all %}
     <tr>
+        <td>{{ item.sku }}</td>
         <td>{{ item.description }}</td>
         <td align="right" valign="top">{{ item.player_number|default_if_none:'-' }}</td>
         <td align="right" valign="top">{{ item.unit_price|currency }}</td>
@@ -44,6 +46,9 @@
     </tr>
     {% endfor %}
     <tr>
-        <td colspan="4" align="right">{% order_totals %}</td>
+        <td colspan="5" align="right">{% order_totals %}</td>
     </tr>
 </table>
+
+<h2>Bankverbindung</h2>
+tbd
