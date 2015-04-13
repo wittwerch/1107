@@ -5,11 +5,11 @@
 <table width="100%" border="0">
     <tr>
         <td>{% trans "Order ID:" %} {{ order.id }}</td>
-        <td align="right">{{ order.time }}</td>
+        <td align="right">{{ order.time|date:"d.m.Y, G:i" }}</td>
     </tr>
 </table>
 
-<h2>{% trans "Your Details" %}</h2>
+<h2>Deine Details</h2>
 <table width="100%" border="1" cellspacing="0" cellpadding="10">
 <tr>
     <th align="left" width="100%">{% trans "Address" %}</th>
@@ -28,7 +28,7 @@
 <h2>{% trans "Items Ordered" %}</h2>
 <table width="100%" border="1" cellspacing="0" cellpadding="10">
     <tr>
-        <th align="left">Artikel Nr</th>
+        <th align="left">Artikelnummer</th>
         <th align="left">{% trans "Item" %}</th>
         <th align="left">Spielernummer</th>
         <th align="right">{% trans "Unit Price" %}</th>
