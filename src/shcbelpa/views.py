@@ -247,7 +247,7 @@ class OrderDetailView(DetailView):
 
             receipt_template = "email/producer_notification"
 
-            send_mail_template("subject",
+            send_mail_template("Bestellung #%i" % order.id,
                            receipt_template, settings.SHOP_ORDER_FROM_EMAIL,
                            settings.SHOP_PRODUCER_EMAIL, context=order_context,
                            addr_bcc=settings.SHOP_ORDER_EMAIL_BCC or None, fail_silently=False)
