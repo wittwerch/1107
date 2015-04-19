@@ -1,0 +1,38 @@
+{% extends "email/base.txt" %}
+{% load shop_tags i18n %}
+
+{% block main %}
+Hallo {{ order.billing_detail_first_name }},
+
+Vielen Dank fuer deine Bestellung! Alle Details zu deiner Bestellung und die Informationen für die Vorauskasse findest du unten.
+
+{% trans "Order ID:" %} #{{ order.id }}
+
+Deine Details
+{% for field, value in order_billing_detail_fields %}
+{{ field }}: {{ value }}
+{% endfor %}
+
+
+{% trans "Items Ordered:" %}
+{% for item in order_items %}
+{{ item.quantity }} x {{ item.description }} ({{ item.player_number|default_if_none:'-' }}) {{ item.unit_price|currency }} {% trans "each" %}
+{% endfor %}
+
+{% order_totals_text %}
+
+Vorauskasse
+Bitte ueberweise den Betrag innerhalb von 30 Tage. Die bestellte Ware wird erst produziert, nachdem wir deine Zahlung erhalten haben.
+
+SHC Belpa 1107
+Postfach 49
+3123 Belp
+
+Bank: Valiant Bank
+IBAN: CH26 0630 0016 2012 9680 8
+
+Mitteilung: Shop #{{ order.id }}
+Betrag: {{ order_total|currency }}
+
+Vielen Dank!
+{% endblock %}

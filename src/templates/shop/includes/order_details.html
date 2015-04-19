@@ -52,7 +52,28 @@
 
 <h2>Vorauskasse</h2>
 Bitte &uuml;berweise den Betrag innerhalb von 30 Tage. Die bestellte Ware wird erst produziert, nachdem wir deine Zahlung erhalten haben.
-
-IBAN: 1234
-Betrag: {{ item.total_price|currency }}
-Mitteilung: Shop #{{ order.id }}
+<br />
+<table width="100%" border="1" cellspacing="0" cellpadding="10">
+    <tr>
+        <td>Zahlungsempf&auml;nger</td>
+        <td>SHC Belpa 1107<br/>Postfach 49<br />3123 Belp</td>
+    </tr>
+        <tr>
+        <td>Bank</td>
+        <td>Valiant Bank</td>
+    </tr>
+    <tr>
+        <td>IBAN</td>
+        <td>CH26 0630 0016 2012 9680 8</td>
+    </tr>
+    <tr>
+        <td>Mitteilung</td>
+        <td>Shop #{{ order.id }}</td>
+    </tr>
+    <tr>
+        <td>Betrag</td>
+        <td>{{ order_total|currency }}</td>
+    </tr>
+</table>
+<br />
+<h3>Vielen Dank!</h3>
