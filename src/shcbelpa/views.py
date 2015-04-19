@@ -9,6 +9,7 @@ from cartridge.shop.models import Order
 from mezzanine.blog.models import BlogPost
 from mezzanine.utils.email import send_mail_template
 from annoying.functions import get_object_or_None
+from braces.views import GroupRequiredMixin
 
 from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor, Teaser, Table
 
@@ -206,10 +207,12 @@ class SponsorView(ListView):
     context_object_name = "sponsors"
 
 
-class OrderListView(TemplateView):
+class OrderListView(GroupRequiredMixin, TemplateView):
     """
     Display all order made in the shop by it's status
     """
+
+    group_required = u"Finance"
 
     template_name = 'shcbelpa/shop/order_list.html'
 
@@ -225,10 +228,12 @@ class OrderListView(TemplateView):
         return context
 
 
-class OrderDetailView(DetailView):
+class OrderDetailView(GroupRequiredMixin, DetailView):
     """
     Display an order with option to mark it as payed
     """
+
+    group_required = u"Finance"
 
     model = Order
     template_name = 'shcbelpa/shop/order_detail.html'
