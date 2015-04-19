@@ -194,7 +194,7 @@ USE_SOUTH = True
 # In the format (('Full Name', 'email@example.com'),
 #                ('Full Name', 'anotheremail@example.com'))
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Webmaster', 'webmaster@shcbelpa.ch'),
 )
 MANAGERS = ADMINS
 
@@ -287,36 +287,6 @@ DATABASES = {
         "PORT": "",
     }
 }
-
-#############
-# LOGGING #
-#############
-
-LOGGING = {
-    'version': 1,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-            }
-        },
-    'loggers': {
-        'shcbelpa': {
-            'handlers': ['console'],
-            'level': 'INFO',
-            'propagate': True,
-            }
-        }
-    }
 
 #########
 # PATHS #
