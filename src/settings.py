@@ -75,9 +75,9 @@ SHOP_PAYMENT_STEP_ENABLED = False
 SHOP_DEFAULT_SHIPPING_VALUE = 0
 
 SHOP_ORDER_FROM_EMAIL = "shop@shcbelpa.ch"
-SHOP_ORDER_EMAIL_BCC = "shop@shcbelpa.ch"
+SHOP_ORDER_EMAIL_BCC = "webmaster@shcbelpa.ch"
 
-SHOP_PRODUCER_EMAIL = 'info@wittwer-mode.ch'
+SHOP_PRODUCER_EMAIL = "info@wittwer-mode.ch"
 
 EXTRA_MODEL_FIELDS = (
     (
