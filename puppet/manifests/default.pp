@@ -78,13 +78,11 @@ exec { "/usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata":
   refreshonly => true
 }
 
-package { "libsqlite3-dev":
-  ensure => installed,
-  require => Exec['update'],
+exec { "wget -O /usr/bin/mailhog https://github.com/mailhog/MailHog/releases/download/v0.1.6/MailHog_linux_amd64 && chmod +x /usr/bin/mailhog":
+  creates => "/usr/bin/mailhog",
+  alias => "mailhog"
 }
 
-exec { "/usr/bin/gem1.9.1 install mailcatcher":
-  creates => "/usr/local/bin/mailcatcher",
-  require => Package["libsqlite3-dev"],
-  alias => "mailcatcher"
+file { "/etc/init/mailhog.conf":
+  source => 'puppet:///files/mailhog.conf'
 }
