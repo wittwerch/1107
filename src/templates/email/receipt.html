@@ -1,0 +1,6 @@
+{% load shop_tags i18n %}
+
+<p>Hallo {{ order.billing_detail_first_name }},</p>
+<p>Vielen Dank f&uuml;r deine Bestellung! Alle Details zu deiner Bestellung und die Informationen für die Vorauskasse findest du unten.</p>
+{% include "shop/includes/order_details.html" %}
+

@@ -73,8 +73,16 @@ file { "/etc/timezone":
   content => "Europe/Zurich"
 }
 
-exec { "dpkg-reconfigure --frontend noninteractive tzdata":
+exec { "/usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata":
   subscribe   => File["/etc/timezone"],
   refreshonly => true
 }
 
+exec { "wget -O /usr/bin/mailhog https://github.com/mailhog/MailHog/releases/download/v0.1.6/MailHog_linux_amd64 && chmod +x /usr/bin/mailhog":
+  creates => "/usr/bin/mailhog",
+  alias => "mailhog"
+}
+
+file { "/etc/init/mailhog.conf":
+  source => 'puppet:///files/mailhog.conf'
+}

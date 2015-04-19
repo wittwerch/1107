@@ -1,0 +1,115 @@
+{% extends "shop/base.html" %}
+{% load shop_tags mezzanine_tags i18n future %}
+
+{% block meta_title %}{% trans "Checkout" %} - {{ step_title }}{% endblock %}
+{% block title %}{% trans "Checkout" %} - {% trans "Step" %} {{ step }} {% trans "of" %} {{ steps|length }}{% endblock %}
+{% block body_id %}checkout{% endblock %}
+
+{% block extra_head %}
+<script>
+var _gaq = [['_trackPageview', '{{ request.path }}{{ step_url }}/']];
+$(function() {$('.middle :input:visible:enabled:first').focus();});
+</script>
+{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block sidebar_wrapper %}{% endblock %}
+{% block sidebar %}{% endblock %}
+
+{% block main_class %}col-md-10{% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <section class="widget widget-roster col-md-4">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Adresse</h4>
+
+            </header>
+        <div>
+    <ul class="list-unstyled">
+
+        {% for field, value in form.billing_detail_fields.values %}
+        <li><label>{{ field }}:</label> {{ value }}</li>
+        {% endfor %}
+
+        {% for field, value in form.additional_instructions_field.values %}
+        <li><label>{{ field }}:</label> {{ value }}</li>
+        {% endfor %}
+
+    </ul>
+        </div>
+        </section>
+
+
+        <section class="widget widget-roster col-md-8">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Bestellung</h4>
+
+            </header>
+        <div class="row">
+            <div class="col-md-12">
+            {% if request.cart.has_items %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th colspan="2" class="left">{% trans "Item" %}</th>
+                    <th>Spielernummer</th>
+                    <th>{% trans "Unit Price" %}</th>
+                    <th class="center">{% trans "Qty" %}</th>
+                    <th>{% trans "Price" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in request.cart.items.all %}
+                <tr>
+                    <td width="30">
+                        {{ form.id }}
+                        {% if item.image %}
+                        <a href="{{ item.get_absolute_url }}">
+                            <img alt="{{ item.description }}" src="{{ MEDIA_URL }}{% thumbnail item.image 30 30 %}">
+                        </a>
+                        {% endif %}
+                    </td>
+                    <td class="left">
+                        <a href="{{ item.get_absolute_url }}">{{ item.description }}</a>
+                    </td>
+                    <td>{{ item.player_number|default_if_none:'-' }}</td>
+                    <td>{{ item.unit_price|currency }}</td>
+                    <td class="quantity">{{ item.quantity }}</td>
+                    <td>{{ item.total_price|currency }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="7" style="text-align: right;">{% order_totals %}</td>
+                </tr>
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+         <div class="col-md-12">
+    <form method="post" class="col-md-12 checkout-form">
+    {% csrf_token %}
+    {% for field in form %}{{ field }}{% endfor %}
+                    <div class="form-actions">
+                <input type="submit" class="btn btn-lg btn-primary pull-right" value="Jetzt kaufen">
+                {% if not CHECKOUT_STEP_FIRST %}
+                <input type="submit" class="btn btn-lg btn-default pull-left" name="back" value="{% trans "Back" %}">
+                {% endif %}
+            </div>
+        </form>
+             </div>
+
+        </div>
+
+            </section>
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load pages_tags mezzanine_tags i18n future staticfiles compress %}
+
+{% block left_navigation %}
+<!-- LEFT NAVIGATION
+============ -->
+<div class="col-md-2">
+        <div class="row">
+        <!-- ARTICLES V3 WIDGET -->
+        <section class="widget widget-roster col-sm-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Kategorien</h4>
+
+            </header>
+     <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+            </section></div>
+</div>
+{% endblock %}
+
+{% block main_class %}col-md-7{% endblock %}
+{% block sidebar_class %}col-md-3{% endblock %}
+
+{% block sidebar %}
+
+{% include "shop/includes/cart.html" %}
+
+{% include "shcbelpa/sidebar/instructions.html" %}
+
+{% endblock %}
+
+{% block breadcrumb %}
+
+{% endblock %}

@@ -22,6 +22,10 @@
         #gallery-page #title    { background-image: url('../img/title-background-gallery-page-large.jpg') }
 }
 
+#content {
+  padding-top: 25px;
+}
+
 dl {
  width:100%;
  overflow:hidden;
@@ -241,4 +245,51 @@ dd {
 .topscorer-player {
   margin: 0px;
   margin-left: 10px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.specialPrice {
+  color: #db2b1d;
+}
+
+/* Left navigation for shop */
+
+.tree > .nav .nav > li {
+  padding-left: 15px;
+}
+.tree .active > a {
+  background-color: #EEEEEE;
+}
+.tree .active-branch > a {
+  font-weight: bold;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.breadcrumb > li {
+  display: inline-block;
+}
+
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #cccccc;
+  content: "/\00a0";
+}
+
+.breadcrumb > .active {
+  color: #999999;
 }

@@ -45,7 +45,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', '{{ GA_TRACKING_CODE }}',
+      ga('create', '{{ GA_TRACKING_CODE }}', 'auto',
           {'siteSpeedSampleRate': 100}
       );
       ga('send', 'pageview');
@@ -141,10 +141,31 @@
 ============ -->
 <div id="content">
 <div class="container">
+
+{% block breadcrumb %}
+{% if not on_home %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BREAKING NEWS -->
+            <ul class="breadcrumb">
+                {% block breadcrumb_menu %}
+                    {% include "pages/menus/breadcrumb.html" %}
+                {% endblock %}
+            </ul>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}
+
 <div class="row">
+
+
+{% block left_navigation %}{% endblock %}
+
+
 <!-- MAIN CONTENT
 ================= -->
-<main id="main-content" class="col-md-8">
+<main id="main-content" class="{% block main_class %}col-md-8{% endblock %}">
 
 {% block main %}{% endblock %}
 
@@ -153,22 +174,23 @@
 
 <!-- SIDEBAR
 ============ -->
-<aside class="col-md-4">
-<div class="row">
+{% block sidebar_wrapper %}
+<aside class="{% block sidebar_class %}col-md-4{% endblock %}">
+    <div class="row">
 
-{% block sidebar %}
+    {% block sidebar %}
 
-    {% include "shcbelpa/sidebar/gallery.html" %}
+        {% include "shcbelpa/sidebar/gallery.html" %}
 
-    {% include "shcbelpa/sidebar/facebook.html" %}
+        {% include "shcbelpa/sidebar/facebook.html" %}
 
+    {% endblock %}
 
+    </div>
+    <!--.row-->
+</aside>
 {% endblock %}
 
-
-</div>
-<!--.row-->
-</aside>
 </div>
 <!--.row-->
 

@@ -586,3 +586,8 @@ class Teaser(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+# load Cartridge customizing
+# necessary that post_save signal always gets registered!
+from shop import *

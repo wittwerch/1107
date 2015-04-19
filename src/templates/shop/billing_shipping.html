@@ -1,0 +1,80 @@
+{% extends "shop/base.html" %}
+{% load shop_tags mezzanine_tags i18n future staticfiles %}
+
+{% block meta_title %}{% trans "Checkout" %} - {{ step_title }}{% endblock %}
+{% block title %}{% trans "Checkout" %} - {% trans "Step" %} {{ step }} {% trans "of" %} {{ steps|length }}{% endblock %}
+{% block body_id %}checkout{% endblock %}
+
+{% block extra_head %}
+<script>
+var _gaq = [['_trackPageview', '{{ request.path }}{{ step_url }}/']];
+$(function() {$('.middle :input:visible:enabled:first').focus();});
+</script>
+<script src="{% static "cartridge/js/shipping_fields.js" %}"></script>
+{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block main_class %}col-md-7{% endblock %}
+
+{% block main %}
+
+
+<div class="row">
+            <section class="widget widget-roster col-md-12">
+            <!-- Widget header -->
+            <header class="clearfix">
+                <h4>Adresse</h4>
+
+            </header>
+            <div>
+
+<form method="post" class="col-md-10 checkout-form">
+    {% csrf_token %}
+
+    {% if request.cart.has_items %}
+
+    {% errors_for form %}
+
+    <div class="alert alert-warning">
+    <strong>Wichtig:</strong> Bitte gib deine Natelnummer an, damit dich Wittwer Sport per SMS benachrichtigen kann wenn die Artikel abgeholt werden können!
+    </div>
+
+    <fieldset>
+        {% fields_for form.billing_detail_fields %}
+    </fieldset>
+
+    <fieldset>
+        {% fields_for form.additional_instructions_field %}
+    </fieldset>
+
+    {% endif %}
+
+    {% block nav-buttons %}
+        {% if request.cart.has_items %}
+            <div class="form-actions">
+                <input type="submit" class="btn btn-lg btn-primary pull-right" value="{% trans "Next" %}">
+                {% if not CHECKOUT_STEP_FIRST %}
+                <input type="submit" class="btn btn-lg btn-default pull-left" name="back" value="{% trans "Back" %}">
+                {% endif %}
+            </div>
+        {% else %}
+            <p>{% trans "Your cart is empty." %}</p>
+            <p>{% trans "This may be due to your session timing out after a period of inactivity." %}</p>
+            <p>{% trans "We apologize for the inconvenience." %}</p>
+            <br>
+            <p><a class="btn btn-lg btn-primary" href="{% url "page" "shop" %}">{% trans "Continue Shopping" %}</a></p>
+        {% endif %}
+    {% endblock %}
+
+</form>
+</div>
+</section>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "shcbelpa/sidebar/instructions.html" %}
+{% endblock %}
+

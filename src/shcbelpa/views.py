@@ -2,10 +2,14 @@ from collections import OrderedDict
 import json
 
 from django.db.models import Count
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import TemplateView, DetailView, ListView
+from django.conf import settings
+from cartridge.shop.models import Order
 from mezzanine.blog.models import BlogPost
+from mezzanine.utils.email import send_mail_template
 from annoying.functions import get_object_or_None
+from braces.views import GroupRequiredMixin
 
 from .models import Player, Team, GameType, Game, Season, SeasonPlayerStats, League, Album, Sponsor, Teaser, Table
 
@@ -201,3 +205,56 @@ class SponsorView(ListView):
     queryset = Sponsor.objects.all()
     template_name = 'shcbelpa/sponsor.html'
     context_object_name = "sponsors"
+
+
+class OrderListView(GroupRequiredMixin, TemplateView):
+    """
+    Display all order made in the shop by it's status
+    """
+
+    group_required = u"Finance"
+
+    template_name = 'shcbelpa/shop/order_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(OrderListView, self).get_context_data(**kwargs)
+
+        # get all new order
+        context['new_orders'] = Order.objects.filter(status=1).order_by('-time')
+
+        # get all payed order
+        context['payed_orders'] = Order.objects.filter(status=2).order_by('-time')
+
+        return context
+
+
+class OrderDetailView(GroupRequiredMixin, DetailView):
+    """
+    Display an order with option to mark it as payed
+    """
+
+    group_required = u"Finance"
+
+    model = Order
+    template_name = 'shcbelpa/shop/order_detail.html'
+    context_object_name = 'order'
+
+    def post(self, request, *args, **kwargs):
+        order = Order.objects.get(pk=kwargs['pk'])
+
+        if order.status == 1:
+            order.status = 2 # set to payed
+            order.save()
+
+            order_context = {"order": order, "request": request,
+                             "order_items": order.items.all()}
+            order_context.update(order.details_as_dict())
+
+            receipt_template = "email/producer_notification"
+
+            send_mail_template("Bestellung #%i" % order.id,
+                           receipt_template, settings.SHOP_ORDER_FROM_EMAIL,
+                           settings.SHOP_PRODUCER_EMAIL, context=order_context,
+                           addr_bcc=settings.SHOP_ORDER_EMAIL_BCC or None, fail_silently=False)
+
+        return redirect('order_detail', pk=order.pk)

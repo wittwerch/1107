@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load pages_tags mezzanine_tags i18n future staticfiles thumbnail %}
+
+{% block meta_title %}
+Bestellungen
+{% endblock %}
+
+{% block subtitle %}
+Bestellungen
+{% endblock %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-lm-4">
+    <h4>Offene Bestellungen</h4>
+        <div class="table-responsive">
+        <table class="table table-striped stats sortable">
+            <thead>
+                <th>Bestellnummer</th>
+                <th>Kunde</th>
+                <th>Betrag</th>
+                <th>Datum</th>
+                <th></th>
+            </thead>
+            <tbody>
+                {% for order in new_orders %}
+                <tr>
+                    <td>{{ order.pk }}</td>
+                    <td>{{ order.billing_detail_first_name }} {{ order.billing_detail_last_name }}, {{ order.billing_detail_city  }}</td>
+                    <td>{{ order.total }}</td>
+                    <td>{{ order.time|date:"d.m.Y" }}</td>
+                    <td><a href="{% url "order_detail" order.pk %}">Details</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lm-4">
+    <h4>Bezahlte Bestellungen</h4>
+        <div class="table-responsive">
+        <table class="table table-striped stats sortable">
+            <thead>
+                <th>Bestellnummer</th>
+                <th>Kunde</th>
+                <th>Betrag</th>
+                <th>Datum</th>
+                <th></th>
+            </thead>
+            <tbody>
+                {% for order in payed_orders %}
+                <tr>
+                    <td>{{ order.pk }}</td>
+                    <td>{{ order.billing_detail_first_name }} {{ order.billing_detail_last_name }}, {{ order.billing_detail_city  }}</td>
+                    <td>{{ order.total }}</td>
+                    <td>{{ order.time|date:"d.m.Y" }}</td>
+                    <td><a href="{% url "order_detail" order.pk %}">Details</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

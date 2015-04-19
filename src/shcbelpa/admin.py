@@ -3,6 +3,7 @@ from copy import deepcopy
 from django.contrib import admin
 from django.conf import settings
 from mezzanine.blog.admin import blogpost_fieldsets, BlogPostAdmin
+from cartridge.shop.admin import ProductAdmin
 
 from .models import League, Club, Game, Team, Player, Season, GameRecap, Teaser, Roster, Sponsor
 from django.contrib.admin import SimpleListFilter
@@ -76,3 +77,6 @@ admin.site.register(Roster, RosterAdmin)
 class SponsorAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Sponsor, SponsorAdmin)
+
+# monkey patch the shop admin
+ProductAdmin.fieldsets[0][1]["fields"].extend(["require_number"])
