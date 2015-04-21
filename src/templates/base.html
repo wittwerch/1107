@@ -48,7 +48,9 @@
       ga('create', '{{ GA_TRACKING_CODE }}', 'auto',
           {'siteSpeedSampleRate': 100}
       );
+      {%  block analytics %}
       ga('send', 'pageview');
+      {% endblock %}
 
     </script>
     <!-- End Google Analytics -->

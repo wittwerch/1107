@@ -48,6 +48,23 @@ $(document).ready(function() {
 <script src="{% static "cartridge/js/product_variations.js" %}"></script>
 {% endblock %}
 
+{% if GA_TRACKING_CODE %}
+{% block analytics %}
+
+ga('require', 'ec');
+
+ga('ec:addProduct', {
+    'id': '{{ product.sku }}',
+    'name': '{{ product.title|escapejs }}'
+     });
+
+ga('ec:setAction', 'detail');
+
+ga('send', 'pageview');
+
+{% endblock %}
+{% endif %}
+
 {% block title %}
 {% editable product.title %}{{ product.title }}{% endeditable %}
 {% endblock %}
