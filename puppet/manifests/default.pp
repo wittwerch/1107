@@ -78,11 +78,15 @@ exec { "/usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata":
   refreshonly => true
 }
 
-exec { "wget -O /usr/bin/mailhog https://github.com/mailhog/MailHog/releases/download/v0.1.6/MailHog_linux_amd64 && chmod +x /usr/bin/mailhog":
+exec { "/usr/bin/wget -O /usr/bin/mailhog https://github.com/mailhog/MailHog/releases/download/v0.1.6/MailHog_linux_amd64 && chmod +x /usr/bin/mailhog":
   creates => "/usr/bin/mailhog",
   alias => "mailhog"
 }
 
 file { "/etc/init/mailhog.conf":
-  source => 'puppet:///files/mailhog.conf'
+  source => 'puppet:///modules/mailhog/mailhog.conf'
 }
+
+exec { "/usr/sbin/locale-gen de_CH de_CH.UTF-8":
+}
+
