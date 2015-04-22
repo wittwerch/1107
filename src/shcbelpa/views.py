@@ -250,11 +250,19 @@ class OrderDetailView(GroupRequiredMixin, DetailView):
                              "order_items": order.items.all()}
             order_context.update(order.details_as_dict())
 
-            receipt_template = "email/producer_notification"
-
+            # send email with order to producer
             send_mail_template("Bestellung #%i" % order.id,
-                           receipt_template, settings.SHOP_ORDER_FROM_EMAIL,
-                           settings.SHOP_PRODUCER_EMAIL, context=order_context,
-                           addr_bcc=settings.SHOP_ORDER_EMAIL_BCC or None, fail_silently=False)
+                           "email/producer_notification",
+                           settings.SHOP_ORDER_FROM_EMAIL,
+                           settings.SHOP_PRODUCER_EMAIL,
+                           context=order_context,
+                           addr_bcc=settings.SHOP_ORDER_EMAIL_BCC or None)
+
+            # send email with payment received notification to customer
+            send_mail_template("Zahlung zu Bestellung #%i erhalten" % order.id,
+                           "email/customer_notification",
+                           settings.SHOP_ORDER_FROM_EMAIL,
+                           order.billing_detail_email,
+                           context=order_context)
 
         return redirect('order_detail', pk=order.pk)
