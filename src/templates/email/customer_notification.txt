@@ -1,0 +1,10 @@
+{% extends "email/base.txt" %}
+{% load shop_tags i18n %}
+
+{% block main %}
+Hallo {{ order.billing_detail_first_name }},
+Wir haben deine Zahlung erhalten und die Bestellung an Wittwer Sport in Belp weitergeleitet. Sobald deine Artikel abholbereit sind, erhaelst du eine Benachrichtigung per SMS.
+
+Sportliche Gruesse,
+SHC Belpa 1107
+{% endblock %}
