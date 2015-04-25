@@ -6,3 +6,6 @@
 local_settings.py
 /static
 src/static
+*.sql
+.idea
+.vagrant
