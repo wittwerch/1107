@@ -50,6 +50,7 @@ admin.site.register(Game, GameAdmin)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'number')
     search_fields = ['first_name', 'last_name', 'number']
+    prepopulated_fields = {'slug': ('first_name', 'last_name')}
 admin.site.register(Player, PlayerAdmin)
 
 class SeasonAdmin(admin.ModelAdmin):

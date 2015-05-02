@@ -60,6 +60,8 @@ class Player(models.Model):
     height = models.DecimalField(max_digits=3, decimal_places=0,blank=True,null=True)
     weight = models.DecimalField(max_digits=3, decimal_places=0,blank=True,null=True)
 
+    slug = models.SlugField()
+
     SHOOTS_CHOICES = (
         ('L', _('Links')),
         ('R', _('Rechts')),

@@ -5,8 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
 
-from shcbelpa.views import HomeView, PlayerView, RosterView, SeasonView, StatsView, GalleryView, AlbumView, \
-    SponsorView, HallOfFameView, GameView, OrderListView, OrderDetailView
+from shcbelpa.views import *
 from shcbelpa.forms import CustomOrderForm
 
 admin.autodiscover()
@@ -34,7 +33,10 @@ urlpatterns += patterns('',
 
     url(r"^game/(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<pk>\d+)/", GameView.as_view(), name="game"),
 
-    url(r'^player/(?P<pk>\d+)/$', PlayerView.as_view(), name='player'),
+    # legacy url (redirect to slugified url)
+    url(r'^player/(?P<pk>\d+)/$', PlayerRedirectView.as_view(), name='player-redirect'),
+
+    url(r'^player/(?P<slug>[-\w]+)/$', PlayerView.as_view(), name='player'),
 
     url(r'^(?P<team_pk>\d+)/players$', RosterView.as_view(), name='roster'),
 

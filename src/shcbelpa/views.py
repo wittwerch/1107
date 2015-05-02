@@ -3,7 +3,8 @@ import json
 
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView, DetailView, ListView, RedirectView
+from django.core.urlresolvers import reverse
 from django.conf import settings
 from cartridge.shop.models import Order
 from mezzanine.blog.models import BlogPost
@@ -84,6 +85,7 @@ class PlayerView(DetailView):
     model = Player
     template_name = 'shcbelpa/player.html'
     context_object_name = 'player'
+    slug_field = 'slug'
 
     def get_context_data(self, **kwargs):
         context = super(PlayerView, self).get_context_data(**kwargs)
@@ -109,6 +111,14 @@ class PlayerView(DetailView):
         context['alltime_stats'] = alltime_stats
         context['season'] = season
         return context
+
+
+class PlayerRedirectView(RedirectView):
+    permanent = True
+
+    def get_redirect_url(self, *args, **kwargs):
+         player = get_object_or_404(Player, pk=kwargs['pk'])
+         return reverse('player', kwargs={'slug': player.slug})
 
 
 class RosterView(TemplateView):
