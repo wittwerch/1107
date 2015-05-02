@@ -36,7 +36,7 @@ Kader {{ team.get_level_display }}
                         <div class="thumbnail">
 
                             <div class="">
-                            <a href="{% url "player" player.pk %}">
+                            <a href="{% url "player" player.slug %}">
                                 {% thumbnail player.get_photo "200x250" crop="center" as im %}
                                     <img src="{{ im.url }}" class="img-thumbnail" alt="{{ player.first_name }} {{ player.last_name }}">
                                 {% endthumbnail %}

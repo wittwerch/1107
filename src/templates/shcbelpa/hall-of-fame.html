@@ -25,7 +25,7 @@ Hall of Fame
                         <div class="thumbnail">
 
                             <div class="">
-                            <a href="{% url "player" scorer.player.pk %}">
+                            <a href="{% url "player" scorer.player.slug %}">
                                 {% thumbnail scorer.player.get_photo "200x250" crop="center" as im %}
                                     <img src="{{ im.url }}" class="img-thumbnail" alt="{{ scorer.player.first_name }} {{ scorer.player.last_name }}">
                                 {% endthumbnail %}
@@ -55,7 +55,7 @@ Hall of Fame
                         <div class="thumbnail">
 
                             <div class="">
-                            <a href="{% url "player" scorer.player.pk %}">
+                            <a href="{% url "player" scorer.player.slug %}">
                                 {% thumbnail scorer.player.get_photo "200x250" crop="center" as im %}
                                     <img src="{{ im.url }}" class="img-thumbnail" alt="{{ scorer.player.first_name }} {{ scorer.player.last_name }}">
                                 {% endthumbnail %}
@@ -85,7 +85,7 @@ Hall of Fame
                         <div class="thumbnail">
 
                             <div class="">
-                            <a href="{% url "player" scorer.player.pk %}">
+                            <a href="{% url "player" scorer.player.slug %}">
                                 {% thumbnail scorer.player.get_photo "200x250" crop="center" as im %}
                                     <img src="{{ im.url }}" class="img-thumbnail" alt="{{ scorer.player.first_name }} {{ scorer.player.last_name }}">
                                 {% endthumbnail %}
