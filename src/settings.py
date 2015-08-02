@@ -201,7 +201,7 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['.shcbelpa.ch']
+ALLOWED_HOSTS = ['.shcbelpa.ch', '87.230.93.145']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -467,6 +467,64 @@ GA_TRACKING_CODE = None
 ##################
 
 COMPRESS_ENABLED = True
+
+
+##################
+# LOGGING        #
+##################
+LOGGING_DIR = "%s/../../logs" % PROJECT_ROOT
+
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(levelname)s [%(name)s] %(message)s'
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+            'filters': ['require_debug_true']
+        },
+        'error_log': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': '%s/error.log' % LOGGING_DIR,
+            'maxBytes': 1024 * 1024 * 5,  # 5MB
+            'backupCount': 100,
+            'formatter': 'simple',
+            'filters': ['require_debug_false']
+        },
+    },
+    'loggers': {
+        'shcbelpa': {
+            'handlers': ['error_log', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['error_log', 'console'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['error_log', 'console'],
+            'level': 'WARNING',
+            'propagate': True,
+        }
+    }
+}
+
 
 ##################
 # LOCAL SETTINGS #
