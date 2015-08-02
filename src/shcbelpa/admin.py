@@ -39,6 +39,7 @@ admin.site.register(Club, ClubAdmin)
 
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('club', 'level')
+    list_filter = 'level',
 admin.site.register(Team, TeamAdmin)
 
 class GameAdmin(admin.ModelAdmin):

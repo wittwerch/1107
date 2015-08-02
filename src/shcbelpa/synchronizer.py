@@ -135,7 +135,7 @@ class LigaManager:
 
     def _get_team(self, string, force_level=None):
         #locale.setlocale(locale.LC_ALL, 'de_DE')
-        pattern = re.compile('((?u)[\w\- ]*) J?([1-9ABCI]*)$')
+        pattern = re.compile('((?u)[\w\- ]*) J?([1-9ABCISenioren]*)$')
 
         self._logger.debug("Matching %s" % string)
         match = pattern.match(string)
@@ -145,6 +145,8 @@ class LigaManager:
             level = match.group(2)
             if level == 'II':
                 level = 2
+            if level == 'Senioren':
+                level = 'S'
         else:
             club_name = string
             level = 1
