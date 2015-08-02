@@ -170,7 +170,10 @@ class LigaManager:
 
         try:
             for xml in xml_table.ihs.Mannschaften.Mannschaft:
-                team = self._get_team(xml.Team.cdata)
+	        try:
+                    team = self._get_team(xml.Team.cdata)
+		except Club.DoesNotExist:
+                    continue
                 table = get_object_or_None(Table, team=team, season=season, league=league, game_type=game_type)
                 if table is None:
                     table = Table(team=team, season=season, league=league, game_type=game_type)
