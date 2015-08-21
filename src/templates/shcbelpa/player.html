@@ -5,6 +5,14 @@
 {{ player.first_name }} {{ player.last_name }}
 {% endblock %}
 
+{% block meta_keywords %}
+    spieler, person, profil, {% if player.number %}#{{ player.number }}{% endif %}, {{ player.first_name }}, {{ player.last_name }}
+{% endblock %}
+
+{% block meta_description %}
+    Alle Statistiken der {{ team.get_level_display }} f&uuml;r die Saison {{ current_season }}
+{% endblock %}
+
 {% block subtitle %}
 {% if player.number %}
     #{{ player.number }}

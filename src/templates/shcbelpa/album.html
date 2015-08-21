@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
 
+{% block meta_title %}
+ Album - {{ album.title }}
+{% endblock %}
+
+{% block meta_keywords %}
+    album, photos, fotos, action, bilder, emotionen
+{% endblock %}
+
+{% block meta_description %}
+Album mit Photos zum Spiel
+{% endblock %}
+
+{% block subtitle %}
+    Gallery
+{% endblock %}
+
 {% block subtitle %}
  {{ album.title }}
 {% endblock %}

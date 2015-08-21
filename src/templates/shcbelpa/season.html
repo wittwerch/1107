@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
 
-{% block subtitle %}
-{{ team.get_level_display }} / {{ current_season.code }}
+{% block meta_title %}
+    Meisterschaft {{ team.get_level_display }} {{ current_season }}
 {% endblock %}
+
+{% block meta_keywords %}
+    tabelle, liga, mannschaften, resultate, spiele, {{ current_season }}, {{ team.get_level_display }}
+{% endblock %}
+
+{% block meta_description %}
+    Alle Spiele und Resultate der {{ team.get_level_display }} f&uuml;r die Saison {{ current_season }}
+{% endblock %}
+
+{% block subtitle %}{{ team.get_level_display }} / {{ current_season.code }}{% endblock %}
 
 {% block main %}
 

@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
 
+{% block meta_title %}
+    Statistiken {{ team.get_level_display }} {{ current_season }}
+{% endblock %}
+
+{% block meta_keywords %}
+    statistiken, stats, goal, assist, tor, topscorer, strafen {{ current_season }}, {{ team.get_level_display }}
+{% endblock %}
+
+{% block meta_description %}
+    Alle Statistiken der {{ team.get_level_display }} f&uuml;r die Saison {{ current_season }}
+{% endblock %}
+
 {% block subtitle %}
 {{ team.get_level_display }} / {{ current_season.code }}
 {% endblock %}
