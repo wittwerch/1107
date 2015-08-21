@@ -13,6 +13,5 @@ install:
 # command to run tests
 script:
   - "coverage run --source=shcbelpa src/manage.py test shcbelpa"
-  - "python src/manage.py validate_templates"
 after_success:
   coveralls
