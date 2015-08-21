@@ -5,6 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.http import HttpResponse
 from django.conf import settings
+from django.views.decorators.cache import cache_page
 
 from shcbelpa.views import *
 from shcbelpa.forms import CustomOrderForm
@@ -28,7 +29,7 @@ urlpatterns += patterns('',
     ("^shop/", include("cartridge.shop.urls")),
     url("^account/orders/$", "cartridge.shop.views.order_history", name="shop_order_history"),
 
-    url("^$", HomeView.as_view(), name='home'),
+    url("^$", cache_page(15*60)(HomeView.as_view()), name='home'),
 
     url(r'^(?P<team_pk>\d{1})/season/(?P<season>\d{4})', SeasonView.as_view(), name='season'),
 
