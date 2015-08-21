@@ -90,3 +90,4 @@ file { "/etc/init/mailhog.conf":
 exec { "/usr/sbin/locale-gen de_CH de_CH.UTF-8":
 }
 
+exec { "mkdir /logs && chown vagrant.vagrant /logs": }

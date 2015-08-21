@@ -13,3 +13,4 @@ gunicorn
 django-annoying
 South==1.0.1
 django-braces==1.8.0
+Fabric==1.10.2
