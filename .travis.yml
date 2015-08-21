@@ -5,7 +5,8 @@ env:
   - DJANGO_SETTINGS_MODULE="settings"
 # command to install dependencies
 before_install:
-  - "sudo locale-gen de_CH.UTF-8 de_CH" 
+  - "sudo locale-gen de_CH.UTF-8 de_CH"
+  - "mkdir logs"
 install:
   - "pip install -r src/requirements.txt"
   - "pip install coveralls"
