@@ -16,6 +16,35 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(levelname)s [%(name)s] %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['console'],
+            'level': 'WARNING',
+            'propagate': True,
+        }
+    }
+}
+
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
