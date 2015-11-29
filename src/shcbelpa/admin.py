@@ -45,6 +45,7 @@ admin.site.register(Team, TeamAdmin)
 class GameAdmin(admin.ModelAdmin):
     list_display = ['date_time', 'home_team', 'away_team', 'season', 'game_type']
     list_filter = ('league', 'season', 'game_type')
+    search_fields = ['lm_id']
     ordering = ['-date_time']
 admin.site.register(Game, GameAdmin)
 

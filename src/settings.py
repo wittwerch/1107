@@ -186,6 +186,8 @@ OWNABLE_MODELS_ALL_EDITABLE = ('blog.BlogPost',)
 # INSTALLED_APPS setting.
 USE_SOUTH = True
 
+# use Django slugify method which handles german Umlauts correct
+SLUGIFY = 'django.template.defaultfilters.slugify'
 
 ########################
 # MAIN DJANGO SETTINGS #

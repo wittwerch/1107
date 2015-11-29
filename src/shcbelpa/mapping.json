@@ -1,54 +1,43 @@
 {
-    "_comment": "SSHA Mapping for Season 2014/2015",
-    "season_id": 3,
+    "_comment": "SSHA Mapping for Season 2015/2016",
+    "season_id": 4,
     "teams": {
         "1": {
-            "team_id": 233,
+            "team_id": 347,
             "league_id": 1,
             "map": {
-                "2": 57,
-                "3": 68,
-                "5": 48
+                "2": 70,
+                "5": 74
             }
         },
         "2": {
-            "team_id": 234,
+            "team_id": 348,
             "league_id": 3,
             "map": {
-                "2": 45,
-                "3": 63,
-                "5": 48
+                "2": 72,
+                "5": 74
             }
         },
         "3": {
-            "team_id": 235,
+            "team_id": 349,
             "league_id": 5,
             "map": {
-                "2": 59,
-                "3": 61,
-                "3": 65
+                "2": 76
             }
         },
         "4": {
-            "team_id": 236,
+            "team_id": 350,
             "league_id": 6,
             "map": {
-                "2": 60,
-                "5": 55
+                "2": 77,
+                "5": 79
             }
         },
         "5": {
-            "team_id": 237,
+            "team_id": 351,
             "league_id": 7,
             "map": {
-                "2": 56
-            }
-        },
-        "6": {
-            "team_id": 325,
-            "league_id": 8,
-            "map": {
-                "2": 80
+                "2": 78
             }
         }
     }
