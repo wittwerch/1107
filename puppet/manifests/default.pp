@@ -57,6 +57,11 @@ package { "node-less":
   require => Exec['update'],
 }
 
+package { "npm":
+  ensure => installed,
+  require => Exec['update'],
+}
+
 # Create virtualenv
 exec { "/usr/bin/virtualenv /virtualenv":
   creates => "/virtualenv",
@@ -90,6 +95,6 @@ file { "/etc/init/mailhog.conf":
 exec { "/usr/sbin/locale-gen de_CH de_CH.UTF-8":
 }
 
-exec { "mkdir /logs && chown vagrant.vagrant /logs": }
+exec { "/bin/mkdir /logs && chown vagrant.vagrant /logs": }
 
-exec { "npm -g install yuglify": }
+exec { "/usr/bin/npm -g install yuglify": }
